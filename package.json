@@ -40,6 +40,7 @@
     "html-webpack-plugin": "^2.24.1",
     "husky": "^0.13.2",
     "image-webpack-loader": "^3.1.0",
+    "object-fit-images": "^3.2.3",
     "postcss-calc": "^5.3.1",
     "postcss-custom-media": "^5.0.1",
     "postcss-custom-properties": "^5.0.1",
