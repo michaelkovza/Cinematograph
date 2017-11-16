@@ -13,6 +13,7 @@
 
   &:hover &__title {
     text-decoration: underline;
+    color: var(--default-black-color);
   }
 
   &:hover &__image {
@@ -52,12 +53,23 @@
     position: absolute;
     top: -26px;
     z-index: -1;
+    font-family: var(--primary-font);
+    font-size: 12px;
+    color: var(--primary-text-color);
   }
 
   &__title {
     display: inline-block;
     text-decoration: none;
-    transition: text-decoration 0.3s;
+    transition: text-decoration 0.3s, color 0.3s;
     max-width: 120px;
+    font-family: var(--primary-font);
+    font-size: 14px;
+    color: var(--primary-text-color);
+
+
+    &--dark {
+      color: var(--secondary-text-color);
+    }
   }
 }
