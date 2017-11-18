@@ -3,29 +3,60 @@
   border: 1px solid transparent;
   transition: border 0.3s;
 
-  &:hover {
-    border: 1px solid var(--secondary-border-color);
+  &:hover &__highlight {
+
+    background-color: var(--accent-color);
+    color: var(--default-black-color);
+
   }
 
-  &:hover &__description {
+
+  &--with-border {
+
+    &:hover {
+      border: 1px solid var(--secondary-border-color);
+    }
+
+  }
+
+  &--with-border &__title {
+    margin: 0;
+  }
+
+  &--with-border:hover &__description {
     border: 1px solid transparent;
   }
 
-  &:hover &__title {
+  &--with-border:hover &__title {
     text-decoration: underline;
     color: var(--default-black-color);
   }
 
-  &:hover &__image {
+  &--with-border:hover &__image {
     transform: scale(0.85);
   }
 
-  &__image-container {
-    max-width: 100%;
-    height: 250px;
+  &--with-border &__description {
+    border: 1px solid var(--primary-border-color);
+    margin-top: 14px;
+    padding: 15px 12px 0;
   }
 
-  &__image {
+  &--with-border &__title &__highlight {
+    background-color: transparent;
+    color: inherit;
+  }
+
+  &--with-border &__title {
+    text-align: left;
+  }
+
+  &--with-border &__image-container {
+    height: 250px;
+    display: block;
+  }
+
+  &--with-border &__image {
     margin: 0 auto;
     display: block;
     width: 100%;
@@ -34,19 +65,36 @@
     font-family: 'object-fit: cover;';
     transform: scale(1);
     transition: transform 0.3s;
-
   }
 
+  &__image-container {
+    max-width: 100%;
+    height: 191px;
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__image {
+    align-self: center;
+    margin: 0 auto;
+    display: block;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    transform: scale(1);
+    transition: transform 0.3s;
+
+  }
 
   &__description {
     display: flex;
     height: 79px;
-    padding: 15px 12px 0;
     flex-flow: column nowrap;
-    border: 1px solid  var(--primary-border-color);
-    margin-top: 14px;
+    border: 1px solid transparent;
     transition: border 0.3s;
     position: relative;
+    margin-top: 14px;
   }
 
   &__status {
@@ -59,17 +107,28 @@
   }
 
   &__title {
-    display: inline-block;
+    display: block;
     text-decoration: none;
     transition: text-decoration 0.3s, color 0.3s;
     max-width: 120px;
     font-family: var(--primary-font);
     font-size: 14px;
+    line-height: 1.3;
     color: var(--primary-text-color);
-
+    text-align: center;
+    margin: 0 auto;
 
     &--dark {
       color: var(--secondary-text-color);
     }
   }
+
+  &__highlight {
+    background-color: transparent;
+    color: inherit;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+
+
 }
