@@ -20,6 +20,17 @@ module.exports = [
             page: 'materials.pug'
         },
         chunks: ['index']
+    },
+    {
+        title: '«author»',
+        filename: 'author.html',
+        template: 'src/html/layouts/layout.pug',
+        inject: 'body',
+        minify: false,
+        env: {
+            page: 'author.pug'
+        },
+        chunks: ['index']
     }
 ];
 
