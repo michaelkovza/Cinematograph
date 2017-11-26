@@ -31,6 +31,28 @@ module.exports = [
             page: 'author.pug'
         },
         chunks: ['index']
+    },
+    {
+        title: '«gallery»',
+        filename: 'gallery.html',
+        template: 'src/html/layouts/layout.pug',
+        inject: 'body',
+        minify: false,
+        env: {
+            page: 'gallery.pug'
+        },
+        chunks: ['index']
+    },
+    {
+        title: '«gallery-detailed»',
+        filename: 'gallery-detailed.html',
+        template: 'src/html/layouts/layout.pug',
+        inject: 'body',
+        minify: false,
+        env: {
+            page: 'gallery-detailed.pug'
+        },
+        chunks: ['index']
     }
 ];
 
