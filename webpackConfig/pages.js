@@ -53,6 +53,17 @@ module.exports = [
             page: 'gallery-detailed.pug'
         },
         chunks: ['index']
+    },
+    {
+        title: '«video»',
+        filename: 'video.html',
+        template: 'src/html/layouts/layout.pug',
+        inject: 'body',
+        minify: false,
+        env: {
+            page: 'video.pug'
+        },
+        chunks: ['index']
     }
 ];
 
