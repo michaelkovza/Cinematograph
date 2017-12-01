@@ -35,6 +35,9 @@
 @import "blocks/article-detailed-container.pcss";
 
 
+.news {
+  position: relative;
+}
 .news__list {
     /* We need to limit the height and show a scrollbar */
     width: 200px;
@@ -64,12 +67,12 @@
 }
 
 .news__preloader {
-  position: relative;
-  bottom: 10px;
+  position: absolute;
+  bottom: 0;
   left: 0;
   width: 180px;
   height: 80px;
-  background: rgba(151, 3, 239, 0.4);
+  background: rgb(151, 3, 239);
 
   &:before {
     content: '';
