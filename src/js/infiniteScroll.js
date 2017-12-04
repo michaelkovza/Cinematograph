@@ -23,7 +23,7 @@ const infiniteScroll = () => {
                            itemArticle.classList.add('itemArticle');
                            itemArticle.innerText = data.articles[i].author + [i];
                            item.appendChild(itemArticle);
-                           newsList.appendChild(item)
+                           newsList.appendChild(item);
                            preloader.style.display = 'none';
                        }
                    })
