@@ -77,6 +77,17 @@ module.exports = [
         chunks: ['index']
     },
     {
+        title: '«video-detailed-movies»',
+        filename: 'video-detailed-movies.html',
+        template: 'src/html/layouts/layout.pug',
+        inject: 'body',
+        minify: false,
+        env: {
+            page: 'video-detailed-movies.pug'
+        },
+        chunks: ['index']
+    },
+    {
         title: '«article»',
         filename: 'article.html',
         template: 'src/html/layouts/layout.pug',
