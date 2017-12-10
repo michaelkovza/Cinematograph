@@ -1,15 +1,14 @@
 const createTerm = ({terms,termContainer}) => {
 
     for ( let i = 0; i < terms.length; i++) {
+
         let termTopCoords = terms[i].getBoundingClientRect().top + 'px';
-        console.log(termTopCoords);
         let termTitle = terms[i].getAttribute('data-term-title');
         let termDescription = terms[i].getAttribute('data-term-description');
 
         let fragment = document.createDocumentFragment();
         let fragmentClarification = document.createElement('article');
         fragmentClarification.classList.add('clarification');
-        fragmentClarification.style = `position:absolute;  top: ${termTopCoords}`;
 
         let fragmentClarificationTitle = document.createElement('h4');
         fragmentClarificationTitle.classList.add('clarification__title');
@@ -22,10 +21,20 @@ const createTerm = ({terms,termContainer}) => {
         fragmentClarification.appendChild(fragmentClarificationTitle);
         fragmentClarification.appendChild(fragmentClarificationDescription);
 
+        terms[i].addEventListener('mouseover', () => {
+            fragmentClarification.style  = `opacity: 1; position:absolute;  top: ${termTopCoords}`
+        });
+
+        terms[i].addEventListener('mouseout', () => {
+            fragmentClarification.style  = `opacity: 0; position:absolute;  top: ${termTopCoords}`;
+        });
+
 
         fragment.appendChild(fragmentClarification);
 
         termContainer.appendChild(fragment);
+
+
 
 
     }
