@@ -35,8 +35,6 @@ const createTerm = ({terms,termContainer}) => {
         termContainer.appendChild(fragment);
 
 
-
-
     }
 
 };
