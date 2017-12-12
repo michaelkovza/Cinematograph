@@ -1,0 +1,75 @@
+.banner {
+  position: relative;
+  padding: 9px;
+  height: 275px;
+  overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 65px;
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__content-container {
+    background: var(--primary-rgba-background-color);
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    padding: 40px;
+  }
+
+  &__title {
+    font-family: var(--primary-bold-font);
+    font-size: 36px;
+    text-transform: uppercase;
+    color: var(--default-black-color);
+  }
+
+  &__category {
+    font-family: var(--primary-font);
+    font-size: 24px;
+    color: var(--default-black-color);
+  }
+
+  &__views {
+    font-family: var(--primary-font);
+    font-size: 14px;
+    color: var(--default-black-color);
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 17px;
+      height: 11px;
+      display: block;
+      background: url('../../images/icons/eye.svg') no-repeat;
+    }
+  }
+
+  &__author {
+    font-family: var(--primary-font);
+    font-size: 14px;
+    color: var(--default-black-color);
+    display: inline-block;
+  }
+
+  &__link {
+    font-family: var(--primary-italic-font);
+    font-size: 14px;
+    color: var(--default-black-color);
+    border-bottom: 1px solid var(--default-black-color);
+  }
+}
