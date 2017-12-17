@@ -1,5 +1,6 @@
-const infiniteScroll = () => {
+import $ from 'jquery';
 
+const infiniteScroll = () => {
 
 
     function debounce(f, ms) {
@@ -23,37 +24,48 @@ const infiniteScroll = () => {
     }
 
 
-    let onWheel = function (e) {
-        e = e || window.event;
 
-        let delta = e.deltaY || e.detail || e.wheelDelta;
-        let number = 0;
+    let infinitScroll = function() {
+      this.initialize = function() {
+          this.setupEvents();
+      };
 
-        if (delta >= number ) {
-            preloader.style.display = 'block';
-            getData()
-        }
+      this.setupEvents = function() {
+          $(window).on('scroll', this.handleScroll.bind(this))
+      };
 
+      this.handleScroll = function(){
+          let scrollTop = $(document).scrollTop();
+          let windowHeight = $(window).height();
+          let height = $(document).height() - windowHeight;
+          let scrollPercentage = (scrollTop / height);
+
+          if(scrollPercentage > 0.9) {
+              preloader.style.display = 'block';
+              getData();
+          }
+      };
+
+      this.initialize();
     };
 
-    let getDataOnScroll = debounce(function(e){
-
-        onWheel(e);
-
-    }, 1000);
 
 
+    let infiniteThottleScroll = debounce(function() {
+        new infinitScroll();
+    }, 5000);
+
+    infiniteThottleScroll();
 
     let newsList = document.getElementsByClassName('js-gallery-video-list')[0];
     let preloader = document.getElementsByClassName('js-preloader')[0];
-    let body = document.body;
 
 
     let url = 'https://newsapi.org/v2/top-headlines?' + 'sources=bbc-news&' + 'apiKey=1aa994764e434bc991ceb52fa10cdf5d';
 
     let req = new Request(url);
 
-    const getData = () => {
+    function getData() {
         fetch(req)
             .then(
                 (response) => {
@@ -62,7 +74,7 @@ const infiniteScroll = () => {
 
 
                        for(let i = 0; i < data.articles.length; i++) {
-                           console.log(data.articles[i]);
+                           //console.log(data.articles[i]);
                            let item = document.createElement('li');
                            let itemLink = document.createElement('a');
                            let itemImage = document.createElement('img');
@@ -92,7 +104,9 @@ const infiniteScroll = () => {
 
                            item.appendChild(itemLink);
                            newsList.appendChild(item);
+
                            preloader.style.display = 'none';
+
                        }
                    })
 
@@ -103,15 +117,16 @@ const infiniteScroll = () => {
     };
     
 
-    getData();
+    //getData();
 
 
 
-    document.addEventListener('wheel',  () =>  {
+
+    /*document.addEventListener('scroll',  () =>  {
 
         getDataOnScroll();
 
-    })
+    })*/
 
 
 };
