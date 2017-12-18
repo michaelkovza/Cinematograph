@@ -97,6 +97,17 @@ module.exports = [
             page: 'article.pug'
         },
         chunks: ['index']
+    },
+    {
+        title: '«article-simple»',
+        filename: 'simple-article.html',
+        template: 'src/html/layouts/layout.pug',
+        inject: 'body',
+        minify: false,
+        env: {
+            page: 'simple-article.pug'
+        },
+        chunks: ['index']
     }
 
 ];
