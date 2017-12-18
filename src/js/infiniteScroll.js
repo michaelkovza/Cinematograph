@@ -3,7 +3,8 @@ import $ from 'jquery';
 const infiniteScroll = () => {
 
     let newsList = document.getElementsByClassName('js-gallery-video-list')[0];
-    let preloader = document.getElementsByClassName('js-preloader')[0];
+    let loader = document.getElementsByClassName('js-loader')[0];
+    let loaderHiddenClass = 'loader--hidden';
 
 
     let url = 'https://newsapi.org/v2/top-headlines?' + 'sources=bbc-news&' + 'apiKey=1aa994764e434bc991ceb52fa10cdf5d';
@@ -51,7 +52,7 @@ const infiniteScroll = () => {
                             item.appendChild(itemLink);
                             newsList.appendChild(item);
 
-                            preloader.style.display = 'none';
+                            loader.classList.add(loaderHiddenClass);
 
                         }
                     })
@@ -68,7 +69,7 @@ const infiniteScroll = () => {
     $(window).scroll(() => {
             if ($(window).scrollTop() + $(window).height() === $(document).height()) {
                 getData();
-                preloader.style.display = 'block';
+                loader.classList.remove(loaderHiddenClass);
             }
 
         }
