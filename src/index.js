@@ -2,7 +2,8 @@ import './css/index.pcss';
 import objectFitImages from 'object-fit-images';
 import ShareToSocialNetworks from './js/ShareToSocialNetworks';
 import createTerm from './js/createTerm';
-import infinteScroll from './js/infiniteScroll';
+import infiniteScroll from './js/infiniteScroll';
+import scrollToTop from './js/scrollToTop';
 
 
 window.addEventListener('load', () => {
@@ -20,7 +21,8 @@ window.addEventListener('load', () => {
     };
     createTerm(createTermOptions);
 
-    infinteScroll();
+    infiniteScroll();
+    scrollToTop();
 
 });
 

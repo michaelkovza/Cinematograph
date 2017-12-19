@@ -3,4 +3,20 @@
   height: 20px;
   background: var(--primary-backgound-color);
   text-align: center;
+  position: relative;
+
+  &__button {
+    width: 9px;
+    height: 9px;
+    border-top: 2px solid #ffff00;
+    border-right: 2px solid #ffff00;
+    background: none;
+    padding: 0;
+    transform-origin: 0;
+    outline: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 17%) rotate(-45deg);
+  }
 }
