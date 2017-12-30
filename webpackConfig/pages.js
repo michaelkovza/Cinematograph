@@ -108,6 +108,17 @@ module.exports = [
             page: 'simple-article.pug'
         },
         chunks: ['index']
+    },
+    {
+        title: '«album»',
+        filename: 'album.html',
+        template: 'src/html/layouts/layout.pug',
+        inject: 'body',
+        minify: false,
+        env: {
+            page: 'album.pug'
+        },
+        chunks: ['index']
     }
 
 ];
