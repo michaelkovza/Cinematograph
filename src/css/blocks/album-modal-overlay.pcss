@@ -1,0 +1,31 @@
+.album-modal-overlay {
+
+  &--closed {
+    display: none;
+  }
+
+  &__content-container {
+    width: 650px;
+    height: 650px;
+    background-color: var(--secondary-rgba-background-color);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__image {
+    width: 65.38461538461539%;
+    height: 95.38461538461539%;
+    object-fit: cover;
+  }
+
+  &__arrow {
+    &--next {
+      order: 2;
+    }
+  }
+}
