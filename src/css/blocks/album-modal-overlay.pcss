@@ -1,5 +1,11 @@
 .album-modal-overlay {
 
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
   &--closed {
     display: none;
   }
@@ -7,7 +13,7 @@
   &__content-container {
     width: 650px;
     height: 650px;
-    background-color: var(--secondary-rgba-background-color);
+    background-color: var(--primary-rgba-background-color);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -24,8 +30,17 @@
   }
 
   &__arrow {
+    width: 20px;
+    height: 36px;
+    background: url('../../images/icons/arrow.svg') no-repeat;
+    background-size: 100%;
+    background-position:  center;
+
     &--next {
       order: 2;
+      transform: rotate(180deg);
+
     }
+
   }
 }

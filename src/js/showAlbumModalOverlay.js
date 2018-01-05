@@ -1,5 +1,9 @@
 const showAlbumModalOverlay = ({albumPhotosSelector, albumModalOverlaySelector, albumModalOverlayImageSelector, albumModalOverlaySelectorClosedClass, prevButton, nextButton}) => {
 
+    if(albumModalOverlaySelector === undefined) {
+        return
+    }
+
     const albumPhotosSelectorArr = Array.prototype.slice.call(albumPhotosSelector);
 
 
@@ -28,7 +32,16 @@ const showAlbumModalOverlay = ({albumPhotosSelector, albumModalOverlaySelector, 
             albumModalOverlaySelector.classList.remove(albumModalOverlaySelectorClosedClass);
             changePhotosByuButtons(index, albumPhotosSelectorArr);
         })
-    })
+    });
+
+
+
+    albumModalOverlaySelector.addEventListener('click', (e) => {
+        let target = e.target;
+        if( target.className === 'album-modal-overlay js-album-modal-overlay') {
+            albumModalOverlaySelector.classList.add(albumModalOverlaySelectorClosedClass);
+        }
+    });
 
 };
 

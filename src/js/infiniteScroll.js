@@ -3,8 +3,15 @@ import $ from 'jquery';
 const infiniteScroll = () => {
 
     let newsList = document.getElementsByClassName('js-gallery-video-list')[0];
+
+    if (newsList === undefined) {
+        return
+    }
+
     let loader = document.getElementsByClassName('js-loader')[0];
     let loaderHiddenClass = 'loader--hidden';
+
+
 
 
     let url = 'https://newsapi.org/v2/top-headlines?' + 'sources=bbc-news&' + 'apiKey=1aa994764e434bc991ceb52fa10cdf5d';

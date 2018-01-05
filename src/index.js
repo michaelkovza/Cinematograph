@@ -34,7 +34,6 @@ window.addEventListener('load', () => {
     };
 
     showAlbumModalOverlay(showAlbumModalOverlayOptions);
-
     infiniteScroll();
     scrollToTop();
 
