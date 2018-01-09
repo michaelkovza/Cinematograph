@@ -1,4 +1,5 @@
 import './css/index.pcss';
+import shave from 'shave';
 import objectFitImages from 'object-fit-images';
 import ShareToSocialNetworks from './js/ShareToSocialNetworks';
 import createTerm from './js/createTerm';
@@ -9,6 +10,8 @@ import showAlbumModalOverlay from './js/showAlbumModalOverlay';
 
 window.addEventListener('load', () => {
     objectFitImages();
+
+    shave('.card-text-shave', 200);
 
     const ShareToSocialNetworksOptions = {
         'buttonSelector': document.getElementsByClassName('share')

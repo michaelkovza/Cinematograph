@@ -119,6 +119,17 @@ module.exports = [
             page: 'album.pug'
         },
         chunks: ['index']
+    },
+    {
+        title: '«library»',
+        filename: 'library.html',
+        template: 'src/html/layouts/layout.pug',
+        inject: 'body',
+        minify: false,
+        env: {
+            page: 'library.pug'
+        },
+        chunks: ['index']
     }
 
 ];
