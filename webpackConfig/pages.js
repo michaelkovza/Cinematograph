@@ -130,7 +130,19 @@ module.exports = [
             page: 'library.pug'
         },
         chunks: ['index']
+    },
+    {
+        title: '«book»',
+        filename: 'book.html',
+        template: 'src/html/layouts/layout.pug',
+        inject: 'body',
+        minify: false,
+        env: {
+            page: 'book.pug'
+        },
+        chunks: ['index']
     }
+
 
 ];
 
