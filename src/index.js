@@ -6,6 +6,7 @@ import createTerm from './js/createTerm';
 import infiniteScroll from './js/infiniteScroll';
 import scrollToTop from './js/scrollToTop';
 import showAlbumModalOverlay from './js/showAlbumModalOverlay';
+import formValidation from "./js/formValidation";
 
 
 window.addEventListener('load', () => {
@@ -35,6 +36,15 @@ window.addEventListener('load', () => {
       'prevButton': document.getElementsByClassName('js-prev-button')[0],
       'nextButton': document.getElementsByClassName('js-next-button')[0]
     };
+
+
+    const formValidationOptions = {
+        formEmailSelector: document.getElementsByClassName('js-input-email')[0],
+        formStatusSelector: document.getElementsByClassName('js-form-status')[0],
+        formSendButton: document.getElementsByClassName('js-form-button')[0]
+    };
+
+    formValidation(formValidationOptions);
 
     showAlbumModalOverlay(showAlbumModalOverlayOptions);
     infiniteScroll();
