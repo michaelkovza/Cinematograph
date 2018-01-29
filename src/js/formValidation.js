@@ -10,9 +10,6 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton}) 
 
         let email = formEmailSelector.value;
 
-        console.log(email + 1);
-
-
 
         if(validateEmail(email)) {
             formStatusSelector.innerHTML = 'Ваш E-mail успешно отправлен'
@@ -21,10 +18,12 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton}) 
         }
 
         if(email === '') {
-            formStatusSelector.innerHTML = 'Заполните поле'
+            formStatusSelector.innerHTML = 'Заполните поле';
+
+            setTimeout(() => {
+                formStatusSelector.innerHTML = ''
+            }, 5000)
         }
-
-
 
     };
 
