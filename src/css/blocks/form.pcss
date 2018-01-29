@@ -1,4 +1,5 @@
 .form {
+  position: relative;
 
   &__title {
     padding-bottom: 20px;
@@ -10,5 +11,20 @@
     font-family: var(--primary-font);
     color: var(--thridly-text-color);
     background: transparent;
+  }
+
+  &__button {
+    width: 9px;
+    height: 9px;
+    border-top: 2px solid var(--secondary-accent-color);
+    border-right: 2px solid var(--secondary-accent-color);
+    background: none;
+    padding: 0;
+    transform-origin: 0;
+    outline: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(55px, 18px) rotate(45deg);
   }
 }
