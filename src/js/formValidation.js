@@ -10,24 +10,39 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton}) 
 
         let email = formEmailSelector.value;
 
-        if(email === '') {
-            formStatusSelector.innerHTML = 'Пожалуйста, заполните поле'
-        }
+        console.log(email + 1);
+
+
 
         if(validateEmail(email)) {
             formStatusSelector.innerHTML = 'Ваш E-mail успешно отправлен'
-        }
-
-        if(!validateEmail(email)) {
+        } else {
             formStatusSelector.innerHTML = 'Поле заполнено некорректно'
         }
+
+        if(email === '') {
+            formStatusSelector.innerHTML = 'Заполните поле'
+        }
+
+
 
     };
 
     formSendButton.addEventListener('click', (event) => {
         event.preventDefault();
         validate();
+    });
+
+    formEmailSelector.addEventListener('change', () => {
+        console.log("change");
+        validate();
+    });
+
+    formEmailSelector.addEventListener('blur', () => {
+        console.log("blur");
+        validate()
     })
+
 
 
 };
