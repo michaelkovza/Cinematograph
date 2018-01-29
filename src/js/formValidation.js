@@ -34,16 +34,14 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton}) 
     });
 
     formEmailSelector.addEventListener('change', () => {
-        console.log("change");
+       
         validate();
     });
 
     formEmailSelector.addEventListener('blur', () => {
-        console.log("blur");
+
         validate()
     })
-
-
 
 };
 
