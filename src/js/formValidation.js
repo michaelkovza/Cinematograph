@@ -34,7 +34,7 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton}) 
     });
 
     formEmailSelector.addEventListener('change', () => {
-       
+
         validate();
     });
 
