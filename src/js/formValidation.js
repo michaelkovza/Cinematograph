@@ -27,19 +27,14 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton, f
                 // send form data on server
 
             });
-
-
         } else {
             formStatusSelector.innerHTML = 'Поле заполнено некорректно.';
             formStatusSelector.classList.remove(formStatusSelectorHiddenClass);
-
-
         }
 
         if(email === '') {
             formStatusSelector.innerHTML = 'Поле не может быть пустым.';
             formStatusSelector.classList.remove(formStatusSelectorHiddenClass);
-
 
             setTimeout(() => {
                 formStatusSelector.innerHTML = '';
