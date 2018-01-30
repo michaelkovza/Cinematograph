@@ -31,5 +31,11 @@
   &__status {
     position: absolute;
     padding-top: 15px;
+    opacity: 1;
+    transition: opacity 0.3s linear;
+
+    &--hidden {
+      opacity: 0;
+    }
   }
 }

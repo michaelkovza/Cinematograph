@@ -41,7 +41,8 @@ window.addEventListener('load', () => {
     const formValidationOptions = {
         formEmailSelector: document.getElementsByClassName('js-input-email')[0],
         formStatusSelector: document.getElementsByClassName('js-form-status')[0],
-        formSendButton: document.getElementsByClassName('js-form-button')[0]
+        formSendButton: document.getElementsByClassName('js-form-button')[0],
+        formStatusSelectorHiddenClass: 'form__status--hidden'
     };
 
     formValidation(formValidationOptions);
