@@ -19,8 +19,11 @@ const infiniteScroll = () => {
     console.log(window.location.href );
 
 
-    let url = 'https://newsapi.org/v2/top-headlines?' + 'sources=bbc-news&' + 'apiKey=1aa994764e434bc991ceb52fa10cdf5d';
+   //let url = 'https://newsapi.org/v2/top-headlines?' + 'sources=bbc-news&' + 'apiKey=1aa994764e434bc991ceb52fa10cdf5d';
+   let url = 'http://dilaradautova.myjino.ru/articles/index.php?PAGEN_1=1';
+    //let url = 'http://www.json-generator.com/api/json/get/cfpcTBMUrS?indent=2';
     let req = new Request(url);
+
 
 
     let item = '';
@@ -33,8 +36,8 @@ const infiniteScroll = () => {
     let itemText = '';
 
 
-    const getData = () => {
-        fetch(req, {body : "BLABLABA"})
+    /*const getData = () => {
+        fetch(req)
             .then(
                 (response) => {
 
@@ -286,6 +289,26 @@ const infiniteScroll = () => {
 
                 }
             )
+    };*/
+
+    const getData = () => {
+        fetch(req, {
+            mode: 'no-cors',
+            method: 'POST',
+            body: {
+                AJAX: 'Y'
+            }
+        })
+            .then(
+                (response) => {
+                    response.json().then(data => {
+                        let item = data.data;
+                        newsList.insertAdjacentHTML('beforeend', item);
+                        loader.classList.add(loaderHiddenClass);
+                    })
+                }
+            )
+
     };
 
 
