@@ -141,6 +141,17 @@ module.exports = [
             page: 'book.pug'
         },
         chunks: ['index']
+    },
+    {
+        title: '«contacts»',
+        filename: 'contacts.html',
+        template: 'src/html/layouts/layout.pug',
+        inject: 'body',
+        minify: false,
+        env: {
+            page: 'contacts.pug'
+        },
+        chunks: ['index']
     }
 
 

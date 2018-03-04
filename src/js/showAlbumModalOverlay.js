@@ -78,9 +78,6 @@ const showAlbumModalOverlay = ({albumPhotosSelector, albumModalOverlaySelector, 
             albumModalOverlaySelector.classList.add(albumModalOverlaySelectorClosedClass);
             photoIndex = null;
         }
-
-
-
     });
 };
 
