@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import shave from 'shave';
+//import fetch from "isomorphic-fetch";
 
 
 const infiniteScroll = () => {
@@ -20,9 +21,9 @@ const infiniteScroll = () => {
 
 
    //let url = 'https://newsapi.org/v2/top-headlines?' + 'sources=bbc-news&' + 'apiKey=1aa994764e434bc991ceb52fa10cdf5d';
-   let url = 'http://dilaradautova.myjino.ru/articles/index.php?PAGEN_1=1';
+   //let url = 'http://dilaradautova.myjino.ru/articles/index.php?PAGEN_1=1';
     //let url = 'http://www.json-generator.com/api/json/get/cfpcTBMUrS?indent=2';
-    let req = new Request(url);
+    //let req = new Request(url);
 
 
 
@@ -291,12 +292,37 @@ const infiniteScroll = () => {
             )
     };*/
 
+
+
     const getData = () => {
+        let data = new FormData();
+        data.append("AJAX", "Y");
+
+        let xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+
+        xhr.open("POST", "http://dilaradautova.myjino.ru/articles/index.php?PAGEN_1=1");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                console.log(xhr.responseText);
+            }
+        };
+
+        xhr.send(data);
+
+
+        /*let myHeaders = new Headers();
+        myHeaders.append('Content-Type', 'application/xml');
+
+
         fetch('http://dilaradautova.myjino.ru/articles/index.php?PAGEN_1=1', {
             method: 'POST',
+            headers: myHeaders,
             body: {
-                AJAX: 'Y'
-            }
+                "AJAX": "Y"
+            },
+            mode: 'no-cors'
         })
             .then(
                 (response) => {
@@ -307,7 +333,18 @@ const infiniteScroll = () => {
                         loader.classList.add(loaderHiddenClass);
                     })
                 }
-            )
+            )*/
+        /*$.ajax({
+            type: 'POST',
+            url: 'http://dilaradautova.myjino.ru/articles/index.php?PAGEN_1=1',
+            data: { AJAX: 'Y' },
+            success(data) {
+               console.log(data);
+            },
+            error(xhr, str) {
+                console.log('Возникла ошибка: ' + xhr + ' ' + str);
+            }
+        });*/
 
     };
 
