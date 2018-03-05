@@ -292,8 +292,7 @@ const infiniteScroll = () => {
     };*/
 
     const getData = () => {
-        fetch(req, {
-            mode: 'no-cors',
+        fetch('http://dilaradautova.myjino.ru/articles/index.php?PAGEN_1=1', {
             method: 'POST',
             body: {
                 AJAX: 'Y'
@@ -301,6 +300,7 @@ const infiniteScroll = () => {
         })
             .then(
                 (response) => {
+                    console.log(response);
                     response.json().then(data => {
                         let item = data.data;
                         newsList.insertAdjacentHTML('beforeend', item);
