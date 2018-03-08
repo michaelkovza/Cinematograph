@@ -1,5 +1,9 @@
 const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton, formStatusSelectorHiddenClass}) => {
 
+    if(!formEmailSelector) {
+        return
+    }
+
     const validateEmail =  (email) => {
         let reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return reg.test(email);
@@ -56,4 +60,4 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton, f
 
 };
 
-export default  formValidaton;
+export default formValidaton;

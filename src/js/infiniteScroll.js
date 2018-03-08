@@ -8,9 +8,9 @@ const infiniteScroll = () => {
     //let newsList = document.getElementsByClassName('js-gallery-video-list')[0];
 
     let newsList = document.getElementsByClassName('js-infinity-content')[0];
-    console.log(newsList.id);
 
-    if (newsList === undefined) {
+
+    if (!newsList) {
         return
     }
 
@@ -299,6 +299,7 @@ const infiniteScroll = () => {
         data.append("AJAX", "Y");
 
         let xhr = new XMLHttpRequest();
+        xhr.crossDomain = true;
         xhr.withCredentials = true;
 
 
@@ -310,41 +311,6 @@ const infiniteScroll = () => {
         };
 
         xhr.send(data);
-
-
-        /*let myHeaders = new Headers();
-        myHeaders.append('Content-Type', 'application/xml');
-
-
-        fetch('http://dilaradautova.myjino.ru/articles/index.php?PAGEN_1=1', {
-            method: 'POST',
-            headers: myHeaders,
-            body: {
-                "AJAX": "Y"
-            },
-            mode: 'no-cors'
-        })
-            .then(
-                (response) => {
-                    console.log(response);
-                    response.json().then(data => {
-                        let item = data.data;
-                        newsList.insertAdjacentHTML('beforeend', item);
-                        loader.classList.add(loaderHiddenClass);
-                    })
-                }
-            )*/
-        /*$.ajax({
-            type: 'POST',
-            url: 'http://dilaradautova.myjino.ru/articles/index.php?PAGEN_1=1',
-            data: { AJAX: 'Y' },
-            success(data) {
-               console.log(data);
-            },
-            error(xhr, str) {
-                console.log('Возникла ошибка: ' + xhr + ' ' + str);
-            }
-        });*/
 
     };
 

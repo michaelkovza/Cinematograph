@@ -1,8 +1,88 @@
 .navigate {
   padding-top: 30px;
+  position: relative;
 
-  &__list {
-    width: 492px;
+  &__image {
+    display: block;
     margin: 0 auto;
+  }
+
+  &__item {
+    position: relative;
+
+    &--gallery {
+      position: absolute;
+      left: -88px;
+      top: 311px;
+      display: flex;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 45px;
+        height: 72px;
+        background: url('../../images/navigate/gallery-pseudo.png') no-repeat center;
+      }
+
+    }
+
+    &--magazine {
+      position: absolute;
+      top: 175px;
+      left: 164px;
+    }
+
+    &--video {
+      position: absolute;
+      bottom: 121px;
+      left: 158px;
+    }
+
+    &--lib {
+      position: absolute;
+      bottom: -28px;
+      left: 284px;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 33px;
+        height: 22px;
+        background: url('../../images/navigate/lib-pseudo.png') no-repeat center;
+      }
+    }
+
+    &--contacts {
+      position: absolute;
+      right: -41px;
+      bottom: 161px;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 106px;
+        height: 100px;
+        background: url('../../images/navigate/contacts-pseudo.png') no-repeat center;
+      }
+    }
+
+  }
+
+  &__link {
+
+    color: var(--secondary-accent-color);
+
+    &--gallery {
+      align-self: center;
+    }
+
+    &--magazine {
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+    }
+
+    &--lib {
+      margin-left: 5px;
+    }
   }
 }
