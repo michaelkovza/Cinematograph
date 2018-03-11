@@ -7,6 +7,7 @@ import infiniteScroll from './js/infiniteScroll';
 import scrollToTop from './js/scrollToTop';
 import showAlbumModalOverlay from './js/showAlbumModalOverlay';
 import formValidation from "./js/formValidation";
+import materialsTabs from "./js/materialsTabs";
 
 
 window.addEventListener('load', () => {
@@ -37,6 +38,7 @@ window.addEventListener('load', () => {
       'nextButton': document.getElementsByClassName('js-next-button')[0]
     };
 
+    showAlbumModalOverlay(showAlbumModalOverlayOptions);
 
     const formValidationOptions = {
         formEmailSelector: document.getElementsByClassName('js-input-email')[0],
@@ -47,7 +49,16 @@ window.addEventListener('load', () => {
 
     formValidation(formValidationOptions);
 
-    showAlbumModalOverlay(showAlbumModalOverlayOptions);
+    const materialsTabsOptions = {
+      articlesTitle: document.getElementsByClassName('js-articles-title')[0],
+      reviewsTitle: document.getElementsByClassName('js-reviews-title')[0],
+      articlesButton: document.getElementsByClassName('js-articles-button')[0],
+      reviewsButton: document.getElementsByClassName('js-reviews-button')[0],
+      activeClass: 'block-title--inversion'
+    };
+
+    materialsTabs(materialsTabsOptions);
+
     infiniteScroll();
     scrollToTop();
 

@@ -7,10 +7,10 @@ const infiniteScroll = () => {
 
     //let newsList = document.getElementsByClassName('js-gallery-video-list')[0];
 
-    let newsList = document.getElementsByClassName('js-infinity-content')[0];
+    let infinityContainer = document.getElementsByClassName('js-infinity-content')[0];
 
 
-    if (!newsList) {
+    if (!infinityContainer) {
         return
     }
 
@@ -307,6 +307,9 @@ const infiniteScroll = () => {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 console.log(xhr.responseText);
+
+                let result = xhr.responseText;
+                infinityContainer.insertAdjacentHTML('beforeend', result);
             }
         };
 
