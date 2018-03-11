@@ -11,7 +11,7 @@ const materialsTabs = ({articlesTitle, reviewsTitle, articlesButton, reviewsButt
     reviewsButton.addEventListener('click', () => {
         articlesTitle.classList.add(activeClass);
         reviewsTitle.classList.remove(activeClass);
-    })
+    });
 };
 
 export default materialsTabs;

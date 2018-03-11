@@ -22,19 +22,6 @@ const frontendServer = new WebpackDevServer(frontendCompiler, {
     noInfo: false,
     inline: true,
     lazy: false,
-    /*proxy: [{
-        context: ["http://localhost:8080", "http://dilaradautova.myjino.ru/articles/index.php?PAGEN_1=1"],
-        target: "http://localhost:8080",
-    }],*/
-    /*proxy:{
-        '/api/!*' : {
-            target: 'http://dilaradautova.myjino.ru/articles/index.php?PAGEN_1=1',
-            changeOrigin: true,
-            pathRewrite: {
-                '^/api': ''
-            }
-        }
-    },*/
     watchOptions: {
         aggregateTimeout: 300,
         poll: 1000
