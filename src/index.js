@@ -8,6 +8,7 @@ import scrollToTop from './js/scrollToTop';
 import showAlbumModalOverlay from './js/showAlbumModalOverlay';
 import formValidation from "./js/formValidation";
 import materialsTabs from "./js/materialsTabs";
+import setMaterials from "./js/setMaterials";
 
 
 window.addEventListener('load', () => {
@@ -20,14 +21,6 @@ window.addEventListener('load', () => {
     };
 
     ShareToSocialNetworks(ShareToSocialNetworksOptions);
-
-    const createTermOptions = {
-        'terms': document.getElementsByClassName('js-term'),
-        'termContainer': document.getElementsByClassName('js-clarification-container')[0]
-
-    };
-
-    createTerm(createTermOptions);
 
     const showAlbumModalOverlayOptions = {
       'albumPhotosSelector': document.getElementsByClassName('js-album-photo'),
@@ -58,6 +51,22 @@ window.addEventListener('load', () => {
     };
 
     materialsTabs(materialsTabsOptions);
+
+    const setMaterialsOptions = {
+      materialsVideoArr: document.getElementsByClassName('js-article-materials-video'),
+      materialsContentList: document.getElementsByClassName('js-article-materials-content-list')[0],
+      materialsVideoList: document.getElementsByClassName('js-article-materials-video-list')[0]
+    };
+
+    setMaterials(setMaterialsOptions);
+
+    const createTermOptions = {
+      'terms': document.getElementsByClassName('js-term'),
+      'termContainer': document.getElementsByClassName('js-clarification-container')[0]
+
+    };
+
+    createTerm(createTermOptions);
 
     infiniteScroll();
     scrollToTop();
