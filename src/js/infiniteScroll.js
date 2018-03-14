@@ -24,7 +24,7 @@ const infiniteScroll = () => {
 
     let count = 1;
 
-    //let navNum = window.scrollData.loadSett.navNum;
+    let navNum = window.scrollData.loadSett.navNum;
 
     let infinityContainer = document.getElementsByClassName('js-infinity-content')[0];
 
@@ -47,9 +47,9 @@ const infiniteScroll = () => {
         }
 
         let xhr = new XMLHttpRequest();
-        let loadUrl = "http://dilaradautova.myjino.ru/articles/index.php?PAGEN_1=1";
+        /*let loadUrl = "http://dilaradautova.myjino.ru/articles/index.php?PAGEN_1=1";*/
 
-       // let loadUrl = `${currentUrl}/index.php?PAGEN_${navNum}=${count++}`;
+       let loadUrl = `${currentUrl}/index.php?PAGEN_${navNum}=${count++}`;
 
 
         xhr.open("POST",loadUrl);

@@ -24,6 +24,8 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton, f
 
                 event.preventDefault();
 
+                console.log(email);
+
                 formStatusSelector.innerHTML = 'Вы добавлены в рассылку.';
                 formStatusSelector.classList.remove(formStatusSelectorHiddenClass);
                 formSendButton.setAttribute('disabled', true);
