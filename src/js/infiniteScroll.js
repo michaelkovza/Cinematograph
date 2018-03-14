@@ -20,11 +20,14 @@ if(reviewsButton !== undefined && articlesButton !== undefined ) {
 const infiniteScroll = () => {
 
     let currentUrl = window.location.href;
-    console.log(currentUrl );
-
     let count = 1;
 
+    if(!window.scrollData) {
+        return
+    }
+
     let navNum = window.scrollData.loadSett.navNum;
+
 
     let infinityContainer = document.getElementsByClassName('js-infinity-content')[0];
 
