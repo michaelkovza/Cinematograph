@@ -9,22 +9,21 @@ const notifcation = () => {
         return;
     }
 
-
-
-    let key = btoa('BOTjgA6ekOZ_DQHOe88M_NsS5DqRg17IYmPdvXPqFw0Oe027vu0UuVXeUBXGjlOQ2N-2OF9ZL2gSDWy0cSuwbgY');
-
-    console.log(key);
-
-    console.log(urlBase64ToUint8Array(key));
+    let key = 'BOTjgA6ekOZ_DQHOe88M_NsS5DqRg17IYmPdvXPqFw0Oe027vu0UuVXeUBXGjlOQ2N-2OF9ZL2gSDWy0cSuwbgY';
 
     function urlBase64ToUint8Array(base64String) {
         const padding = '='.repeat((4 - base64String.length % 4) % 4);
         const base64 = (base64String + padding)
-            .replace(/-/g, '+')
-            .replace(/_/g, '/')
-        ;
+            .replace(/\-/g, '+')
+            .replace(/_/g, '/');
+
         const rawData = window.atob(base64);
-        return Uint8Array.from([...rawData].map((char) => char.charCodeAt(0)));
+        const outputArray = new Uint8Array(rawData.length);
+
+        for (let i = 0; i < rawData.length; ++i) {
+            outputArray[i] = rawData.charCodeAt(i);
+        }
+        return outputArray;
     }
 
     function requestPermission() {
@@ -45,8 +44,6 @@ const notifcation = () => {
             });
     }
 
-    requestPermission();
-
     function subscribeUserToPush() {
         return navigator.serviceWorker.register('secondIndex.js')
             .then(function(registration) {
@@ -63,8 +60,8 @@ const notifcation = () => {
             });
     }
 
-    subscribeUserToPush();
-
+    requestPermission()
+        .then(() => subscribeUserToPush())
 
 };
 
