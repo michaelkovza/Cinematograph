@@ -9,6 +9,7 @@ import showAlbumModalOverlay from './js/showAlbumModalOverlay';
 import formValidation from "./js/formValidation";
 import materialsTabs from "./js/materialsTabs";
 import setMaterials from "./js/setMaterials";
+import notification from "./js/notification";
 
 
 window.addEventListener('load', () => {
@@ -70,6 +71,7 @@ window.addEventListener('load', () => {
 
     infiniteScroll();
     scrollToTop();
+    notification();
 
 });
 

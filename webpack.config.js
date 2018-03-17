@@ -17,7 +17,8 @@ const placeAssetsInFolder = (folder) => {
 
 const webpackConfig = {
     entry: {
-        index: [ path.join(__dirname, 'src')]
+        index: [ path.join(__dirname, 'src')],
+        secondIndex:  './sw/sw.js'
     },
     output: {
         path: path.join(__dirname, 'build'),
