@@ -1,0 +1,17 @@
+.show-footer-button-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  transition: opacity 0.3s linear;
+
+  &--hidden {
+    opacity: 0;
+  }
+
+  &__button {
+    width: 270px;
+    height: 120px;
+    background:  var(--secondary-accent-color);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  }
+}
