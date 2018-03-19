@@ -45,7 +45,7 @@ const notifcation = () => {
     }
 
     function subscribeUserToPush() {
-        return navigator.serviceWorker.register('secondIndex.js')
+        return navigator.serviceWorker.register('sw.js')
             .then(function(registration) {
                 let subscribeOptions = {
                     userVisibleOnly: true,
@@ -60,8 +60,13 @@ const notifcation = () => {
             });
     }
 
+    const notifyApiUrl  = `${window.location.origin}/api/subscribeToNotification`;
+
     requestPermission()
         .then(() => subscribeUserToPush())
+        .then(pushSubscription => fetch(notifyApiUrl, { method: 'post', body: {endpoint: pushSubscription.endpoint}}))
+
+
 
 };
 
