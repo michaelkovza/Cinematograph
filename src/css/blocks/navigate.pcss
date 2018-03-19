@@ -108,8 +108,8 @@
     }
 
     &--magazine {
-      writing-mode: vertical-lr;
-      text-orientation: upright;
+      //writing-mode: vertical-lr;
+      //text-orientation: upright;
       font-family: var(--primary-font);
       font-weight: normal;
     }
@@ -123,6 +123,12 @@
       top: -16px;
       right: -50px;
     }
+  }
+
+  &__link--magazine &__highlight {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
   }
 
   &__search-form {
@@ -178,5 +184,17 @@
     background: none;
     font-weight: bold;
     padding: 0;
+  }
+
+
+  &__highlight {
+    background: transparent;
+    color: var(--secondary-accent-color);
+    transition: background 0.3s linear;
+
+    &:hover {
+      background: var(--accent-color);
+
+    }
   }
 }

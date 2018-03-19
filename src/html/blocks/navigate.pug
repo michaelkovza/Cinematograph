@@ -2,18 +2,30 @@ div.navigate-container
     nav.navigate.navigate-container__navigate
         img.navigate__image(src=require('../../images/navigate/main.png'))
         div.navigate__item.navigate__item--gallery
-            a.navigate__link.navigate__link--gallery(href="#" title="галерея") галерея
+            a.navigate__link.navigate__link--gallery(href="#" title="галерея")
+                mark.navigate__highlight галерея
         div.navigate__item.navigate__item--magazine
-            a.navigate__link.navigate__link--magazine(href="#" title="журнал") журнал
+            a.navigate__link.navigate__link--magazine(href="#" title="журнал")
+                mark.navigate__highlight
+                    span.navigate__letter ж
+                    span.navigate__letter у
+                    span.navigate__letter р
+                    span.navigate__letter н
+                    span.navigate__letter а
+                    span.navigate__letter л
         div.navigate__item.navigate__item--video
-            a.navigate__link.navigate__link--video(href="#" title="видиотека") видиотека
+            a.navigate__link.navigate__link--video(href="#" title="видиотека")
+                mark.navigate__highlight видиотека
         div.navigate__item.navigate__item--lib
-            a.navigate__link.navigate__link--lib(href="#" title="библиотека") библиотека
+            a.navigate__link.navigate__link--lib(href="#" title="библиотека")
+                mark.navigate__highlight библиотека
         div.navigate__item.navigate__item--contacts
-            a.navigate__link.navigate__link--contacts(href="#" title="контакты") контакты
+            a.navigate__link.navigate__link--contacts(href="#" title="контакты")
+                mark.navigate__highlight контакты
         div.navigate__item.navigate__item--search
             form.navigate__search-form
                 div.navigate__input-container
                     input.navigate__input(type="text")
                 span.navigate__slash &nbsp; / &nbsp;
-                button.navigate__button поиск
+                button.navigate__button(title="поиск")
+                    mark.navigate__highlight поиск
