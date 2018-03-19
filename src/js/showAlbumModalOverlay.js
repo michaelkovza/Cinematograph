@@ -1,3 +1,5 @@
+import disableScroll from './disableScroll';
+
 const showAlbumModalOverlay = ({albumPhotosSelector, albumModalOverlaySelector, albumModalOverlayImageSelector, albumModalOverlaySelectorClosedClass, prevButton, nextButton}) => {
 
     if(albumModalOverlaySelector === undefined) {
@@ -66,6 +68,9 @@ const showAlbumModalOverlay = ({albumPhotosSelector, albumModalOverlaySelector, 
                 nextButton.style.visibility = 'hidden';
                 prevButton.removeAttribute('style');
             }
+
+            disableScroll(true)
+
         })
     });
 
@@ -77,6 +82,8 @@ const showAlbumModalOverlay = ({albumPhotosSelector, albumModalOverlaySelector, 
         if( target.className === 'album-modal-overlay js-album-modal-overlay') {
             albumModalOverlaySelector.classList.add(albumModalOverlaySelectorClosedClass);
             photoIndex = null;
+
+            disableScroll(false)
         }
     });
 };
