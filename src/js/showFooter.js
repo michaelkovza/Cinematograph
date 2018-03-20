@@ -52,12 +52,12 @@ const showFooter = () => {
     console.log(marginTop);
     showFooterButtonContainer.setAttribute("style", `margin-top: ${marginTop}px`);
 
-    showFooterButton.addEventListener('mouseover', function(event) {
+    showFooterButton.addEventListener('mouseover', () => {
         console.log("VNIZ");
         scrollTo(documentElement, documentElement.scrollHeight, 500);
     });
 
-    showFooterButtonContainer.addEventListener('mouseleave',function(event)  {
+    showFooterButtonContainer.addEventListener('mouseleave',() => {
         console.log("VVERH");
         scrollTo(documentElement, 0, 500);
     });
