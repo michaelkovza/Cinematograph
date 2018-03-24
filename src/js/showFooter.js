@@ -1,74 +1,51 @@
-import disableScroll from './disableScroll';
-
-import _ from 'lodash';
-
-function scrollTo(element, to, duration) {
-    let start = element.scrollTop,
-        change = to - start,
-        currentTime = 0,
-        increment = 20;
-
-    let animateScroll = function(){
-        currentTime += increment;
-        let val = Math.easeInOutQuad(currentTime, start, change, duration);
-        element.scrollTop = val;
-        if(currentTime < duration) {
-            setTimeout(animateScroll, increment);
-        }
-    };
-    animateScroll();
-}
-
-//t = current time
-//b = start value
-//c = change in value
-//d = duration
-Math.easeInOutQuad = function (t, b, c, d) {
-    t /= d/2;
-    if (t < 1) return c/2*t*t + b;
-    t--;
-    return -c/2 * (t*(t-2) - 1) + b;
-};
-
 const showFooter = () => {
+
+    let body = document.getElementsByClassName('js-body')[0];
     let showFooterButtonContainer = document.getElementsByClassName('js-show-footer-button-container')[0];
     let showFooterButton = showFooterButtonContainer.getElementsByClassName('js-show-footer-button')[0];
     let clientHeight = document.body.clientHeight;
     let windowInnerHeight = window.innerHeight;
     let footer = document.getElementsByClassName('js-footer')[0];
 
-    let isEdge = !isIE && !!window.StyleMedia;
-    let isIE = /*@cc_on!@*/false || !!document.documentMode;
+    let marginTop = windowInnerHeight - clientHeight + footer.offsetHeight;
 
-    let documentElement;
+    let bodyHeight = body.offsetHeight;
+    let headerHeight = document.getElementsByClassName('header')[0].offsetHeight;
+    let navigateContainerHeight = document.getElementsByClassName('navigate-container')[0].offsetHeight;
+    let showFooterButtonHeight = showFooterButton.offsetHeight;
 
-    if (isEdge || isIE) {
-        documentElement = document.body;
-    } else {
-        documentElement = document.documentElement;
+    let bodyDisableScroll = 'body--disable-scroll';
+
+    if(navigateContainerHeight) {
+        body.classList.add(bodyDisableScroll)
     }
 
-    let marginTop = windowInnerHeight - clientHeight + footer.offsetHeight;
-    console.log(marginTop);
+    let translateNumber = bodyHeight - headerHeight - navigateContainerHeight - showFooterButtonHeight;
+
+
+    let isFooterShown = false;
+
+
     showFooterButtonContainer.setAttribute("style", `margin-top: ${marginTop}px`);
 
-    showFooterButton.addEventListener('mouseover', () => {
-        console.log("VNIZ");
-        scrollTo(documentElement, documentElement.scrollHeight, 500);
+    showFooterButton.addEventListener('mouseenter', () => {
+        isFooterShown = true;
+        body.style.transform = `translateY(-${translateNumber}px)`;
+
     });
 
-    showFooterButtonContainer.addEventListener('mouseleave',() => {
-        console.log("VVERH");
-        scrollTo(documentElement, 0, 500);
-    });
+    showFooterButtonContainer.addEventListener('mouseleave', () => {
+        isFooterShown = false;
+        body.style.transform = 'translateY(0)';
 
+    });
 
     document.addEventListener('mousemove', (event) => {
+
       if(event.pageY > 670) {
           showFooterButtonContainer.classList.remove('show-footer-button-container--hidden');
-      } else {
+      } else if(isFooterShown === false) {
           showFooterButtonContainer.classList.add('show-footer-button-container--hidden');
-          disableScroll(true)
       }
     });
 
