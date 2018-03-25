@@ -25,12 +25,12 @@ window.addEventListener('load', () => {
     ShareToSocialNetworks(ShareToSocialNetworksOptions);
 
     const showAlbumModalOverlayOptions = {
-      'albumPhotosSelector': document.getElementsByClassName('js-album-photo'),
-      'albumModalOverlaySelector': document.getElementsByClassName('js-album-modal-overlay')[0],
-      'albumModalOverlayImageSelector': document.getElementsByClassName('js-album-modal-overlay-image')[0],
-      'albumModalOverlaySelectorClosedClass': 'album-modal-overlay--closed',
-      'prevButton': document.getElementsByClassName('js-prev-button')[0],
-      'nextButton': document.getElementsByClassName('js-next-button')[0]
+      albumPhotosSelector: document.getElementsByClassName('js-album-photo'),
+      albumModalOverlaySelector: document.getElementsByClassName('js-album-modal-overlay')[0],
+      albumModalOverlayImageSelector: document.getElementsByClassName('js-album-modal-overlay-image')[0],
+      albumModalOverlaySelectorClosedClass: 'album-modal-overlay--closed',
+      prevButton: document.getElementsByClassName('js-prev-button')[0],
+      nextButton: document.getElementsByClassName('js-next-button')[0]
     };
 
     showAlbumModalOverlay(showAlbumModalOverlayOptions);
@@ -49,7 +49,10 @@ window.addEventListener('load', () => {
       reviewsTitle: document.getElementsByClassName('js-reviews-title')[0],
       articlesButton: document.getElementsByClassName('js-articles-button')[0],
       reviewsButton: document.getElementsByClassName('js-reviews-button')[0],
-      activeClass: 'block-title--inversion'
+      activeClass: 'block-title--inversion',
+      materialsArticles: document.getElementsByClassName('js-materials-articles-list')[0],
+      materialsReviews: document.getElementsByClassName('js-materials-reviews-list')[0],
+      materialsActiveClass: 'articles__list--active'
     };
 
     materialsTabs(materialsTabsOptions);
@@ -63,17 +66,25 @@ window.addEventListener('load', () => {
     setMaterials(setMaterialsOptions);
 
     const createTermOptions = {
-      'terms': document.getElementsByClassName('js-term'),
-      'termContainer': document.getElementsByClassName('js-clarification-container')[0]
+      terms: document.getElementsByClassName('js-term'),
+      termContainer: document.getElementsByClassName('js-clarification-container')[0]
 
     };
 
     createTerm(createTermOptions);
 
+    const showFooterOptions = {
+        bodySelector: document.getElementsByClassName('js-body')[0],
+        footerButtonContainerSelector: document.getElementsByClassName('js-show-footer-button-container')[0],
+        footerButtonSelector: document.getElementsByClassName('js-show-footer-button')[0],
+        footerSelector: document.getElementsByClassName('js-footer')[0]
+    };
+
+    showFooter(showFooterOptions);
+
     infiniteScroll();
     scrollToTop();
-    notification();
-    showFooter();
+    //notification();
 
 });
 

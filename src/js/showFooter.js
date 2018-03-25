@@ -1,23 +1,23 @@
-const showFooter = () => {
+const showFooter = ({bodySelector, footerButtonContainerSelector, footerButtonSelector, footerSelector }) => {
 
-    let body = document.getElementsByClassName('js-body')[0];
-    let showFooterButtonContainer = document.getElementsByClassName('js-show-footer-button-container')[0];
-    let showFooterButton = showFooterButtonContainer.getElementsByClassName('js-show-footer-button')[0];
+    if(!footerButtonContainerSelector) {
+        return
+    }
+
     let clientHeight = document.body.clientHeight;
     let windowInnerHeight = window.innerHeight;
-    let footer = document.getElementsByClassName('js-footer')[0];
 
-    let marginTop = windowInnerHeight - clientHeight + footer.offsetHeight;
+    let marginTop = windowInnerHeight - clientHeight + footerSelector.offsetHeight;
 
-    let bodyHeight = body.offsetHeight;
+    let bodyHeight = bodySelector.offsetHeight;
     let headerHeight = document.getElementsByClassName('header')[0].offsetHeight;
     let navigateContainerHeight = document.getElementsByClassName('navigate-container')[0].offsetHeight;
-    let showFooterButtonHeight = showFooterButton.offsetHeight;
+    let showFooterButtonHeight = footerButtonSelector.offsetHeight;
 
     let bodyDisableScroll = 'body--disable-scroll';
 
     if(navigateContainerHeight) {
-        body.classList.add(bodyDisableScroll)
+        bodySelector.classList.add(bodyDisableScroll)
     }
 
     let translateNumber = bodyHeight - headerHeight - navigateContainerHeight - showFooterButtonHeight;
@@ -26,26 +26,26 @@ const showFooter = () => {
     let isFooterShown = false;
 
 
-    showFooterButtonContainer.setAttribute("style", `margin-top: ${marginTop}px`);
+    footerButtonContainerSelector.setAttribute("style", `margin-top: ${marginTop}px`);
 
-    showFooterButton.addEventListener('mouseenter', () => {
+    footerButtonSelector.addEventListener('mouseenter', () => {
         isFooterShown = true;
-        body.style.transform = `translateY(-${translateNumber}px)`;
+        bodySelector.style.transform = `translateY(-${translateNumber}px)`;
 
     });
 
-    showFooterButtonContainer.addEventListener('mouseleave', () => {
+    footerButtonContainerSelector.addEventListener('mouseleave', () => {
         isFooterShown = false;
-        body.style.transform = 'translateY(0)';
+        bodySelector.style.transform = 'translateY(0)';
 
     });
 
     document.addEventListener('mousemove', (event) => {
 
-      if(event.pageY > 670) {
-          showFooterButtonContainer.classList.remove('show-footer-button-container--hidden');
-      } else if(isFooterShown === false) {
-          showFooterButtonContainer.classList.add('show-footer-button-container--hidden');
+      if(event.pageY > 670 ) {
+          footerButtonContainerSelector.classList.remove('show-footer-button-container--hidden');
+      } else if (isFooterShown === false){
+          footerButtonContainerSelector.classList.add('show-footer-button-container--hidden');
       }
     });
 

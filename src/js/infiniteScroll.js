@@ -19,6 +19,8 @@ if(reviewsButton !== undefined && articlesButton !== undefined ) {
 
 const infiniteScroll = () => {
 
+
+
     let currentUrl = window.location.href;
     let count = 1;
 

@@ -1,4 +1,5 @@
 const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton, formStatusSelectorHiddenClass}) => {
+    let url = window.location.origin;
 
     if(!formEmailSelector) {
         return
@@ -24,13 +25,35 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton, f
 
                 event.preventDefault();
 
-                console.log(email);
-
-                formStatusSelector.innerHTML = 'Вы добавлены в рассылку.';
                 formStatusSelector.classList.remove(formStatusSelectorHiddenClass);
                 formSendButton.setAttribute('disabled', true);
 
-                // send form data on server
+
+                let data = new FormData();
+                data.append("email", email);
+
+                let xhr = new XMLHttpRequest();
+
+                let sendEmailUrl = `${url}/api/subscribe`;
+
+                xhr.open("POST",sendEmailUrl);
+
+                xhr.onreadystatechange = function () {
+                  if(xhr.readyState === XMLHttpRequest.DONE) {
+                      let result = xhr.responseText;
+                      result.status === 'ok'
+                          ?
+                          formStatusSelector.innerHTML = 'Вы добавлены в рассылку.'
+                          :
+                          formStatusSelector.innerHTML = result.msg
+                  }
+                };
+
+                xhr.send(data);
+
+
+
+
 
             });
         } else {
