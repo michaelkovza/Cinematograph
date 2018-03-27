@@ -1,0 +1,63 @@
+<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 141.53 141.53">
+    <defs>
+        <clipPath id="clip-path">
+            <polyline points="-7.37 -288.95 579.63 -288.95 579.63 295.05 -7.37 295.05 -7.37 -288.95"
+                      style="fill:none;clip-rule:evenodd"/>
+        </clipPath>
+    </defs>
+    <title>10Монтажная область 1</title>
+    <polyline
+            points="45.11 91.9 45.11 58.92 45.58 54.05 46.96 49.35 49.22 45 52.25 41.16 55.96 37.97 60.21 35.54 64.84 33.96 69.69 33.29 74.57 33.55 79.32 34.74 83.76 36.8 87.72 39.67 91.07 43.25 93.67 47.39 95.45 51.95 96.32 56.76 96.32 94.06 96.31 94.17 85.81 94.17 85.37 90.43 84.02 86.92 81.84 83.86 78.96 81.44 75.58 79.8 71.9 79.05 68.14 79.24 64.55 80.35 61.35 82.32 58.73 85.01 56.87 88.28 55.87 91.9 55.87 94.17 55.71 94.17 45.21 94.17 45.11 91.9"
+            style="fill:blue;fill-rule:evenodd"/>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M45.21,94.16q-.1-1.13-.1-2.26"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
+    </g>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M55.87,91.9a15.05,15.05,0,0,1,29.95,2.15s0,.07,0,.11"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
+    </g>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M96.32,94.06v.11"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
+    </g>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M45.11,58.92a25.65,25.65,0,0,1,51.3,0"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.7086614370346069px"/>
+    </g>
+    <polyline points="-7.37 -288.95 579.63 -288.95 579.63 295.05 -7.37 295.05 -7.37 -288.95"
+              style="fill:none;fill-rule:evenodd"/>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M55.87,58.92a15,15,0,1,1,29.95,0"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    </g>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M55.71,94.16s0-.07,0-.11a15.05,15.05,0,1,1,30.1,0s0,.07,0,.11"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    </g>
+    <line x1="96.41" y1="93.8" x2="96.41" y2="58.92"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="45.11" y1="94.16" x2="45.11" y2="58.92"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="96.32" y1="58.92" x2="85.81" y2="58.92"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="55.87" y1="58.92" x2="45.11" y2="58.92"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="55.87" y1="94.16" x2="55.87" y2="58.92"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="55.87" y1="94.16" x2="45.11" y2="94.16"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="96.41" y1="94.16" x2="85.66" y2="94.16"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="85.81" y1="94.16" x2="85.81" y2="58.92"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="79.65" y1="81.91" x2="79.65" y2="46.66"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="85.51" y1="37.93" x2="79.65" y2="46.66"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="55.87" y1="75.41" x2="45.11" y2="75.41"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <polyline points="-7.37 -288.95 579.63 -288.95 579.63 295.05 -7.37 295.05 -7.37 -288.95"
+              style="fill:none;fill-rule:evenodd"/>
+</svg>

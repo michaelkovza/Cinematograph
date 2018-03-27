@@ -5,7 +5,7 @@ let articlesButton = document.getElementsByClassName('js-articles-button')[0];
 
 let reviewsData = false;
 
-if(reviewsButton !== undefined && articlesButton !== undefined ) {
+if (reviewsButton !== undefined && articlesButton !== undefined) {
 
 
     reviewsButton.addEventListener('click', () => {
@@ -20,11 +20,10 @@ if(reviewsButton !== undefined && articlesButton !== undefined ) {
 const infiniteScroll = () => {
 
 
-
     let currentUrl = window.location.href;
     let count = 1;
 
-    if(!window.scrollData) {
+    if (!window.scrollData) {
         return
     }
 
@@ -41,25 +40,24 @@ const infiniteScroll = () => {
     let loaderHiddenClass = 'loader--hidden';
 
 
-
     const getData = () => {
 
         let data = new FormData();
         data.append("AJAX", "Y");
 
-        if(reviewsData === true) {
+        if (reviewsData === true) {
             data.append("REVIEWS", "Y")
         }
 
         let xhr = new XMLHttpRequest();
-        /*let loadUrl = "http://dilaradautova.myjino.ru/articles/index.php?PAGEN_1=1";*/
-
-       let loadUrl = `${currentUrl}/index.php?PAGEN_${navNum}=${count++}`;
 
 
-        xhr.open("POST",loadUrl);
+        let loadUrl = `${currentUrl}/index.php?PAGEN_${navNum}=${count++}`;
 
-        xhr.onreadystatechange = function() {
+
+        xhr.open("POST", loadUrl);
+
+        xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 let result = xhr.responseText;
                 infinityContainer.insertAdjacentHTML('beforeend', result);

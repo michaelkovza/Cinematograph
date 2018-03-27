@@ -1,0 +1,59 @@
+<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 141.53 141.53">
+    <defs>
+        <clipPath id="clip-path">
+            <polyline points="-431.95 -5.89 155.05 -5.89 155.05 578.11 -431.95 578.11 -431.95 -5.89"
+                      style="fill:none;clip-rule:evenodd"/>
+        </clipPath>
+    </defs>
+    <title>5Монтажная область 1</title>
+    <polyline
+            points="45.11 75.7 45.11 42.71 45.7 36.59 46.77 32.83 49.58 27.52 52.33 24.29 56.05 21.31 60.22 18.92 64.84 17.75 69.68 17.08 74.57 17.34 79.32 18.53 83.76 20.59 87.72 23.47 91.07 27.04 93.67 31.18 95.45 35.74 96.32 40.56 96.32 77.85 95.58 82.19 94.1 86.34 91.94 90.17 89.15 93.58 85.81 96.47 85.81 108.68 85.81 120.96 85.44 124.31 84.33 127.49 82.53 130.34 80.15 132.72 77.29 134.52 74.11 135.63 70.76 136.01 67.41 135.63 64.23 134.52 61.38 132.72 58.99 130.34 57.2 127.49 56.09 124.31 55.71 120.96 55.71 108.43 55.71 96.47 52.08 93.27 49.12 89.46 46.92 85.15 45.57 80.51 45.11 75.7"
+            style="fill:blue;fill-rule:evenodd"/>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M55.71,96.47A25.65,25.65,0,0,1,45.11,75.7"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
+    </g>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M70.76,136A15.05,15.05,0,0,1,55.71,121"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
+    </g>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M85.81,121a15.05,15.05,0,0,1-15,15.05"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
+    </g>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M96.32,77.85A25.64,25.64,0,0,1,85.81,96.47"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
+    </g>
+    <path d="M96.41,42.71A25.65,25.65,0,0,0,70.76,17.06c-14.17,0-25.53,10.24-25.53,24.41S56.6,68.36,70.76,68.36A25.65,25.65,0,0,0,96.41,42.71"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <polyline points="-431.95 -5.89 155.05 -5.89 155.05 578.11 -431.95 578.11 -431.95 -5.89"
+              style="fill:none;fill-rule:evenodd"/>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M85.81,42.71a15.05,15.05,0,1,0-15,15.05,15.05,15.05,0,0,0,15-15.05"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    </g>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M96.41,75.7a25.65,25.65,0,1,1-51.3,0"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    </g>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M57.73,50.23a15.05,15.05,0,0,1,26.07,0"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    </g>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M85.81,121a15.05,15.05,0,1,1-30.1,0"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    </g>
+    <line x1="96.41" y1="77.85" x2="96.41" y2="42.71"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="45.11" y1="77.96" x2="45.11" y2="42.71"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="55.71" y1="120.96" x2="55.71" y2="96.47"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="85.81" y1="120.96" x2="85.81" y2="96.47"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <polyline points="-431.95 -5.89 155.05 -5.89 155.05 578.11 -431.95 578.11 -431.95 -5.89"
+              style="fill:none;fill-rule:evenodd"/>
+</svg>

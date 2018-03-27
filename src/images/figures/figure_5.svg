@@ -1,0 +1,94 @@
+<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 141.53 141.53">
+    <defs>
+        <clipPath id="clip-path">
+            <polyline points="-7.37 -147.42 579.63 -147.42 579.63 436.58 -7.37 436.58 -7.37 -147.42"
+                      style="fill:none;clip-rule:evenodd"/>
+        </clipPath>
+    </defs>
+    <title>6Монтажная область 1</title>
+    <polyline
+            points="49.03 56.19 53.42 48.89 53.42 34.06 73.69 13.79 76.28 11.8 79.31 10.55 82.56 10.12 85.8 10.55 88.83 11.8 91.42 13.79 93.42 16.39 94.67 19.42 95.1 22.66 95.1 93.61 94.67 96.86 93.42 99.89 91.42 102.48 87.34 106.57 57.9 136.01 49.03 127.14 49.03 56.19"
+            style="fill:blue;fill-rule:evenodd"/>
+    <line x1="49.03" y1="127.14" x2="57.9" y2="136.01"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
+    <line x1="57.9" y1="136.01" x2="87.34" y2="106.57"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
+    <line x1="87.34" y1="106.57" x2="91.42" y2="102.48"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M95.1,93.62a12.54,12.54,0,0,1-3.67,8.87"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
+    </g>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M73.69,13.79A12.54,12.54,0,0,1,95.1,22.66"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
+    </g>
+    <line x1="73.69" y1="13.79" x2="53.42" y2="34.06"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
+    <line x1="53.42" y1="48.89" x2="49.03" y2="56.19"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
+    <polyline points="-7.37 -147.42 579.63 -147.42 579.63 436.58 -7.37 436.58 -7.37 -147.42"
+              style="fill:none;fill-rule:evenodd"/>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M73.69,13.79A12.54,12.54,0,1,1,91.42,31.53"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    </g>
+    <g style="clip-path:url(#clip-path)">
+        <path d="M95,92.2a12.54,12.54,0,0,1-3.59,10.28"
+              style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    </g>
+
+    <line x1="49.03" y1="56.19" x2="57.9" y2="65.06"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="57.9" y1="136.01" x2="57.9" y2="65.06"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="49.03" y1="127.14" x2="57.9" y2="136.01"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="92.26" y1="101.65" x2="57.9" y2="136.01"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="73.69" y1="13.79" x2="53.42" y2="34.06"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="71.16" y1="51.8" x2="71.16" y2="106.28"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="77.74" y1="99.69" x2="71.16" y2="106.28"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="77.79" y1="45.17" x2="77.79" y2="99.73"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="73.4" y1="95.34" x2="77.79" y2="99.73"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="49.03" y1="127.14" x2="49.03" y2="56.19"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="95.1" y1="93.62" x2="95.1" y2="22.66"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="49.03" y1="56.19" x2="59" y2="39.63"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="66.68" y1="47.32" x2="71.16" y2="51.8"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="73.35" y1="40.73" x2="77.79" y2="45.17"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="53.42" y1="34.06" x2="59" y2="39.63"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="73.31" y1="40.69" x2="66.72" y2="47.27"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="57.9" y1="65.06" x2="71.16" y2="51.8"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="77.79" y1="45.17" x2="91.42" y2="31.53"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="73.35" y1="40.73" x2="73.35" y2="95.24"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="53.42" y1="48.89" x2="53.42" y2="34.06"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="64.53" y1="129.38" x2="64.53" y2="58.43"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="54.01" y1="47.91" x2="64.53" y2="58.43"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="73.4" y1="95.34" x2="71.16" y2="97.58"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="84.42" y1="109.49" x2="84.42" y2="38.54"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <line x1="66.68" y1="20.8" x2="84.42" y2="38.54"
+          style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5017075538635254px"/>
+    <polyline points="-7.37 -147.42 579.63 -147.42 579.63 436.58 -7.37 436.58 -7.37 -147.42"
+              style="fill:none;fill-rule:evenodd"/>
+</svg>

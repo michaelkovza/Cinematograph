@@ -28,6 +28,14 @@
     border-right-color:  transparent;
     margin-top: 12px;
 
+    &--with-right-border {
+      border-right-color: var(--secondary-accent-color);
+
+      &:after {
+        display: none;
+      }
+    }
+
     &:after {
       content: '';
       position: absolute;
@@ -41,6 +49,10 @@
 
   &__next-link {
     border-left-color: transparent;
+
+    &--with-left-border {
+      border-left-color: var(--secondary-accent-color);
+    }
   }
 
   &__pointer {
