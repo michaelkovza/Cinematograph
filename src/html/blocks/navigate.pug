@@ -12,20 +12,21 @@ div.navigate-container
                     img.navigate__figure(src=require('../../images/figures/figure_3.svg'))
             li.navigate__item.navigate__item--with-border-top
                 div.navigate__figure-container
-                    img.navigate__figure.navigate__figure--position(src=require('../../images/figures/figure_4.svg'))
-                form.navigate__search-form
-                    div.navigate__search-form-input-container
-                        input.navigate__search-form-input(type="text")
-                    span.navigate__search-form-slash &nbsp; / &nbsp;
-                    button.navigate__search-form-button
-                        mark.navigate__highlight поиск
+                    img.navigate__figure.navigate__figure--form.js-navigate-figure-form(src=require('../../images/figures/figure_4.svg'))
+                div.navigate__search-form-container
+                    form.navigate__search-form
+                        div.navigate__search-form-input-container
+                            input.navigate__search-form-input(type="text")
+                        span.navigate__search-form-slash &nbsp; / &nbsp;
+                        button.navigate__search-form-button(title="поиск")
+                            mark.navigate__highlight поиск
             li.navigate__item.navigate__item--with-border-left
                 div.navigate__figure-container
                     img.navigate__figure(src=require('../../images/figures/figure_5.svg'))
             li.navigate__item
                 div.navigate__figure-container
-                    img.navigate__figure(src=require('../../images/figures/figure_6.svg'))
-                a.navigate__link.navigate__link--magazine(href="#")
+                    img.navigate__figure.navigate__figure--circle(src=require('../../images/figures/figure_6.svg'))
+                a.navigate__link.navigate__link--magazine(href="#" title="журнал")
                     mark.navigate__highlight
                         span.navigate__letter ж
                         span.navigate__letter у
@@ -33,6 +34,12 @@ div.navigate-container
                         span.navigate__letter н
                         span.navigate__letter а
                         span.navigate__letter л
+                div.navigate__small-circle.navigate__small-circle--bottom-top
+                div.navigate__small-circle.navigate__small-circle--bottom-middle
+                div.navigate__small-circle.navigate__small-circle--bottom-bottom
+                div.navigate__small-circle.navigate__small-circle--top.navigate__small-circle--top-top
+                div.navigate__small-circle.navigate__small-circle--top.navigate__small-circle--top-middle
+                div.navigate__small-circle.navigate__small-circle--top.navigate__small-circle--top-bottom
             li.navigate__item
                 div.navigate__figure-container
                     img.navigate__figure(src=require('../../images/figures/figure_7.svg'))
@@ -42,6 +49,8 @@ div.navigate-container
             li.navigate__item.navigate__item--with-border-left
                 div.navigate__figure-container
                     img.navigate__figure(src=require('../../images/figures/figure_9.svg'))
+                a.navigate__link.navigate__link--gallery(href="#" title="галлерея")
+                    mark.navigate__highlight галлерея
             li.navigate__item
                 div.navigate__figure-container
                     img.navigate__figure(src=require('../../images/figures/figure_10.svg'))
@@ -51,14 +60,18 @@ div.navigate-container
             li.navigate__item
                 div.navigate__figure-container
                     img.navigate__figure(src=require('../../images/figures/figure_12.svg'))
-                a.navigate__link.navigate__link--contacts(href="#")
+                a.navigate__link.navigate__link--contacts(href="#" title="контакты")
                     mark.navigate__highlight контакты
             li.navigate__item.navigate__item--with-border-left
                 div.navigate__figure-container
                     img.navigate__figure(src=require('../../images/figures/figure_13.svg'))
             li.navigate__item
                 div.navigate__figure-container
-                    img.navigate__figure(src=require('../../images/figures/figure_14.svg'))
+                    img.navigate__figure.navigate__figure--video(src=require('../../images/figures/figure_14.svg'))
+                a.navigate__link.navigate__link--video(href="#" title="видеотека")
+                    mark.navigate__highlight видеотека
+                svg.navigate__circle-container(height="200" width="200")
+                    circle.navigate__circle(cx="100" cy="100" r="35" stroke="black" stroke-width="1" fill-opacity="0")
             li.navigate__item
                 div.navigate__figure-container
                     img.navigate__figure(src=require('../../images/figures/figure_15.svg'))

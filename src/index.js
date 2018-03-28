@@ -84,6 +84,7 @@ window.addEventListener('load', () => {
 
     infiniteScroll();
     scrollToTop();
+
     //notification();
 
 });
