@@ -11,6 +11,7 @@ import materialsTabs from "./js/materialsTabs";
 import setMaterials from "./js/setMaterials";
 import notification from "./js/notification";
 import showFooter from "./js/showFooter";
+import browserDetection from "./js/browserDetection";
 
 
 window.addEventListener('load', () => {
@@ -81,6 +82,12 @@ window.addEventListener('load', () => {
     };
 
     showFooter(showFooterOptions);
+
+    const browserDetectionOptions = {
+        bodySelector: document.getElementsByClassName('js-body')[0]
+    };
+
+    browserDetection(browserDetectionOptions);
 
     infiniteScroll();
     scrollToTop();
