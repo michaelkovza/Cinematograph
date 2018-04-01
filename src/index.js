@@ -83,6 +83,10 @@ window.addEventListener('load', () => {
 
     showFooter(showFooterOptions);
 
+    window.addEventListener('resize', () => {
+        showFooter(showFooterOptions);
+    });
+
     const browserDetectionOptions = {
         bodySelector: document.getElementsByClassName('js-body')[0]
     };

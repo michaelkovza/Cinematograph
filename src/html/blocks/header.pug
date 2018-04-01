@@ -1,7 +1,8 @@
-header.header
-    nav.header__navigate home\files
-    a.header__link(href="#" title="Cinematograph")
-        img.header__logo(src=require('../../images/cinematograph.svg') alt="cinematograph logo image")
+mixin header(title)
+    header.header
+        nav.header__navigate= title
+        a.header__link(href="#" title="Cinematograph")
+            img.header__logo(src=require('../../images/cinematograph.svg') alt="cinematograph logo image")
 
 
 
