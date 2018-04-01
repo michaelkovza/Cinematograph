@@ -1,0 +1,39 @@
+.not-found {
+
+  &__link:hover &__highlight {
+    background: var(--accent-color);
+  }
+
+  &__content-container {
+    text-align: left;
+    max-width: 902px;
+    margin: 0 auto;
+    padding-top: 54px;
+  }
+
+  &__content-title {
+    font-family: var(--primary-font);
+    color: var(--secondary-accent-color);
+    font-size: 130px;
+    padding-bottom: 25px;
+  }
+
+  &__content-text {
+    font-family: var(--primary-font);
+    color: var(--primary-text-color);
+    font-size: 14px;
+    font-weight: normal;
+    padding-bottom: 15px;
+  }
+
+  &__link {
+    color: var(--secondary-accent-color);
+  }
+
+  &__highlight {
+    color: var(--secondary-accent-color);
+    background: transparent;
+    transition: background 0.3s linear;
+  }
+
+}
