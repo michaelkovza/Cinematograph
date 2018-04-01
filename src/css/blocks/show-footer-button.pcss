@@ -1,7 +1,4 @@
 .show-footer-button-container {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
   transition: opacity 0.3s linear;
 
   &--hidden {
@@ -9,9 +6,12 @@
   }
 
   &__button {
+    display: block;
     width: 270px;
     height: 120px;
+    margin: 0 auto;
     background:  var(--secondary-accent-color);
     border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    box-shadow: 0 -10px 110px 80px var(--secondary-accent-color);
   }
 }
