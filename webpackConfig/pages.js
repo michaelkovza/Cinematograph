@@ -152,6 +152,17 @@ module.exports = [
             page: 'contacts.pug'
         },
         chunks: ['index']
+    },
+    {
+        title: '«search-page»',
+        filename: 'search-page.html',
+        template: 'src/html/layouts/layout.pug',
+        inject: 'body',
+        minify: false,
+        env: {
+            page: 'search-page.pug'
+        },
+        chunks: ['index']
     }
 
 
