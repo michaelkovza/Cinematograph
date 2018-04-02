@@ -61,6 +61,10 @@
     opacity: 1;
   }
 
+  &__list:hover &__line-with-square {
+    transform: translateX(0);
+  }
+
   &__figure-container {
     display: flex;
     align-content: center;
@@ -68,6 +72,10 @@
     width: 130px;
     height: 130px;
     position: relative;
+
+    &--without-overflow {
+      overflow: inherit;
+    }
 
     &--with-lines {
       &:before {
@@ -211,28 +219,6 @@
       position: absolute;
       top: -16px;
       right: -95px;
-
-      &:after {
-        content: '';
-        display: block;
-        width: 18px;
-        height: 18px;
-        border: 1px solid var(--default-black-color);
-        position: absolute;
-        left: -10px;
-      }
-
-      &:before {
-        content: '';
-        display: block;
-        height: 1px;
-        background: var(--secondary-accent-color);
-        width: 140px;
-        transform: rotate(135deg);
-        position: absolute;
-        left: -118px;
-        bottom: -50px;
-      }
     }
 
     &--video {
@@ -314,6 +300,23 @@
     left: 15px;
     bottom: -15px;
     overflow: hidden;
+  }
+
+  &__line-with-square-container {
+    width: 110px;
+    height: 100px;
+    position: absolute;
+    left: 60px;
+    overflow: hidden;
+  }
+
+  &__line-with-square {
+    background: url('../../images/navigate/navigate-contacts.svg') no-repeat center;
+    width: 110px;
+    height: 100px;
+    transform: translateX(-110px);
+    transition: transform 0.3s linear;
+
   }
 
   &__line {
