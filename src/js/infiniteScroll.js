@@ -57,6 +57,7 @@ const infiniteScroll = () => {
             let count = ++countReviews;
 
             if(count > window.scrollData.reviews.endPage) {
+                loader.classList.add(loaderHiddenClass);
                 return
             }
 
@@ -69,6 +70,7 @@ const infiniteScroll = () => {
             let count = ++countArticles;
 
             if(count > window.scrollData.articles.endPage) {
+                loader.classList.add(loaderHiddenClass);
                 return
             }
 
@@ -80,6 +82,7 @@ const infiniteScroll = () => {
             let count = ++countDefault;
 
             if(count > window.scrollData.default.endPage) {
+                loader.classList.add(loaderHiddenClass);
                 return
             }
 
