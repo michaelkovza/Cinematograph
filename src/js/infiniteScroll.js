@@ -46,61 +46,83 @@ const infiniteScroll = () => {
 
     const getData = () => {
 
-        let data = new FormData();
-        data.append("AJAX", "Y");
 
-        data.append("type", type);
+            let data = new FormData();
+            data.append("AJAX", "Y");
 
-        let xhr = new XMLHttpRequest();
+            data.append("type", type);
 
-        if(type === 'reviews') {
-            let count = ++countReviews;
+            let xhr = new XMLHttpRequest();
 
-            if(count > window.scrollData.reviews.endPage) {
-                loader.classList.add(loaderHiddenClass);
-                return
+            if (type === 'reviews' ) {
+                let count = ++countReviews;
+
+                if (count > window.scrollData.reviews.endPage) {
+                    loader.classList.add(loaderHiddenClass);
+                    return
+                }
+
+                navNumReviews = window.scrollData.reviews.loadSett.navNum;
+                loadUrl = `${currentUrl}/index.php?PAGEN_${navNumReviews}=${count}`;
+                xhr.open("POST", loadUrl);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        let result = xhr.responseText;
+                        infinityContainer.insertAdjacentHTML('beforeend', result);
+                        loader.classList.add(loaderHiddenClass);
+                    }
+                };
+
+                xhr.send(data);
+
             }
 
-            navNumReviews = window.scrollData.reviews.loadSett.navNum;
-            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumReviews}=${count}`;
+            if (type === 'articles') {
+                let count = ++countArticles;
 
-        }
+                if (count > window.scrollData.articles.endPage) {
+                    loader.classList.add(loaderHiddenClass);
+                    return
+                }
 
-        if(type === 'articles') {
-            let count = ++countArticles;
+                navNumArticles = window.scrollData.articles.loadSett.navNum;
+                loadUrl = `${currentUrl}/index.php?PAGEN_${navNumArticles}=${count}`;
+                xhr.open("POST", loadUrl);
 
-            if(count > window.scrollData.articles.endPage) {
-                loader.classList.add(loaderHiddenClass);
-                return
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        let result = xhr.responseText;
+                        infinityContainer.insertAdjacentHTML('beforeend', result);
+                        loader.classList.add(loaderHiddenClass);
+                    }
+                };
+
+                xhr.send(data);
             }
 
-            navNumArticles = window.scrollData.articles.loadSett.navNum;
-            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumArticles}=${count}`;
-        }
+            if (type === 'default') {
+                let count = ++countDefault;
 
-        if (type === 'default') {
-            let count = ++countDefault;
+                if (count > window.scrollData.default.endPage) {
+                    loader.classList.add(loaderHiddenClass);
+                    return
+                }
 
-            if(count > window.scrollData.default.endPage) {
-                loader.classList.add(loaderHiddenClass);
-                return
+                navNumDefault = window.scrollData.default.loadSett.navNum;
+                loadUrl = `${currentUrl}/index.php?PAGEN_${navNumDefault}=${count}`;
+                xhr.open("POST", loadUrl);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        let result = xhr.responseText;
+                        infinityContainer.insertAdjacentHTML('beforeend', result);
+                        loader.classList.add(loaderHiddenClass);
+                    }
+                };
+
+                xhr.send(data);
             }
-
-            navNumDefault = window.scrollData.default.loadSett.navNum;
-            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumDefault}=${count}`;
-        }
-
-        xhr.open("POST", loadUrl);
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                let result = xhr.responseText;
-                infinityContainer.insertAdjacentHTML('beforeend', result);
-                loader.classList.add(loaderHiddenClass);
-            }
-        };
-
-        xhr.send(data);
 
     };
 
