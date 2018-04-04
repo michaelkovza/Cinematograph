@@ -78,14 +78,12 @@ window.addEventListener('load', () => {
         bodySelector: document.getElementsByClassName('js-body')[0],
         footerButtonContainerSelector: document.getElementsByClassName('js-show-footer-button-container')[0],
         footerButtonSelector: document.getElementsByClassName('js-show-footer-button')[0],
-        footerSelector: document.getElementsByClassName('js-footer')[0]
+        footerSelector: document.getElementsByClassName('js-footer')[0],
+        footerButtonContainerHiddenClass: 'show-footer-button-container--disable'
     };
 
     showFooter(showFooterOptions);
 
-    window.addEventListener('resize', () => {
-        showFooter(showFooterOptions);
-    });
 
     const browserDetectionOptions = {
         bodySelector: document.getElementsByClassName('js-body')[0]

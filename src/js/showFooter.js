@@ -1,11 +1,21 @@
-const showFooter = ({bodySelector, footerButtonContainerSelector, footerButtonSelector, footerSelector }) => {
+const showFooter = ({bodySelector, footerButtonContainerSelector, footerButtonSelector, footerSelector,footerButtonContainerHiddenClass }) => {
+
+
 
     if(!footerButtonContainerSelector) {
         return
     }
 
-    let clientHeight = document.body.clientHeight;
     let windowInnerHeight = window.innerHeight;
+
+
+    if(windowInnerHeight <= 930) {
+        footerButtonContainerSelector.classList.add(footerButtonContainerHiddenClass);
+        return
+    }
+
+    let clientHeight = document.body.clientHeight;
+
 
     let marginTop = windowInnerHeight - clientHeight + footerSelector.offsetHeight;
 
