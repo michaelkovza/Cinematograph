@@ -3,17 +3,18 @@ import $ from 'jquery';
 let reviewsButton = document.getElementsByClassName('js-reviews-button')[0];
 let articlesButton = document.getElementsByClassName('js-articles-button')[0];
 
-let reviewsData = false;
+let type = 'default';
+let loadUrl;
 
 if (reviewsButton !== undefined && articlesButton !== undefined) {
 
 
     reviewsButton.addEventListener('click', () => {
-        reviewsData = true;
+        type = 'reviews';
     });
 
     articlesButton.addEventListener('click', () => {
-        reviewsData = false;
+        type = 'articles';
     });
 }
 
@@ -21,14 +22,17 @@ const infiniteScroll = () => {
 
 
     let currentUrl = window.location.href;
-    let count = 1;
+    let countDefault = 1;
+    let countReviews = 1;
+    let countArticles = 1;
 
     if (!window.scrollData) {
         return
     }
 
-    let navNum = window.scrollData.loadSett.navNum;
-
+    let navNumDefault;
+    let navNumReviews;
+    let navNumArticles;
 
     let infinityContainer = document.getElementsByClassName('js-infinity-content')[0];
 
@@ -45,15 +49,24 @@ const infiniteScroll = () => {
         let data = new FormData();
         data.append("AJAX", "Y");
 
-        if (reviewsData === true) {
-            data.append("REVIEWS", "Y")
-        }
+        data.append("type", type);
 
         let xhr = new XMLHttpRequest();
 
+        if(type === 'reviews') {
+            navNumReviews = window.scrollData.reviews.loadSett.navNum;
+            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumReviews}=${countReviews++}`;
+        }
 
-        let loadUrl = `${currentUrl}/index.php?PAGEN_${navNum}=${count++}`;
+        if(type === 'articles') {
+            navNumArticles = window.scrollData.articles.loadSett.navNum;
+            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumArticles}=${countArticles++}`;
+        }
 
+        if (type === 'default') {
+            navNumDefault = window.scrollData.default.loadSett.navNum;
+            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumDefault}=${countDefault++}`;
+        }
 
         xhr.open("POST", loadUrl);
 
