@@ -81,8 +81,7 @@ const infiniteScroll = () => {
         xhr.send(data);
 
     };
-
-    getData();
+    
 
     $(window).scroll(() => {
             if ($(window).scrollTop() + $(window).height() === $(document).height()) {
