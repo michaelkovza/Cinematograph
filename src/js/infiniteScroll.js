@@ -54,18 +54,33 @@ const infiniteScroll = () => {
         let xhr = new XMLHttpRequest();
 
         if(type === 'reviews') {
+            let count = ++countReviews;
+
+            if(count > window.scrollData.reviews.endPage) {
+                return
+            }
+
             navNumReviews = window.scrollData.reviews.loadSett.navNum;
-            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumReviews}=${countReviews++}`;
+            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumReviews}=${++countReviews}`;
+
         }
 
         if(type === 'articles') {
+            let count = ++countArticles;
+            if(count > window.scrollData.articles.endPage) {
+                return
+            }
             navNumArticles = window.scrollData.articles.loadSett.navNum;
-            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumArticles}=${countArticles++}`;
+            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumArticles}=${++countArticles}`;
         }
 
         if (type === 'default') {
+            let count = ++countDefault;
+            if(count > window.scrollData.default.endPage) {
+                return
+            }
             navNumDefault = window.scrollData.default.loadSett.navNum;
-            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumDefault}=${countDefault++}`;
+            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumDefault}=${++countDefault}`;
         }
 
         xhr.open("POST", loadUrl);
@@ -81,7 +96,7 @@ const infiniteScroll = () => {
         xhr.send(data);
 
     };
-    
+
 
     $(window).scroll(() => {
             if ($(window).scrollTop() + $(window).height() === $(document).height()) {
