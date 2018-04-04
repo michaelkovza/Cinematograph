@@ -7,7 +7,7 @@ let type = 'default';
 let loadUrl;
 
 if (reviewsButton !== undefined && articlesButton !== undefined) {
-
+    type = 'articles';
 
     reviewsButton.addEventListener('click', () => {
         type = 'reviews';
