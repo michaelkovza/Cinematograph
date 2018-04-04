@@ -61,26 +61,30 @@ const infiniteScroll = () => {
             }
 
             navNumReviews = window.scrollData.reviews.loadSett.navNum;
-            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumReviews}=${++countReviews}`;
+            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumReviews}=${count}`;
 
         }
 
         if(type === 'articles') {
             let count = ++countArticles;
+
             if(count > window.scrollData.articles.endPage) {
                 return
             }
+
             navNumArticles = window.scrollData.articles.loadSett.navNum;
-            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumArticles}=${++countArticles}`;
+            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumArticles}=${count}`;
         }
 
         if (type === 'default') {
             let count = ++countDefault;
+
             if(count > window.scrollData.default.endPage) {
                 return
             }
+
             navNumDefault = window.scrollData.default.loadSett.navNum;
-            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumDefault}=${++countDefault}`;
+            loadUrl = `${currentUrl}/index.php?PAGEN_${navNumDefault}=${count}`;
         }
 
         xhr.open("POST", loadUrl);
