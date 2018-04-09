@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import _ from 'lodash';
 
 let reviewsButton = document.getElementsByClassName('js-reviews-button')[0];
 let articlesButton = document.getElementsByClassName('js-articles-button')[0];
@@ -25,32 +26,30 @@ if (reviewsButton !== undefined && articlesButton !== undefined) {
     });
 }
 
+const initDataPagination = (type, dataObj, scrollDataProp) => {
+    if(!window.scrollData) {
+        return
+    }
+
+    if(dataObj[type] || !types.hasOwnProperty(type)) {
+        return
+    }
+
+    dataObj[type].navNum = _.get(window.scrollData ,`${scrollDataProp}.loadSet.navNum`, null);
+    dataObj[type].endPage = _.get(window.scrollData ,`${scrollDataProp}.endPage`, null);
+    dataObj[type].count = 1;
+};
 
 const infiniteScroll = () => {
 
     let currentUrl = window.location.href;
 
-    if (!window.scrollData) {
-        return
-    }
+    let dataPagination = {};
 
-    let dataPagination = {
-        [types.default]: {
-            navNum: window.scrollData.default.loadSett.navNum || null,
-            endPage: window.scrollData.default.endPage,
-            count: 1
-        },
-        [types.articles]: {
-            navNum: window.scrollData.articles.loadSett.navNum || null,
-            endPage: window.scrollData.articles.endPage,
-            count: 1
-        },
-        [types.reviews]: {
-            navNum: window.scrollData.reviews.loadSett.navNum || null,
-            endPage: window.scrollData.reviews.endPage,
-            count: 1
-        }
-    };
+    initDataPagination(types.default, dataPagination, 'default');
+    initDataPagination(types.articles, dataPagination, 'articles');
+    initDataPagination(types.reviews, dataPagination, 'reviews');
+
 
     let infinityContainer = document.getElementsByClassName('js-infinity-content')[0];
 
@@ -70,42 +69,6 @@ const infiniteScroll = () => {
 
             let xhr = new XMLHttpRequest();
 
-            /*if (type === 'reviews' ) {
-                let count = ++countReviews;
-
-                if (count >= window.scrollData.reviews.endPage) {
-                    loader.classList.add(loaderHiddenClass);
-                    return
-                }
-
-                navNumReviews = window.scrollData.reviews.loadSett.navNum;
-                loadUrl = `${currentUrl}/index.php?PAGEN_${navNumReviews}=${count}`;
-                xhr.open("POST", loadUrl);
-
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        let result = xhr.responseText;
-                        infinityContainer.insertAdjacentHTML('beforeend', result);
-                        loader.classList.add(loaderHiddenClass);
-                    }
-                };
-
-                xhr.send(data);
-
-            }*/
-
-            /*if (type === 'articles') {
-                let count = ++countArticles;
-
-                if (count <= window.scrollData.articles.endPage) {
-                    loader.classList.remove(loaderHiddenClass);
-
-                    loadUrl = `${currentUrl}/index.php?PAGEN_${navNumArticles}=${count}`;
-
-                }
-
-            }*/
-
             const getUrl = (type) => {
 
                 dataPagination[type].count = ++dataPagination[type].count;
@@ -121,6 +84,7 @@ const infiniteScroll = () => {
             switch (type) {
                 case types.default:
                     loadUrl = getUrl(type);
+
                     break;
                 case types.articles:
                     loadUrl = getUrl(type);
