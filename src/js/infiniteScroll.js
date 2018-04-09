@@ -36,17 +36,17 @@ const infiniteScroll = () => {
 
     let dataPagination = {
         [types.default]: {
-            navNum: window.scrollData.default.loadSett.navNum,
+            navNum: window.scrollData.default.loadSett.navNum || null,
             endPage: window.scrollData.default.endPage,
             count: 1
         },
         [types.articles]: {
-            navNum: window.scrollData.articles.loadSett.navNum,
+            navNum: window.scrollData.articles.loadSett.navNum || null,
             endPage: window.scrollData.articles.endPage,
             count: 1
         },
         [types.reviews]: {
-            navNum: window.scrollData.reviews.loadSett.navNum,
+            navNum: window.scrollData.reviews.loadSett.navNum || null,
             endPage: window.scrollData.reviews.endPage,
             count: 1
         }
