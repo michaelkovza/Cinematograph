@@ -32,7 +32,8 @@ const initDataPagination = (type, dataObj, scrollDataProp) => {
     if(!window.scrollData && !window.scrollData[scrollDataProp]) {
         return
     }
-    
+
+    dataObj.type = scrollDataProp;
 
     console.log(dataObj[type], types.hasOwnProperty(type), "ASDASDASDASD");
 
