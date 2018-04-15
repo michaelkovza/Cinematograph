@@ -11,6 +11,7 @@ const types = {
   reviews: 'reviews'
 };
 
+let dataPagination = {};
 
 
 let type = types.default;
@@ -46,7 +47,7 @@ const infiniteScroll = () => {
 
     let currentUrl = window.location.href;
 
-    let dataPagination = {};
+
 
     initDataPagination(types.default, dataPagination, 'default');
     initDataPagination(types.articles, dataPagination, 'articles');
