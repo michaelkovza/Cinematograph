@@ -11,10 +11,7 @@ const types = {
   reviews: 'reviews'
 };
 
-window.scrollData  = 'default';
-
 let type = types.default;
-
 
 if (reviewsButton !== undefined && articlesButton !== undefined) {
     type = types.articles;
