@@ -11,8 +11,6 @@ const types = {
   reviews: 'reviews'
 };
 
-let dataPagination = {};
-
 
 let type = types.default;
 
@@ -47,16 +45,17 @@ const infiniteScroll = () => {
 
     let currentUrl = window.location.href;
 
-    initDataPagination(types.default, dataPagination, 'default');
-    initDataPagination(types.articles, dataPagination, 'articles');
-    initDataPagination(types.reviews, dataPagination, 'reviews');
-
-
     let infinityContainer = document.getElementsByClassName('js-infinity-content')[0];
 
     if (!infinityContainer) {
         return
     }
+
+    let dataPagination = {};
+
+    initDataPagination(types.default, dataPagination, 'default');
+    initDataPagination(types.articles, dataPagination, 'articles');
+    initDataPagination(types.reviews, dataPagination, 'reviews');
 
     let loader = document.getElementsByClassName('js-loader')[0];
     let loaderHiddenClass = 'loader--hidden';
