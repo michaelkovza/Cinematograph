@@ -38,16 +38,14 @@ const initDataPagination = (type, dataObj, scrollDataProp) => {
 
     console.log(dataObj.type, types.hasOwnProperty(type), "ASDASDASDASD");
 
-    dataObj[type].navNum = _.get(window.scrollData ,`${scrollDataProp}.loadSet.navNum`, null);
-    dataObj[type].endPage = _.get(window.scrollData ,`${scrollDataProp}.endPage`, null);
-    dataObj[type].count = 1;
+    dataObj.type.navNum = _.get(window.scrollData ,`${scrollDataProp}.loadSet.navNum`, null);
+    dataObj.type.endPage = _.get(window.scrollData ,`${scrollDataProp}.endPage`, null);
+    dataObj.type.count = 1;
 };
 
 const infiniteScroll = () => {
 
     let currentUrl = window.location.href;
-
-
 
     initDataPagination(types.default, dataPagination, 'default');
     initDataPagination(types.articles, dataPagination, 'articles');
