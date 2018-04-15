@@ -7,7 +7,7 @@ const showFooter = ({bodySelector, footerButtonContainerSelector, footerButtonSe
     let windowInnerHeight = window.innerHeight;
 
 
-    if(windowInnerHeight <= 930) {
+    if(windowInnerHeight <= 915) {
         footerButtonContainerSelector.classList.add(footerButtonContainerHiddenClass);
         return
     }
