@@ -36,7 +36,7 @@ const initDataPagination = (type, dataObj, scrollDataProp) => {
 
     dataObj.type = scrollDataProp;
 
-    console.log(dataObj[type], types.hasOwnProperty(type), "ASDASDASDASD");
+    console.log(dataObj.type, types.hasOwnProperty(type), "ASDASDASDASD");
 
     dataObj[type].navNum = _.get(window.scrollData ,`${scrollDataProp}.loadSet.navNum`, null);
     dataObj[type].endPage = _.get(window.scrollData ,`${scrollDataProp}.endPage`, null);
