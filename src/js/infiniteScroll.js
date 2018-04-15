@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import _ from 'lodash';
 
 let reviewsButton = document.getElementsByClassName('js-reviews-button')[0];
@@ -12,7 +11,10 @@ const types = {
   reviews: 'reviews'
 };
 
+window.scrollData  = 'default';
+
 let type = types.default;
+
 
 if (reviewsButton !== undefined && articlesButton !== undefined) {
     type = types.articles;
@@ -25,6 +27,7 @@ if (reviewsButton !== undefined && articlesButton !== undefined) {
         type = types.articles;
     });
 }
+
 
 const initDataPagination = (type, dataObj, scrollDataProp) => {
     if(!window.scrollData) {
@@ -84,7 +87,6 @@ const infiniteScroll = () => {
             switch (type) {
                 case types.default:
                     loadUrl = getUrl(type);
-
                     break;
                 case types.articles:
                     loadUrl = getUrl(type);
@@ -112,13 +114,11 @@ const infiniteScroll = () => {
         xhr.send(data);
     };
 
-    $(window).scroll(() => {
-            if ($(window).scrollTop() + $(window).height() === $(document).height()) {
-                getData();
-            }
-
+    window.onscroll = function() {
+        if(window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+            getData();
         }
-    )
+    }
 };
 
 export default infiniteScroll;

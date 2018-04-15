@@ -1,7 +1,5 @@
 const showFooter = ({bodySelector, footerButtonContainerSelector, footerButtonSelector, footerSelector,footerButtonContainerHiddenClass }) => {
 
-
-
     if(!footerButtonContainerSelector) {
         return
     }
@@ -15,7 +13,6 @@ const showFooter = ({bodySelector, footerButtonContainerSelector, footerButtonSe
     }
 
     let clientHeight = document.body.clientHeight;
-
 
     let marginTop = windowInnerHeight - clientHeight + footerSelector.offsetHeight;
 
@@ -32,9 +29,7 @@ const showFooter = ({bodySelector, footerButtonContainerSelector, footerButtonSe
 
     let translateNumber = bodyHeight - headerHeight - navigateContainerHeight - showFooterButtonHeight;
 
-
     let isFooterShown = false;
-
 
     footerButtonContainerSelector.setAttribute("style", `margin-top: ${marginTop}px`);
 
@@ -50,13 +45,16 @@ const showFooter = ({bodySelector, footerButtonContainerSelector, footerButtonSe
 
     });
 
-    document.addEventListener('mousemove', (event) => {
+    const toggleFooterClass = (footerButtonContainerSelector,mouseCords,event) => {
+        if( event.pageY > mouseCords )  {
+            footerButtonContainerSelector.classList.remove('show-footer-button-container--hidden')
+        } else if (isFooterShown === false) {
+            footerButtonContainerSelector.classList.add('show-footer-button-container--hidden')
+        }
+    };
 
-      if(event.pageY > 670 ) {
-          footerButtonContainerSelector.classList.remove('show-footer-button-container--hidden');
-      } else if (isFooterShown === false){
-          footerButtonContainerSelector.classList.add('show-footer-button-container--hidden');
-      }
+    document.addEventListener('mousemove', (event) => {
+      toggleFooterClass(footerButtonContainerSelector, 670, event);
     });
 
 };
