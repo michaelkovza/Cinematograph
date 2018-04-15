@@ -174,6 +174,17 @@ module.exports = [
             page: '404.pug'
         },
         chunks: ['index']
+    },
+    {
+        title: '«search-page-not-found»',
+        filename: 'search-page-not-found.html',
+        template: 'src/html/layouts/layout.pug',
+        inject: 'body',
+        minify: false,
+        env: {
+            page: 'search-page-not-found.pug'
+        },
+        chunks: ['index']
     }
 
 
