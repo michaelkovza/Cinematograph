@@ -11,6 +11,8 @@ const types = {
   reviews: 'reviews'
 };
 
+
+
 let type = types.default;
 
 if (reviewsButton !== undefined && articlesButton !== undefined) {
@@ -27,13 +29,10 @@ if (reviewsButton !== undefined && articlesButton !== undefined) {
 
 
 const initDataPagination = (type, dataObj, scrollDataProp) => {
-    if(!window.scrollData) {
+    if(!window.scrollData && !window.scrollData[scrollDataProp]) {
         return
     }
-
-    if(dataObj[type] || !types.hasOwnProperty(type)) {
-        return
-    }
+    
 
     console.log(dataObj[type], types.hasOwnProperty(type), "ASDASDASDASD");
 
