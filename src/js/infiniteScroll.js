@@ -32,13 +32,12 @@ const initDataPagination = (type, dataObj, scrollDataProp) => {
         return
     }
 
-    console.log(dataObj, types.hasOwnProperty(type), "ASDASDASDASD");
-
     dataObj[type] = {
         navNum: _.get(window.scrollData ,`${scrollDataProp}.loadSet.navNum`, null),
-        endPage: _.get(window.scrollData ,`${scrollDataProp}.endPage`, null),
+        endPage: _.get(window.scrollData ,`${scrollDataProp}.loadSet.endPage`, null),
         count: 1
     };
+
 };
 
 const infiniteScroll = () => {
@@ -73,10 +72,13 @@ const infiniteScroll = () => {
 
                 dataPagination[type].count = ++dataPagination[type].count;
 
+
                 if(dataPagination[type].count <= dataPagination[type].endPage) {
                     loader.classList.remove(loaderHiddenClass);
                     return `${currentUrl}/index.php?PAGEN_${dataPagination[type].navNum}=${dataPagination[type].count}`;
                 }
+
+                return null;
             };
 
             let loadUrl = null;
