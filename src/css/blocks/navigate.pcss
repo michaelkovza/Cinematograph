@@ -17,7 +17,7 @@
   }
 
   &__list:hover &__circle {
-    animation: stroke 3s linear forwards;
+    stroke-dashoffset: 0;
   }
 
   &__list:hover &__search-form {
@@ -267,8 +267,8 @@
   }
 
   &__small-circle {
-    width: 17px;
-    height: 17px;
+    width: 15px;
+    height: 15px;
     border: 1px solid var(--default-black-color);
     border-radius: 50%;
     position: absolute;
@@ -293,6 +293,7 @@
   &__circle {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 3s linear;
   }
 
   &__line-container {
