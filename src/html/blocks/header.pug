@@ -1,8 +1,10 @@
-mixin header(title)
-    header.header
-        nav.header__navigate= title
-        a.header__link(href="#" title="Cinematograph")
-            img.header__logo(src=require('../../images/cinematograph.svg') alt="cinematograph logo image")
+header.header
+    nav.header__navigate
+        a.header__navigate-link(href="#") home/
+        a.header__navigate-link(href="#") main/
+        a.header__navigate-link(href="#") some-link/
+    a.header__link(href="#" title="Cinematograph")
+        img.header__logo(src=require('../../images/cinematograph.svg') alt="cinematograph logo image")
 
 
 
