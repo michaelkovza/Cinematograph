@@ -1,15 +1,29 @@
 .firefox {
-  .navigate__gallery-figure-lines:after {
-    bottom: 3px;
-  }
 
-  .navigate__gallery-figure-lines:before {
+  .navigate__gallery-figure-lines {
+    height: 54px;
+    right: 0;
     top: 3px;
   }
 
   .navigate__gallery-figure:before {
     height: 72px;
   }
+
+  .navigate__gallery-figure-circle {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    background: #fff;
+    width: 26px;
+    height: 28px;
+    border-radius: 50%;
+    left: 50%;
+    top: 74px;
+    transform: translateX(-50%);
+  }
+
+
 
   .navigate__link--video {
     top: -12px;
