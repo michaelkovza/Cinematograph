@@ -12,6 +12,7 @@ import setMaterials from "./js/setMaterials";
 import notification from "./js/notification";
 import showFooter from "./js/showFooter";
 import browserDetection from "./js/browserDetection";
+import setImageArticleDescription from './js/setImageArticleDescription';
 
 
 window.addEventListener('load', () => {
@@ -66,6 +67,12 @@ window.addEventListener('load', () => {
 
     setMaterials(setMaterialsOptions);
 
+    const setImageArticleDescriptionOptions = {
+        imageArticleArr: document.getElementsByClassName('js-article-image')
+    };
+
+    setImageArticleDescription(setImageArticleDescriptionOptions);
+
     const createTermOptions = {
       terms: document.getElementsByClassName('js-term'),
       termContainer: document.getElementsByClassName('js-clarification-container')[0]
@@ -90,6 +97,8 @@ window.addEventListener('load', () => {
     };
 
     browserDetection(browserDetectionOptions);
+
+
 
     infiniteScroll();
     scrollToTop();
