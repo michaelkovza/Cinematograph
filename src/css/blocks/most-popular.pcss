@@ -1,8 +1,19 @@
 .most-popular {
 
   &__list {
-    padding-top: 54px;
+    padding-top: 35px;
     max-width: 920px;
-    justify-content: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    overflow-x: scroll;
+
+    @media (--tablet-large) {
+      overflow-x: inherit;
+    }
+
+    @media (--desktop-small) {
+      padding-top: 54px;
+      justify-content: center;
+    }
   }
 }

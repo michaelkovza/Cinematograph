@@ -1,4 +1,5 @@
 const setImageArticleDescription = ({imageArticleArr}) => {
+
     for(let i = 0; i < imageArticleArr.length; i++) {
         let imageDescription = imageArticleArr[i].getAttribute('alt');
 

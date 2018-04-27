@@ -57,7 +57,12 @@
 
   &--with-border &__image-container {
     height: 250px;
+    width: 170px;
     display: block;
+
+    @media (--desktop-small) {
+      width: auto;
+    }
   }
 
   &--with-border &__image {

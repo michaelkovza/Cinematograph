@@ -1,6 +1,10 @@
 .articles {
-  padding-top: 54px;
+  padding-top: 35px;
   padding-bottom: 84px;
+
+  @media(--desktop-small) {
+    padding-top: 54px;
+  }
 
   &__button {
     background: transparent;
@@ -16,8 +20,12 @@
   }
 
   &__list {
-    padding-top: 54px;
+    padding-top: 35px;
     display: none;
+
+    @media (--desktop-small) {
+      padding-top: 54px;
+    }
 
     &--active {
       display: flex;

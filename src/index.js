@@ -68,7 +68,7 @@ window.addEventListener('load', () => {
     setMaterials(setMaterialsOptions);
 
     const setImageArticleDescriptionOptions = {
-        imageArticleArr: document.getElementsByClassName('js-article-image')
+        imageArticleArr: document.querySelectorAll('.js-article img')
     };
 
     setImageArticleDescription(setImageArticleDescriptionOptions);
