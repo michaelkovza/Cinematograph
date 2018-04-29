@@ -10,9 +10,9 @@ const setMaterials = ( {materialsVideoArr, materialsContentList, materialsVideoL
             `<h3 class="article-detailed__video-title"> 
                 ${materialsVideoTitle}
              </h3>
-             <span class="article-detailed__video-area">
+             <h4 class="article-detailed__video-area">
                 ${materialsVideoArea}
-             </span>`
+             </h4>`
         );
 
         materialsContentList.insertAdjacentHTML('beforeend',
