@@ -1,36 +1,37 @@
 mixin footer(classNames)
     footer(class=classNames)
-        img.footer__image(src=require('../../images/cinematograph-footer.svg'))
-        nav.footer__navigation.gel-layout
-            ul.footer__list.gel-layout__item.gel-2-10-xl
-                li.footer__item.footer__item--main Разделы
-                li.footer__item
-                    a.footer__link(href="#" title="Статьи") Статьи
-                li.footer__item
-                    a.footer__link(href="#" title="Рецензии") Рецензии
-                li.footer__item
-                    a.footer__link(href="#" title="Галерея") Галерея
-                li.footer__item
-                    a.footer__link(href="#" title="Видеотека") Видеотека
-                li.footer__item
-                    a.footer__link(href="#" title="Библиотека") Библиотека
-                li.footer__item
-                    a.footer__link(href="#" title="Контакты") Контакты
-            ul.footer__list.gel-layout__item.gel-2-10-xl
-                li.footer__item.footer__item--main Соцсети
-                li.footer__item
-                    a.footer__link(href="https://vk.com/cinematographmag" target="_blank" title="Вконтакте") Вконтакте
-                li.footer__item
-                    a.footer__link(href="https://twitter.com/cinemamagtweet" target="_blank" title="Twitter") Twitter
-                li.footer__item
-                    a.footer__link(href="https://t.me/cinematographmag" target="_blank" title="Telegram") Telegram
-            ul.footer__list.footer__list--right.gel-layuot__item.gel-3-10-xl
-                li.footer__item.footer__item--main Подписка
-                li.footer__item
-                    form.footer__form.form
-                        fieldset.form__fieldset
-                            legend.form__title Оставьте e-mail, чтобы получать наши избранные материалы
-                            input.form__input.js-input-email(type="email" required placeholder="Ваш E-mail")
-                            button.form__button.js-form-button(disabled title="Отправить")
-                        span.form__status.form__status--hidden.js-form-status
-                    p.footer__notice Нажимая кнопку отправки, Вы&nbsp;даёте согласие на&nbsp;обработку персональных данных в&nbsp;соответствии с&nbsp;действующим Федеральным законом &laquo;О&nbsp;персональных данных&raquo;.
+        div.footer__content.gel-layout
+            img.footer__image(src=require('../../images/cinematograph-footer.svg'))
+            nav.footer__navigation.gel-layout
+                ul.footer__list.gel-layout__item.gel-2-10-xl
+                    li.footer__item.footer__item--main Разделы
+                    li.footer__item
+                        a.footer__link(href="#" title="Статьи") Статьи
+                    li.footer__item
+                        a.footer__link(href="#" title="Рецензии") Рецензии
+                    li.footer__item
+                        a.footer__link(href="#" title="Галерея") Галерея
+                    li.footer__item
+                        a.footer__link(href="#" title="Видеотека") Видеотека
+                    li.footer__item
+                        a.footer__link(href="#" title="Библиотека") Библиотека
+                    li.footer__item
+                        a.footer__link(href="#" title="Контакты") Контакты
+                ul.footer__list.gel-layout__item.gel-2-10-xl
+                    li.footer__item.footer__item--main Соцсети
+                    li.footer__item
+                        a.footer__link(href="https://vk.com/cinematographmag" target="_blank" title="Вконтакте") Вконтакте
+                    li.footer__item
+                        a.footer__link(href="https://twitter.com/cinemamagtweet" target="_blank" title="Twitter") Twitter
+                    li.footer__item
+                        a.footer__link(href="https://t.me/cinematographmag" target="_blank" title="Telegram") Telegram
+                ul.footer__list.footer__list--right.gel-layuot__item.gel-3-10-xl
+                    li.footer__item.footer__item--main Подписка
+                    li.footer__item
+                        form.footer__form.form
+                            fieldset.form__fieldset
+                                legend.form__title Оставьте e-mail, чтобы получать наши избранные материалы
+                                input.form__input.js-input-email(type="email" required placeholder="Ваш E-mail")
+                                button.form__button.js-form-button(disabled title="Отправить")
+                            span.form__status.form__status--hidden.js-form-status
+                        p.footer__notice Нажимая кнопку отправки, Вы&nbsp;даёте согласие на&nbsp;обработку персональных данных в&nbsp;соответствии с&nbsp;действующим Федеральным законом &laquo;О&nbsp;персональных данных&raquo;.
