@@ -11,6 +11,12 @@
 
   &__list {
     max-width: 920px;
-    justify-content: center;
+    flex-flow: row nowrap;
+    overflow-x: scroll;
+
+    @media (--desktop-small) {
+      overflow-x: inherit;
+      justify-content: center;
+    }
   }
 }

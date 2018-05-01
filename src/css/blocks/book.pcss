@@ -1,4 +1,11 @@
 .book {
+  padding: 0 10px;
+
+
+  @media (--desktop-small) {
+    padding: 0;
+  }
+
   &__book-title {
     font-family: var(--primary-bold-font);
     color: var(--default-black-color);
@@ -31,7 +38,7 @@
 
   &__description {
     font-family: var(--primary-font);
-    width: 525px;
+    max-width: 525px;
     text-align: left;
     margin: 0 auto;
     font-size: 16px;
@@ -41,14 +48,18 @@
   }
 
   &__review {
-    width: 712px;
+    max-width: 712px;
     margin: 0 auto;
     text-align: left;
     font-family: var(--primary-font);
     font-size: 16px;
     color: var(--primary-text-color);
     padding-top: 25px;
-    padding-bottom: 100px;
+    padding-bottom: 25px;
+
+    @media (--desktop-small) {
+      padding-bottom: 100px;
+    }
   }
 
   &__review-paragraph {
