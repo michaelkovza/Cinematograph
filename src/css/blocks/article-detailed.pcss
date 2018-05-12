@@ -60,7 +60,11 @@
     div {
       position: relative;
       padding: 10px 0;
-      margin-bottom: 40px;
+      margin-bottom: 25px;
+
+      @media (--desktop-small) {
+        margin-bottom: 40px;
+      }
 
       &:after {
         content: '';
@@ -73,8 +77,8 @@
       }
 
       iframe {
-        width: 711px;
-        height: 399px;
+        max-width: 711px;
+        max-height: 399px;
       }
     }
 
@@ -85,7 +89,11 @@
     color: var(--default-black-color);
     font-weight: bold;
     font-size: 16px;
-    padding: 20px 0 2px 0;
+    padding: 15px 0 2px 0;
+
+    @media (--desktop-small) {
+      padding: 20px 0 2px 0;
+    }
   }
 
   &__video-area {

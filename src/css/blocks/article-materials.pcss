@@ -13,9 +13,13 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 440px;
+      width: 240px;
       height: 1px;
       background-color: var(--eighth-border-color);
+
+      @media (--desktop-small) {
+        width: 440px;
+      }
     }
 
   }
@@ -23,6 +27,11 @@
   &__video-list-container {
     display: flex;
     flex-flow: column nowrap;
+    width: 100%;
+
+    @media (--desktop-small) {
+      width: 60%;
+    }
   }
 
   &__video-list {
@@ -30,6 +39,11 @@
     font-family: var(--primary-font);
     font-size: 16px;
     color: var(--sixty-text-color);
+    list-style-type: none;
+
+    @media (--desktop-small) {
+      list-style-type: decimal;
+    }
   }
 
   &__video {

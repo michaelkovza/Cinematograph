@@ -1,21 +1,32 @@
 .banner {
+
   position: relative;
   padding: 9px;
-  height: 275px;
+  height: 160px;
   overflow: hidden;
   margin-top: 30px;
-  margin-bottom: 65px;
+  margin-bottom: 45px;
+
+  @media (--desktop-small) {
+    height: 275px;
+    margin-bottom: 65px;
+  }
+
 
   &__image {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     font-family: 'object-fit: cover;';
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
+
+    @media (--desktop-small) {
+      height: auto;
+    }
   }
 
   &__content-container {
@@ -25,28 +36,44 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
-    padding: 40px;
+    padding: 15px;
+
+    @media (--desktop-small) {
+      padding: 40px;
+    }
   }
 
   &__title {
     font-family: var(--primary-bold-font);
-    font-size: 36px;
+    font-size: 26px;
     text-transform: uppercase;
     color: var(--default-black-color);
+
+    @media (--desktop-small) {
+      font-size: 36px;
+    }
   }
 
   &__category {
     font-family: var(--primary-font);
-    font-size: 24px;
+    font-size: 22px;
     color: var(--default-black-color);
+
+    @media (--desktop-small) {
+      font-size: 24px;
+    }
   }
 
   &__views {
     font-family: var(--primary-font);
-    font-size: 16px;
+    font-size: 14px;
     color: var(--default-black-color);
     position: relative;
     margin:0 auto;
+
+    @media (--desktop-small) {
+      font-size: 16px;
+    }
 
     &:before {
       content: '';
@@ -62,15 +89,23 @@
 
   &__author {
     font-family: var(--primary-font);
-    font-size: 16px;
+    font-size: 14px;
     color: var(--default-black-color);
     display: inline-block;
+
+    @media (--desktop-small) {
+      font-size: 16px;
+    }
   }
 
   &__link {
     font-family: var(--primary-italic-font);
-    font-size: 16px;
+    font-size: 14px;
     color: var(--default-black-color);
     border-bottom: 1px solid var(--default-black-color);
+
+    @media (--desktop-small) {
+      font-size: 16px;
+    }
   }
 }

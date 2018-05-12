@@ -6,6 +6,11 @@
     font-size: 16px;
     color: var(--secondary-text-color);
     margin: 0 auto;
+    padding: 0 10px;
+
+    @media (--desktop-small) {
+      padding: 0;
+    }
 
     img {
       display: block;
@@ -32,8 +37,12 @@
   }
 
   &__photo-links {
-    width: 884px;
     margin: 0 auto;
+    width: 320px;
+
+    @media (--desktop-small) {
+      width: 884px;
+    }
   }
 
 }
