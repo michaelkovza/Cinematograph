@@ -1,7 +1,9 @@
+include ../blocks/term-card
 include ../blocks/footer
 main.main#main
     include ../blocks/header
     include ../blocks/article-detailed
+    +term-card('term-card main__term-card js-term-card term-card--disable')
     div.commerical-with-line-container
         include ../blocks/commerical-with-line
     +footer('footer main__footer main__footer--with-out-margin')

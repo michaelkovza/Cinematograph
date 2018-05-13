@@ -1,12 +1,20 @@
 .article-detailed-container {
 
   &__article-materials {
-    padding-bottom: 55px;
+    padding-bottom: 25px;
+
+    @media (--desktop-small) {
+      padding-bottom: 55px;
+    }
   }
 
   &__article-source {
-    padding-bottom: 70px;
+    padding: 0 10px 20px;
     justify-content: space-between;
+
+    @media (--desktop-small) {
+      padding: 0 0 70px;
+    }
   }
 
   &__simple-links {

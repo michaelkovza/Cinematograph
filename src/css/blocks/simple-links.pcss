@@ -2,14 +2,26 @@
   display: flex;
   flex-flow: row nowrap;
   margin: 0 auto;
-  width: 712px;
+  justify-content: space-between;
+  padding: 10px;
+  width: 320px;
+
+  @media (--desktop-small) {
+    width: 712px;
+    padding: 0;
+    justify-content: inherit;
+  }
 
   &__link {
     display: block;
     position: relative;
     border: 1px solid var(--secondary-accent-color);
-    width: 50%;
+    width: 148px;
     height: 120px;
+
+    @media (--desktop-small) {
+      width: 50%;
+    }
   }
 
 
@@ -25,33 +37,40 @@
   }
 
   &__prev-link {
-    border-right-color:  transparent;
-    margin-top: 12px;
 
-    &--with-right-border {
-      border-right-color: var(--secondary-accent-color);
+
+    @media (--desktop-small) {
+      border-right-color:  transparent;
+      margin-top: 12px;
+
+      &--with-right-border {
+        border-right-color: var(--secondary-accent-color);
+
+        &:after {
+          display: none;
+        }
+      }
 
       &:after {
-        display: none;
+        content: '';
+        position: absolute;
+        height: 132px;
+        right: -1px;
+        top: -13px;
+        width: 1px;
+        background-color: var(--secondary-accent-color);
       }
-    }
-
-    &:after {
-      content: '';
-      position: absolute;
-      height: 132px;
-      right: -1px;
-      top: -13px;
-      width: 1px;
-      background-color: var(--secondary-accent-color);
     }
   }
 
   &__next-link {
-    border-left-color: transparent;
 
-    &--with-left-border {
-      border-left-color: var(--secondary-accent-color);
+    @media (--desktop-small) {
+      border-left-color: transparent;
+
+      &--with-left-border {
+        border-left-color: var(--secondary-accent-color);
+      }
     }
   }
 

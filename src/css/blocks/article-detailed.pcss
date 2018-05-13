@@ -35,6 +35,12 @@
 
     p {
       padding-bottom: 20px;
+
+      a {
+        color: var(--secondary-accent-color);
+        text-decoration: underline;
+      }
+
     }
 
     span {
@@ -44,10 +50,7 @@
       text-decoration: underline;
     }
 
-    a {
-      color: var(--secondary-accent-color);
-      text-decoration: underline;
-    }
+
 
     img {
       display: block;
@@ -71,9 +74,13 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 440px;
+        width: 240px;
         height: 1px;
         background-color: var(--eighth-border-color);
+
+        @media (--desktop-small) {
+          width: 440px;
+        }
       }
 
       iframe {
@@ -101,6 +108,7 @@
     color: var(--primary-text-color);
     font-size: 14px;
     font-weight: normal;
+    display: block;
 
   }
 
@@ -108,5 +116,10 @@
     position: absolute;
     right: 0;
     top: 0;
+    display: none;
+
+    @media (--desktop-small) {
+      display: block;
+    }
   }
 }

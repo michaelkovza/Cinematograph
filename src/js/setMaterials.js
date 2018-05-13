@@ -3,6 +3,7 @@ const setMaterials = ( {materialsVideoArr, materialsContentList, materialsVideoL
     for(let i = 0; i < materialsVideoArr.length; i++) {
         let materialsVideoTitle = materialsVideoArr[i].getAttribute('data-title');
         let materialsVideoDescription = materialsVideoArr[i].getAttribute('data-description');
+        let materialsVideoHref = materialsVideoArr[i].getAttribute('data-href');
         let materialsVideoArea = materialsVideoArr[i].getAttribute('data-area');
         let materailsVideoSrc = materialsVideoArr[i].getAttribute('src');
 
@@ -10,9 +11,9 @@ const setMaterials = ( {materialsVideoArr, materialsContentList, materialsVideoL
             `<h3 class="article-detailed__video-title"> 
                 ${materialsVideoTitle}
              </h3>
-             <h4 class="article-detailed__video-area">
+             <a class="article-detailed__video-area" href=${materialsVideoHref} target="_blank">
                 ${materialsVideoArea}
-             </h4>`
+             </a>`
         );
 
         materialsContentList.insertAdjacentHTML('beforeend',

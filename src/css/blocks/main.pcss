@@ -1,4 +1,21 @@
 .main {
+
+  &__term-card {
+    width: 96%;
+    background: red;
+    margin: 0 auto;
+    position: fixed;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    z-index: 5;
+
+    @media (--desktop-small) {
+      display: none;
+    }
+  }
+
   &__footer {
     margin-top: 50px;
 

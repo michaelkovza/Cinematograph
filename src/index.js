@@ -13,6 +13,7 @@ import notification from "./js/notification";
 import showFooter from "./js/showFooter";
 import browserDetection from "./js/browserDetection";
 import setImageArticleDescription from './js/setImageArticleDescription';
+import createTermCard from './js/createTermCard';
 
 
 window.addEventListener('load', () => {
@@ -98,6 +99,13 @@ window.addEventListener('load', () => {
 
     browserDetection(browserDetectionOptions);
 
+    const createTermCardOptions = {
+      termCard: document.getElementsByClassName('js-term-card')[0],
+      terms: document.getElementsByClassName('js-term'),
+      termCardDisableClass: 'term-card--disable'
+    };
+
+    createTermCard(createTermCardOptions);
 
 
     infiniteScroll();
