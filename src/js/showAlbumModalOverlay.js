@@ -1,12 +1,14 @@
 import disableScroll from './disableScroll';
 
-const showAlbumModalOverlay = ({albumPhotosSelector, albumModalOverlaySelector, albumModalOverlayImageSelector, albumModalOverlaySelectorClosedClass, prevButton, nextButton}) => {
+const showAlbumModalOverlay = ({albumPhotosSelector, albumModalOverlaySelector, albumModalOverlayImageSelector, albumModalOverlaySelectorClosedClass, albumModalOverlayHorizontalClass, albumModalOverlayImageHorizontalClass, prevButton, nextButton}) => {
 
     if(albumModalOverlaySelector === undefined) {
         return
     }
 
     let photoIndex = null;
+
+    const horizontalImageClass = 'album__image--horizontal';
 
     const albumPhotosSelectorArr = Array.prototype.slice.call(albumPhotosSelector);
 
@@ -50,6 +52,11 @@ const showAlbumModalOverlay = ({albumPhotosSelector, albumModalOverlaySelector, 
 
     albumPhotosSelectorArr.forEach((item, index) => {
         item.addEventListener('click', () => {
+
+            if(item.classList.contains(horizontalImageClass)) {
+                albumModalOverlaySelector.classList.add(albumModalOverlayHorizontalClass);
+                albumModalOverlayImageSelector.classList.add(albumModalOverlayImageHorizontalClass);
+            }
 
             photoIndex = index;
 

@@ -32,6 +32,8 @@ window.addEventListener('load', () => {
       albumModalOverlaySelector: document.getElementsByClassName('js-album-modal-overlay')[0],
       albumModalOverlayImageSelector: document.getElementsByClassName('js-album-modal-overlay-image')[0],
       albumModalOverlaySelectorClosedClass: 'album-modal-overlay--closed',
+      albumModalOverlayHorizontalClass: 'album-modal-overlay--horizontal',
+      albumModalOverlayImageHorizontalClass: 'album-modal-overlay__image--horizontal',
       prevButton: document.getElementsByClassName('js-prev-button')[0],
       nextButton: document.getElementsByClassName('js-next-button')[0]
     };

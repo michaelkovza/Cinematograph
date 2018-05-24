@@ -84,8 +84,24 @@
       }
 
       iframe {
-        max-width: 711px;
-        max-height: 399px;
+        /*max-width: 711px;
+        max-height: 399px;*/
+        width: 100%;
+        height: 230px;
+        display: block;
+
+        @media (--tablet-small) {
+          height: 310px;
+        }
+
+        @media (--tablet) {
+          height: 426px;
+        }
+
+        @media (--tablet-large) {
+          height: 399px;
+        }
+
       }
     }
 
