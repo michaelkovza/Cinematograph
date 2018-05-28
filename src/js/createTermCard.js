@@ -6,6 +6,9 @@ const createTermCard = ({ termCard, terms, termCardDisableClass }) => {
         return
     }
 
+    if(!termCard) {
+        return
+    }
 
     const termCardTitle = termCard.getElementsByClassName('term-card__title')[0];
     const termCardDescription = termCard.getElementsByClassName('term-card__description')[0];

@@ -12,17 +12,9 @@
     display: none;
   }
 
-  &--horizontal &__content-container {
-    width: 850px;
-  }
-
-  &--horizontal &__image {
-    width: 85.384615%;
-    height: 75.384615%;
-  }
 
   &__content-container {
-    width: 650px;
+    width: 850px;
     height: 650px;
     background-color: var(--primary-rgba-background-color);
     position: fixed;
@@ -35,9 +27,10 @@
   }
 
   &__image {
-    width: 65.38461538461539%;
-    height: 95.38461538461539%;
-    object-fit: cover;
+    width: 85.384615%;
+    height: 75.384615%;
+    object-fit: contain;
+    font-family: 'object-fit: contain;';
   }
 
   &__arrow {
