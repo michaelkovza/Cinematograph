@@ -27,8 +27,14 @@
   &__footer {
     margin-top: 50px;
 
-    &--with-out-margin {
+    &--without-margin {
       margin-top: 0;
+    }
+
+    &--with-margin-on-tablet-small {
+      @media (--tablet-small) {
+        margin-top: 50px;
+      }
     }
   }
 }
