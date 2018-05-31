@@ -31,7 +31,8 @@ mixin footer(classNames)
                         form.footer__form.form
                             fieldset.form__fieldset
                                 legend.form__title Оставьте e-mail, чтобы получать наши избранные материалы
-                                input.form__input.js-input-email(type="email" required placeholder="Ваш E-mail")
-                                button.form__button.js-form-button(disabled title="Отправить")
+                                div.form__data-container
+                                    input.form__input.js-input-email(type="email" required placeholder="Ваш E-mail")
+                                    button.form__button.js-form-button(disabled title="Отправить")
                             span.form__status.form__status--hidden.js-form-status
                         p.footer__notice Нажимая кнопку отправки, Вы&nbsp;даёте согласие на&nbsp;обработку персональных данных в&nbsp;соответствии с&nbsp;действующим Федеральным законом &laquo;О&nbsp;персональных данных&raquo;.

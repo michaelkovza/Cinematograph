@@ -1,8 +1,11 @@
 .form {
-  position: relative;
-
   &__title {
     padding-bottom: 20px;
+  }
+
+  &__data-container {
+    position: relative;
+    width: 210px;
   }
 
   &__input {
@@ -23,9 +26,10 @@
     transform-origin: 0;
     outline: none;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(55px, 18px) rotate(45deg);
+    right: 0;
+    top: 1px;
+    transform: rotate(45deg);
+    transform-origin: 0 0 0;
   }
 
   &__status {

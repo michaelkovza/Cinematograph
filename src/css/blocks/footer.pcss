@@ -43,11 +43,13 @@
     flex-flow: row wrap;
     justify-content: space-between;
 
-    @media (--desktop-small) {
+    @media (--tablet) {
+      width: auto;
+      margin: 0 auto;
       justify-content: unset;
       padding-bottom: 55px;
+      flex-flow: row nowrap;
     }
-
   }
 
   &__navigation--mobile &__list {
@@ -55,7 +57,7 @@
     margin: 0;
     padding: 0 10px;
 
-    @media (--desktop-small) {
+    @media (--tablet) {
       width: 60%;
       margin: 0 auto;
     }
@@ -63,7 +65,7 @@
     &--form {
       padding: 15px 10px 0;
 
-      @media (--desktop-small) {
+      @media (--tablet) {
         padding: 0 10px;
       }
     }
