@@ -16,9 +16,13 @@
     display: block;
     overflow: hidden;
 
+    @media (--tablet) {
+      height: 190px;
+      width: 335px;
+    }
+
     @media (--desktop-small) {
       width: 436px;
-      height: 190px;
     }
 
     &:before {
@@ -27,7 +31,7 @@
       height: 130%;
       display: none;
 
-      @media (--desktop-small) {
+      @media (--tablet) {
         display: block;
       }
     }
@@ -62,9 +66,9 @@
     font-family: 'object-fit: cover;';
     z-index: -1;
     width: 100%;
-    height: auto;
+    height: 100%;
 
-    @media (--desktop-small) {
+    @media (--tablet) {
       display: block;
     }
   }
@@ -105,7 +109,7 @@
     border: 1px solid var(--primary-rgba-border-color);
     background: var(--secondary-rgba-background-color);
 
-    @media (--desktop-small) {
+    @media (--tablet) {
       width: 168px;
     }
   }
