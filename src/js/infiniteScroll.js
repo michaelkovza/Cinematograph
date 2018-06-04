@@ -80,9 +80,14 @@ const infiniteScroll = () => {
                 if(dataPagination[type].count <= dataPagination[type].endPage) {
                     loader.classList.remove(loaderHiddenClass);
                     return `${currentUrl}/index.php?PAGEN_${dataPagination[type].navNum}=${dataPagination[type].count}`;
-                } else {
+                }
+
+                console.log(dataPagination[type].count , dataPagination[type].endPage );
+
+                if(dataPagination[type].count >= dataPagination[type].endPage) {
                     showMoreButton.classList.add(showMoreButtonHiddenClass);
                 }
+
 
                 return null;
             };
