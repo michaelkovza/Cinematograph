@@ -76,17 +76,19 @@ const infiniteScroll = () => {
 
                 dataPagination[type].count = ++dataPagination[type].count;
 
+                if(dataPagination[type].count >= dataPagination[type].endPage) {
+                    showMoreButton.classList.add(showMoreButtonHiddenClass);
+                }
+
 
                 if(dataPagination[type].count <= dataPagination[type].endPage) {
                     loader.classList.remove(loaderHiddenClass);
                     return `${currentUrl}/index.php?PAGEN_${dataPagination[type].navNum}=${dataPagination[type].count}`;
                 }
 
-                console.log(dataPagination[type].count , dataPagination[type].endPage );
 
-                if(dataPagination[type].count >= dataPagination[type].endPage) {
-                    showMoreButton.classList.add(showMoreButtonHiddenClass);
-                }
+
+
 
 
                 return null;
