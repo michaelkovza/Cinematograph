@@ -15,9 +15,9 @@ const createTermCard = ({ termCard, terms, termCardDisableClass }) => {
     const termCardCloseButton = termCard.getElementsByClassName('term-card__close-button')[0];
 
     for(let i = 0; i < terms.length; i++) {
-        terms[i].addEventListener('click', (e) => {
-            let dataTermTitle = e.target.getAttribute('data-term-title');
-            let dataTermDescription = e.target.getAttribute('data-term-description');
+        terms[i].addEventListener('click', () => {
+            let dataTermTitle = terms[i].getAttribute('data-term-title');
+            let dataTermDescription = terms[i].getAttribute('data-term-description');
             termCardTitle.innerHTML = dataTermTitle;
             termCardDescription.innerHTML = dataTermDescription;
             termCard.classList.remove(termCardDisableClass);

@@ -52,6 +52,7 @@ const infiniteScroll = () => {
     }
 
     const showMoreButton = document.getElementsByClassName('js-show-more')[0];
+    const showMoreButtonHiddenClass = 'show-more--hidden';
 
     let dataPagination = {};
 
@@ -80,6 +81,11 @@ const infiniteScroll = () => {
                     loader.classList.remove(loaderHiddenClass);
                     return `${currentUrl}/index.php?PAGEN_${dataPagination[type].navNum}=${dataPagination[type].count}`;
                 }
+
+                if(dataPagination[type].count >= dataPagination[type].endPage) {
+                    showMoreButton.classList.add(showMoreButtonHiddenClass);
+                }
+
 
                 return null;
             };
