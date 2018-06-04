@@ -86,11 +86,6 @@ const infiniteScroll = () => {
                     return `${currentUrl}/index.php?PAGEN_${dataPagination[type].navNum}=${dataPagination[type].count}`;
                 }
 
-
-
-
-
-
                 return null;
             };
 
