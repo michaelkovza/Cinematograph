@@ -55,6 +55,7 @@
 
   &--with-border &__image-container {
     height: 250px;
+    width: 170px;
     display: block;
   }
 
@@ -74,6 +75,10 @@
     font-size: 14px;
     position: absolute;
     top: -246px;
+  }
+
+  &--book &__image-container {
+    width: auto;
   }
 
   &--book &__image {
@@ -122,9 +127,9 @@
     margin: 0 auto;
     display: block;
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    font-family: 'object-fit: cover;';
+    height: 100%;
+    object-fit: contain;
+    font-family: 'object-fit: contain;';
     transform: scale(1);
     transition: transform 0.3s;
 

@@ -1,7 +1,8 @@
 import _ from 'lodash';
+import isMobile from './isMobile';
 
-let reviewsButton = document.getElementsByClassName('js-reviews-button')[0];
-let articlesButton = document.getElementsByClassName('js-articles-button')[0];
+const reviewsButton = document.getElementsByClassName('js-reviews-button')[0];
+const articlesButton = document.getElementsByClassName('js-articles-button')[0];
 
 // везде тип default, если это не страница журнал
 
@@ -49,6 +50,8 @@ const infiniteScroll = () => {
     if (!infinityContainer) {
         return
     }
+
+    const showMoreButton = document.getElementsByClassName('js-show-more')[0];
 
     let dataPagination = {};
 
@@ -113,9 +116,17 @@ const infiniteScroll = () => {
         xhr.send(data);
     };
 
-    window.onscroll = function() {
-        if(window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+    if(isMobile()) {
+        showMoreButton.addEventListener('click', function () {
             getData();
+        })
+    }
+
+    if(!isMobile()) {
+        window.onscroll = function () {
+            if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+                getData();
+            }
         }
     }
 };
