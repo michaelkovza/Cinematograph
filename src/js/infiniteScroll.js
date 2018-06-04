@@ -83,7 +83,7 @@ const infiniteScroll = () => {
                 } else {
                     showMoreButton.classList.add(showMoreButtonHiddenClass);
                 }
-                
+
                 return null;
             };
 
