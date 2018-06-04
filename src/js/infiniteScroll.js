@@ -51,8 +51,6 @@ const infiniteScroll = () => {
         return
     }
 
-    const showMoreButton = document.getElementsByClassName('js-show-more')[0];
-    const showMoreButtonHiddenClass = 'show-more--hidden';
 
     let dataPagination = {};
 
@@ -60,8 +58,15 @@ const infiniteScroll = () => {
     initDataPagination(types.articles, dataPagination, 'articles');
     initDataPagination(types.reviews, dataPagination, 'reviews');
 
-    let loader = document.getElementsByClassName('js-loader')[0];
-    let loaderHiddenClass = 'loader--hidden';
+    const loader = document.getElementsByClassName('js-loader')[0];
+    const loaderHiddenClass = 'loader--hidden';
+
+    const showMoreButton = document.getElementsByClassName('js-show-more')[0];
+    const showMoreButtonHiddenClass = 'show-more--hidden';
+
+    if(dataPagination[type].count >= dataPagination[type].endPage) {
+        showMoreButton.classList.add(showMoreButtonHiddenClass);
+    }
 
     const getData = () => {
 
