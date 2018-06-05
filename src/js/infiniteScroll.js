@@ -12,7 +12,6 @@ const types = {
   reviews: 'reviews'
 };
 
-
 let type = types.default;
 
 if (reviewsButton !== undefined && articlesButton !== undefined) {
@@ -41,6 +40,12 @@ const initDataPagination = (type, dataObj, scrollDataProp) => {
 
 };
 
+const showShowMoreButton = (currentCount, endPageCount, showMoreButton, showMoreButtonShownClass) => {
+    if(currentCount < endPageCount) {
+        showMoreButton.classList.add(showMoreButtonShownClass);
+    }
+};
+
 const infiniteScroll = () => {
 
     let currentUrl = window.location.href;
@@ -50,7 +55,6 @@ const infiniteScroll = () => {
     if (!infinityContainer) {
         return
     }
-
 
     let dataPagination = {};
 
@@ -64,9 +68,7 @@ const infiniteScroll = () => {
     const showMoreButton = document.getElementsByClassName('js-show-more')[0];
     const showMoreButtonShownClass = 'show-more--shown';
 
-    if(dataPagination[type].count < dataPagination[type].endPage) {
-        showMoreButton.classList.add(showMoreButtonShownClass);
-    }
+    showShowMoreButton(dataPagination[type].count, dataPagination[type].endPage, showMoreButton, showMoreButtonShownClass);
 
     const getData = () => {
 
@@ -81,9 +83,7 @@ const infiniteScroll = () => {
 
                 dataPagination[type].count = ++dataPagination[type].count;
 
-                if(dataPagination[type].count < dataPagination[type].endPage) {
-                    showMoreButton.classList.add(showMoreButtonShownClass);
-                }
+                showShowMoreButton(dataPagination[type].count, dataPagination[type].endPage, showMoreButton, showMoreButtonShownClass);
 
                 if(dataPagination[type].count <= dataPagination[type].endPage) {
                     loader.classList.remove(loaderHiddenClass);
