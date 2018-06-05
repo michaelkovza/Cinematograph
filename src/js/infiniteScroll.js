@@ -62,10 +62,10 @@ const infiniteScroll = () => {
     const loaderHiddenClass = 'loader--hidden';
 
     const showMoreButton = document.getElementsByClassName('js-show-more')[0];
-    const showMoreButtonHiddenClass = 'show-more--hidden';
+    const showMoreButtonShownClass = 'show-more--shown';
 
-    if(dataPagination[type].count >= dataPagination[type].endPage) {
-        showMoreButton.classList.add(showMoreButtonHiddenClass);
+    if(dataPagination[type].count < dataPagination[type].endPage) {
+        showMoreButton.classList.add(showMoreButtonShownClass);
     }
 
     const getData = () => {
@@ -81,10 +81,9 @@ const infiniteScroll = () => {
 
                 dataPagination[type].count = ++dataPagination[type].count;
 
-                if(dataPagination[type].count >= dataPagination[type].endPage) {
-                    showMoreButton.classList.add(showMoreButtonHiddenClass);
+                if(dataPagination[type].count < dataPagination[type].endPage) {
+                    showMoreButton.classList.add(showMoreButtonShownClass);
                 }
-
 
                 if(dataPagination[type].count <= dataPagination[type].endPage) {
                     loader.classList.remove(loaderHiddenClass);
