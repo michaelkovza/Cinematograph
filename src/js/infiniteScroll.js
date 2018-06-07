@@ -43,6 +43,8 @@ const initDataPagination = (type, dataObj, scrollDataProp) => {
 const showShowMoreButton = (currentCount, endPageCount, showMoreButton, showMoreButtonShownClass) => {
     if(currentCount < endPageCount) {
         showMoreButton.classList.add(showMoreButtonShownClass);
+    } else {
+        showMoreButton.classList.remove(showMoreButtonShownClass);
     }
 };
 
