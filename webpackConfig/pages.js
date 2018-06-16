@@ -1,5 +1,5 @@
 module.exports = [
-    /*{
+    {
         title: '«index»',
         filename: 'index.html',
         template: 'src/html/layouts/layout.pug',
@@ -186,7 +186,6 @@ module.exports = [
         },
         chunks: ['index']
     }
-*/
 
 ];
 

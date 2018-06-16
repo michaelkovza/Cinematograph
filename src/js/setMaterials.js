@@ -1,4 +1,9 @@
-const setMaterials = ( {materialsVideoArr, materialsContentList, materialsVideoList}) => {
+const setMaterials = ( {materialsVideoArr, materialsContentList, materialsVideoList, materials, materialsHiddenClass}) => {
+
+
+    if(materialsVideoArr.length === 0) {
+        materials.classList.add(materialsHiddenClass)
+    }
 
     for(let i = 0; i < materialsVideoArr.length; i++) {
         let materialsVideoTitle = materialsVideoArr[i].getAttribute('data-title');

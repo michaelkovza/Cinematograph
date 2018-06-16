@@ -65,7 +65,9 @@ window.addEventListener('load', () => {
     const setMaterialsOptions = {
       materialsVideoArr: document.getElementsByClassName('js-article-materials-video'),
       materialsContentList: document.getElementsByClassName('js-article-materials-content-list')[0],
-      materialsVideoList: document.getElementsByClassName('js-article-materials-video-list')[0]
+      materialsVideoList: document.getElementsByClassName('js-article-materials-video-list')[0],
+      materials: document.getElementsByClassName('js-article-materials')[0],
+      materialsHiddenClass: 'article-materials--hidden'
     };
 
     setMaterials(setMaterialsOptions);
