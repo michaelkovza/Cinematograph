@@ -1,6 +1,6 @@
 const setMaterials = ( {materialsVideoArr, materialsContentList, materialsVideoList, materials, materialsHiddenClass}) => {
 
-    if(materials === undefined) {
+    if(!materials) {
         return
     }
 
