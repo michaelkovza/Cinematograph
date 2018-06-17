@@ -155,14 +155,14 @@ const webpackConfig = {
 
 if (IS_PRODUCTION) {
     webpackConfig.plugins.push(
-       /* new webpack.optimize.UglifyJsPlugin({
+        new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
             },
             beautify: true,
             sourceMap: false,
             warnings: false
-        }),*/
+        }),
         new ExtractTextPlugin('[name].css'),
         new CompressionPlugin({
             asset: '[file].gz',
