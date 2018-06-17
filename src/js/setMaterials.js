@@ -1,5 +1,9 @@
 const setMaterials = ( {materialsVideoArr, materialsContentList, materialsVideoList, materials, materialsHiddenClass}) => {
 
+    if(materials === undefined) {
+        return
+    }
+
 
     if(materialsVideoArr.length === 0) {
         materials.classList.add(materialsHiddenClass)
