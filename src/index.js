@@ -1,5 +1,5 @@
 import './css/index.pcss';
-import shave from 'shave';
+/*import shave from 'shave';*/
 import objectFitImages from 'object-fit-images';
 import ShareToSocialNetworks from './js/ShareToSocialNetworks';
 import createTerm from './js/createTerm';
@@ -14,12 +14,16 @@ import showFooter from "./js/showFooter";
 import browserDetection from "./js/browserDetection";
 import setImageArticleDescription from './js/setImageArticleDescription';
 import createTermCard from './js/createTermCard';
+import { TrackPagePart } from "./js/track-page";
 
+let counters = new TrackPagePart();
 
 window.addEventListener('load', () => {
+    counters.init();
+
     objectFitImages();
 
-    shave('.card-text-shave', 200);
+    /*shave('.card-text-shave', 200);*/
 
     const ShareToSocialNetworksOptions = {
         'buttonSelector': document.getElementsByClassName('share')
