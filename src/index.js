@@ -16,7 +16,7 @@ import setImageArticleDescription from './js/setImageArticleDescription';
 import createTermCard from './js/createTermCard';
 import { TrackPagePart } from "./js/track-page";
 
-let counters = new TrackPagePart();
+const counters = new TrackPagePart();
 
 window.addEventListener('load', () => {
     counters.init();
