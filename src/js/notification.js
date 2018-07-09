@@ -64,9 +64,16 @@ const notifcation = () => {
 
     requestPermission()
         .then(() => subscribeUserToPush())
-        .then(pushSubscription => fetch(notifyApiUrl, { method: 'post', body: {pushSubscription: JSON.stringify(pushSubscription)}}))
+        .then(pushSubscription => {
 
+                let data = new FormData();
 
+                data.append("pushSubscription", JSON.stringify(pushSubscription));
+
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", notifyApiUrl);
+                xhr.send(data);
+            })
 
 };
 
