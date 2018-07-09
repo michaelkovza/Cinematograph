@@ -9,7 +9,7 @@ const notifcation = () => {
         return;
     }
 
-    let key = 'AIzaSyCaP3DNqjHDcHBOlaQkQW1klPDE9PdcZOo';
+    let key = 'BP5xy530cEfpf1lqLLRg5IToSZu5or9K9yx6tkpjTlTN-UCebqxQdYIma0npq1GPB4pp-2wTPLpNJTD88UkJxrc';
 
     function urlBase64ToUint8Array(base64String) {
         const padding = '='.repeat((4 - base64String.length % 4) % 4);
@@ -45,7 +45,7 @@ const notifcation = () => {
     }
 
     function subscribeUserToPush() {
-        return navigator.serviceWorker.register('sw.js', { scope: '/testnotifications/'} )
+        return navigator.serviceWorker.register('sw.js')
             .then(function(registration) {
                 let subscribeOptions = {
                     userVisibleOnly: true,
