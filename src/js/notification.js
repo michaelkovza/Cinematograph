@@ -60,7 +60,7 @@ const notifcation = () => {
             });
     }
 
-    const notifyApiUrl  = `${window.location.origin}/api/subscribeToNotify`;
+    const notifyApiUrl  = `https://cinematograph.media/api/subscribeToNotify`;
 
     requestPermission()
         .then(() => subscribeUserToPush())
