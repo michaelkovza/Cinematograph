@@ -9,7 +9,7 @@ const notifcation = () => {
         return;
     }
 
-    let key = 'BOTjgA6ekOZ_DQHOe88M_NsS5DqRg17IYmPdvXPqFw0Oe027vu0UuVXeUBXGjlOQ2N-2OF9ZL2gSDWy0cSuwbgY';
+    let key = 'AIzaSyCaP3DNqjHDcHBOlaQkQW1klPDE9PdcZOo';
 
     function urlBase64ToUint8Array(base64String) {
         const padding = '='.repeat((4 - base64String.length % 4) % 4);

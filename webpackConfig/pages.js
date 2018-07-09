@@ -1,5 +1,5 @@
 module.exports = [
-    {
+   /* {
         title: '«index»',
         filename: 'index.html',
         template: 'src/html/layouts/layout.pug',
@@ -184,8 +184,8 @@ module.exports = [
         env: {
             page: 'search-page-not-found.pug'
         },
-        chunks: ['index']
-    }
+        */chunks: ['index']
+   /* }*/
 
 ];
 
