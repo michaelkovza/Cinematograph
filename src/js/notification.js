@@ -64,7 +64,7 @@ const notifcation = () => {
 
     requestPermission()
         .then(() => subscribeUserToPush())
-        .then(pushSubscription => fetch(notifyApiUrl, { method: 'post', body: {endpoint: pushSubscription}}))
+        .then(pushSubscription => fetch(notifyApiUrl, { method: 'post', body: {pushSubscription: JSON.stringify(pushSubscription)}}))
 
 
 
