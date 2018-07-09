@@ -45,7 +45,7 @@ const notifcation = () => {
     }
 
     function subscribeUserToPush() {
-        return navigator.serviceWorker.register('sw.js', { scope: '/testnotifications/'} )
+        return navigator.serviceWorker.register('/testnotifications/sw.js', { scope: '/testnotifications/'} )
             .then(function(registration) {
                 let subscribeOptions = {
                     userVisibleOnly: true,
