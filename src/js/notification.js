@@ -45,7 +45,7 @@ const notifcation = () => {
     }
 
     function subscribeUserToPush() {
-        return navigator.serviceWorker.register('sw.js')
+        return navigator.serviceWorker.register('sw.js', { scope: '/testnotifications/'} )
             .then(function(registration) {
                 let subscribeOptions = {
                     userVisibleOnly: true,
@@ -60,11 +60,11 @@ const notifcation = () => {
             });
     }
 
-    const notifyApiUrl  = `${window.location.origin}/api/subscribeToNotification`;
+    const notifyApiUrl  = `${window.location.origin}/api/subscribeToNotify`;
 
     requestPermission()
         .then(() => subscribeUserToPush())
-        .then(pushSubscription => fetch(notifyApiUrl, { method: 'post', body: {endpoint: pushSubscription.endpoint}}))
+        .then(pushSubscription => fetch(notifyApiUrl, { method: 'post', body: {endpoint: pushSubscription}}))
 
 
 
