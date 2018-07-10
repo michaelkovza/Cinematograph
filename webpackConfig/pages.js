@@ -9,7 +9,7 @@ module.exports = [
             page: 'index.pug'
         },
         chunks: ['index']
-    },
+    }/*,
     {
         title: '«materials»',
         filename: 'materials.html',
@@ -185,7 +185,7 @@ module.exports = [
             page: 'search-page-not-found.pug'
         },
         chunks: ['index']
-    }
+    }*/
 
 ];
 

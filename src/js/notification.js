@@ -9,7 +9,7 @@ const notifcation = () => {
         return;
     }
 
-    let key = 'BOTjgA6ekOZ_DQHOe88M_NsS5DqRg17IYmPdvXPqFw0Oe027vu0UuVXeUBXGjlOQ2N-2OF9ZL2gSDWy0cSuwbgY';
+    let key = 'BP5xy530cEfpf1lqLLRg5IToSZu5or9K9yx6tkpjTlTN-UCebqxQdYIma0npq1GPB4pp-2wTPLpNJTD88UkJxrc';
 
     function urlBase64ToUint8Array(base64String) {
         const padding = '='.repeat((4 - base64String.length % 4) % 4);
@@ -60,13 +60,20 @@ const notifcation = () => {
             });
     }
 
-    const notifyApiUrl  = `${window.location.origin}/api/subscribeToNotification`;
+    const notifyApiUrl  = `${window.location.origin}/api/subscribeToNotify`;
 
     requestPermission()
         .then(() => subscribeUserToPush())
-        .then(pushSubscription => fetch(notifyApiUrl, { method: 'post', body: {pushSubscriptionObj: pushSubscription}}))
+        .then(pushSubscription => {
 
+                let data = new FormData();
 
+                data.append("pushSubscription", JSON.stringify(pushSubscription));
+
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", notifyApiUrl);
+                xhr.send(data);
+            })
 
 };
 
