@@ -9,7 +9,7 @@ let config = {
     messagingSenderId: "854998265633"
 };
 
-let app = firebase.initializeApp(config);
+firebase.initializeApp(config);
 const messaging = firebase.messaging();
 
 
@@ -28,6 +28,10 @@ const notifcation = () => {
     })
     .catch(function(err) {
         console.log('Unable to get permission to notify.', err);
+    });
+
+    messaging.onMessage(function (payload) {
+        console.log('onMessage', payload)
     });
    /* if (!('serviceWorker' in navigator)) {
         // Браузер не поддерживает сервис-воркеры.
@@ -75,7 +79,7 @@ const notifcation = () => {
     }
 
     function subscribeUserToPush() {
-        return navigator.serviceWorker.register('sw.js')
+        return navigator.serviceWorker.register('firebase-messaging-sw.js')
             .then(function(registration) {
                 let subscribeOptions = {
                     userVisibleOnly: true,
