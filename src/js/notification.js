@@ -1,5 +1,35 @@
+import firebase from 'firebase';
+
+let config = {
+    apiKey: "AIzaSyCaP3DNqjHDcHBOlaQkQW1klPDE9PdcZOo",
+    authDomain: "cinematograph-2c5b2.firebaseapp.com",
+    databaseURL: "https://cinematograph-2c5b2.firebaseio.com/",
+    projectId: "cinematograph-2c5b2",
+    storageBucket: "cinematograph-2c5b2.appspot.com",
+    messagingSenderId: "854998265633"
+};
+
+let app = firebase.initializeApp(config);
+const messaging = firebase.messaging();
+
+
+
+
 const notifcation = () => {
-    if (!('serviceWorker' in navigator)) {
+
+    messaging.requestPermission().then(function() {
+        console.log('Notification permission granted.');
+        // TODO(developer): Retrieve an Instance ID token for use with FCM.
+        return messaging.getToken();
+        // ...
+    })
+    .then(function (token) {
+        console.log(token);
+    })
+    .catch(function(err) {
+        console.log('Unable to get permission to notify.', err);
+    });
+   /* if (!('serviceWorker' in navigator)) {
         // Браузер не поддерживает сервис-воркеры.
         return;
     }
@@ -73,7 +103,7 @@ const notifcation = () => {
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", notifyApiUrl);
                 xhr.send(data);
-            })
+            })*/
 
 };
 
