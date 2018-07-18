@@ -18,9 +18,8 @@ const notifcation = () => {
 
   messaging.requestPermission().then(function () {
     console.log('Notification permission granted.');
-    // TODO(developer): Retrieve an Instance ID token for use with FCM.
     return messaging.getToken();
-    // ...
+
   })
     .then(function (token) {
 
@@ -38,7 +37,8 @@ const notifcation = () => {
     });
 
   messaging.onMessage(function (payload) {
-    console.log('onMessage', payload)
+    console.log('onMessage', payload);
+    return new Notification('hello', {body: payload.notification.body})
   });
 };
 
