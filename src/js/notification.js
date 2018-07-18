@@ -12,8 +12,7 @@ let config = {
 firebase.initializeApp(config);
 const messaging = firebase.messaging();
 
-
-
+const notifyApiUrl  = `${window.location.origin}/api/subscribeToNotify`;
 
 const notifcation = () => {
 
@@ -24,7 +23,15 @@ const notifcation = () => {
         // ...
     })
     .then(function (token) {
-        console.log(token);
+
+      let data = new FormData();
+
+      data.append("pushSubscription", token);
+
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", notifyApiUrl);
+      xhr.send(data);
+
     })
     .catch(function(err) {
         console.log('Unable to get permission to notify.', err);

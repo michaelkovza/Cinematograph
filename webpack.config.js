@@ -18,7 +18,7 @@ const placeAssetsInFolder = (folder) => {
 const webpackConfig = {
     entry: {
         index: [ path.join(__dirname, 'src')],
-        sw:  './sw/firebase-messaging-sw.js'
+        'firebase-messaging-sw':  './sw/firebase-messaging-sw.js'
     },
     output: {
         path: path.join(__dirname, 'build'),
