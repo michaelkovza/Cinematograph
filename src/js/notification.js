@@ -44,7 +44,13 @@ const notifcation = () => {
         body: payload.notification.body,
         click_action: payload.notification.click_action
       }
-    );/*new Notification('hello', {body: payload.notification.body})*/
+    );
+
+    notification.onclick = function (e) {
+      e.preventDefault();
+      window.open(payload.notification.click_action, '_blank')
+    }
+    /*new Notification('hello', {body: payload.notification.body})*/
   });
 };
 
