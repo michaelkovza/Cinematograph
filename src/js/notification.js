@@ -42,7 +42,7 @@ const notifcation = () => {
     let notification = new Notification(
       payload.notification.title, {
         body: payload.notification.body,
-        click_action: payload.notifcation.click_action
+        click_action: payload.notification.click_action
       }
     );/*new Notification('hello', {body: payload.notification.body})*/
   });
