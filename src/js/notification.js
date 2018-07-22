@@ -38,9 +38,9 @@ const notifcation = () => {
 
   messaging.onMessage(function (payload) {
     console.log('onMessage', payload);
-    
+
     let notification = new Notification(
-      payload.notifaction.title, {
+      payload.notification.title, {
         body: payload.notification.body,
         click_action: payload.notifcation.click_action
       }
