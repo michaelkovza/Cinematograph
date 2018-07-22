@@ -44,6 +44,8 @@ const notifcation = () => {
       click_action: payload.notification.click_action
     };
 
+    console.log(options);
+
     let notification = new Notification(options);/*new Notification('hello', {body: payload.notification.body})*/
   });
 };
