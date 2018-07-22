@@ -38,7 +38,8 @@ const notifcation = () => {
 
   messaging.onMessage(function (payload) {
     console.log('onMessage', payload);
-    return new Notification('hello', {body: payload.notification.body})
+
+    let notification = new Notification('hello world');/*new Notification('hello', {body: payload.notification.body})*/
   });
 };
 
