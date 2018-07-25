@@ -12,47 +12,57 @@ let config = {
 firebase.initializeApp(config);
 const messaging = firebase.messaging();
 
+
 const notifyApiUrl  = `${window.location.origin}/api/subscribeToNotify`;
 
 const notifcation = () => {
 
-  messaging.requestPermission().then(function () {
-    console.log('Notification permission granted.');
-    return messaging.getToken();
+  navigator.serviceWorker.register('./firebase-messaging-sw.js')
+    .then((registration) => {
+      messaging.useServiceWorker(registration);
 
-  })
-    .then(function (token) {
+      messaging.requestPermission().then(function () {
+        console.log('Notification permission granted.');
+        return messaging.getToken();
 
-      let data = new FormData();
+      })
+        .then(function (token) {
 
-      data.append("pushSubscription", token);
+          let data = new FormData();
 
-      let xhr = new XMLHttpRequest();
-      xhr.open("POST", notifyApiUrl);
-      xhr.send(data);
+          data.append("pushSubscription", token);
 
-    })
-    .catch(function (err) {
-      console.log('Unable to get permission to notify.', err);
+          let xhr = new XMLHttpRequest();
+          xhr.open("POST", notifyApiUrl);
+          xhr.send(data);
+
+        })
+        .catch(function (err) {
+          console.log('Unable to get permission to notify.', err);
+        });
+
+      messaging.onMessage(function (payload) {
+        console.log('onMessage', payload);
+
+        let notification = new Notification(
+          payload.notification.title, {
+            body: payload.notification.body,
+            click_action: payload.notification.click_action,
+            icon: require('../images/notify-logo.png')
+          }
+        );
+
+        notification.onclick = function (e) {
+          e.preventDefault();
+          window.open(payload.notification.click_action, '_blank')
+        }
+        /*new Notification('hello', {body: payload.notification.body})*/
+      });
+
+
     });
 
-  messaging.onMessage(function (payload) {
-    console.log('onMessage', payload);
 
-    let notification = new Notification(
-      payload.notification.title, {
-        body: payload.notification.body,
-        click_action: payload.notification.click_action,
-        icon: require('../images/notify-logo.png')
-      }
-    );
-
-    notification.onclick = function (e) {
-      e.preventDefault();
-      window.open(payload.notification.click_action, '_blank')
-    }
-    /*new Notification('hello', {body: payload.notification.body})*/
-  });
 };
 
 export default notifcation;
