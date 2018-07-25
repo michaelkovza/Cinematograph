@@ -42,7 +42,8 @@ const notifcation = () => {
     let notification = new Notification(
       payload.notification.title, {
         body: payload.notification.body,
-        click_action: payload.notification.click_action
+        click_action: payload.notification.click_action,
+        icon: require('../images/notify-logo.png')
       }
     );
 
