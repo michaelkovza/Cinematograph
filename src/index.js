@@ -119,7 +119,7 @@ window.addEventListener('load', () => {
     infiniteScroll();
     scrollToTop();
 
-    if('https://cinematograph.media' === window.location.href) {
+    if('https://cinematograph.media/' === window.location.href) {
         notification();
     }
 
