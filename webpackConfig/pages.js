@@ -9,7 +9,7 @@ module.exports = [
             page: 'index.pug'
         },
         chunks: ['index']
-    },/*,
+    },
     {
         title: '«materials»',
         filename: 'materials.html',
@@ -31,7 +31,8 @@ module.exports = [
             page: 'author.pug'
         },
         chunks: ['index']
-    },
+    }
+    /*,
     {
         title: '«gallery»',
         filename: 'gallery.html',
@@ -165,7 +166,7 @@ module.exports = [
         chunks: ['index']
     },
     */
-    {
+    /*{
         title: '«404»',
         filename: '404.html',
         template: 'src/html/layouts/layout.pug',
