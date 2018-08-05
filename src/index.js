@@ -1,5 +1,5 @@
+import $ from 'jquery';
 import './css/index.pcss';
-/*import shave from 'shave';*/
 import objectFitImages from 'object-fit-images';
 import ShareToSocialNetworks from './js/ShareToSocialNetworks';
 import createTerm from './js/createTerm';
@@ -15,6 +15,7 @@ import browserDetection from "./js/browserDetection";
 import setImageArticleDescription from './js/setImageArticleDescription';
 import createTermCard from './js/createTermCard';
 import { TrackPagePart } from "./js/track-page";
+import creatSlider from "./js/slider";
 
 const counters = new TrackPagePart();
 
@@ -23,7 +24,9 @@ window.addEventListener('load', () => {
 
     objectFitImages();
 
-    /*shave('.card-text-shave', 200);*/
+    const sliderSelector = $('.js-slider');
+    creatSlider(sliderSelector);
+    
 
     const ShareToSocialNetworksOptions = {
         'buttonSelector': document.getElementsByClassName('share')

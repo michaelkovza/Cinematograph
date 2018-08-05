@@ -1,0 +1,47 @@
+.js-slider {
+  /* Arrows */
+  & .slick-prev {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 18px;
+    height: 36px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    background: red;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    left: 25px;
+    z-index: 5;
+    outline: none;
+    color: transparent;
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+  }
+
+  & .slick-next {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 18px;
+    height: 36px;
+    outline: none;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%) rotate(180deg);
+    cursor: pointer;
+    background: red;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    right: 25px;
+    z-index: 5;
+    color: transparent;
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+
+  }
+}
