@@ -8,7 +8,12 @@ const defaultOptions = {
   infinite: false,
   draggable: false,
   autoplay: false,
-  variableWidth: true
+  variableWidth: false,
+
+  responsive: [{
+    breakpoint: 1024,
+    settings: "unslick"
+  }]
 };
 
 const createSlider = (sliderSelector, options = defaultOptions) => {

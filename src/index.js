@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import _ from 'lodash'
 import './css/index.pcss';
 import objectFitImages from 'object-fit-images';
 import ShareToSocialNetworks from './js/ShareToSocialNetworks';
@@ -26,7 +27,14 @@ window.addEventListener('load', () => {
 
     const sliderSelector = $('.js-slider');
     creatSlider(sliderSelector);
-    
+
+    window.addEventListener('resize',(e) => {
+      console.log(e.target.innerWidth);
+
+      if(e.target.innerWidth >= 1024) {
+        creatSlider(sliderSelector);
+      }
+    });
 
     const ShareToSocialNetworksOptions = {
         'buttonSelector': document.getElementsByClassName('share')
