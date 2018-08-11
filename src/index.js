@@ -29,8 +29,6 @@ window.addEventListener('load', () => {
     creatSlider(sliderSelector);
 
     window.addEventListener('resize',(e) => {
-      console.log(e.target.innerWidth);
-
       if(e.target.innerWidth >= 1024) {
         creatSlider(sliderSelector);
       }
