@@ -1,0 +1,32 @@
+.mobile-logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__link {
+    display: block;
+  }
+
+  &__logo {
+    display: block;
+    width: 180px;
+    height: auto;
+  }
+
+  &__hand {
+    display: block;
+    width: 30px;
+    margin: 15px auto 0;
+    animation: pulse 1s linear infinite alternate;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}

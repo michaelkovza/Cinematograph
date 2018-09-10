@@ -1,7 +1,12 @@
 main.main.main--height#main
-    include ../blocks/header
-    include ../blocks/navigate
-    include ../blocks/show-footer-button
+    div.main__mobile-container
+        include ../blocks/mobile-header
+        include ../blocks/mobile-logo-container
+        include ../blocks/mobile-navigate
+    div.main__desktop-container
+        include ../blocks/header
+        include ../blocks/navigate
+        include ../blocks/show-footer-button
 
 
 
