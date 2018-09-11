@@ -16,7 +16,8 @@ import browserDetection from "./js/browserDetection";
 import setImageArticleDescription from './js/setImageArticleDescription';
 import createTermCard from './js/createTermCard';
 import { TrackPagePart } from "./js/track-page";
-import creatSlider from "./js/slider";
+import createSlider from "./js/slider";
+import menu from "./js/menu";
 
 const counters = new TrackPagePart();
 
@@ -26,11 +27,11 @@ window.addEventListener('load', () => {
     objectFitImages();
 
     const sliderSelector = $('.js-slider');
-    creatSlider(sliderSelector);
+    createSlider(sliderSelector);
 
     window.addEventListener('resize',(e) => {
       if(e.target.innerWidth >= 1024) {
-        creatSlider(sliderSelector);
+        createSlider(sliderSelector);
       }
     });
 
@@ -124,9 +125,20 @@ window.addEventListener('load', () => {
 
     createTermCard(createTermCardOptions);
 
+    const menuOptions = {
+      menuOpenButton: document.getElementsByClassName('js-open-menu-button')[0],
+      menuCloseButton: document.getElementsByClassName('js-close-menu-button')[0],
+      menuSelector: document.getElementsByClassName('js-mobile-navigate')[0],
+      hiddenClass: 'mobile-navigate--hidden',
+      bgOverlaySelector: document.getElementsByClassName('js-mobile-bg-overlay')[0],
+      bgOverlayHiddenClass: 'mobile-bg-overlay--hidden'
+    };
+
+    menu(menuOptions);
 
     infiniteScroll();
     scrollToTop();
+
 
     if('https://cinematograph.media' === window.location.href) {
         notification();

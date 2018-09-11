@@ -1,12 +1,32 @@
 nav.mobile-navigate.mobile-navigate--hidden.js-mobile-navigate
     ul.mobile-navigate__list
+        li.mobile-navigate__item.mobile-navigate__item--main Разделы
         li.mobile-navigate__item
-            a.mobile-navigate__link(href="#" title="журнал") журнал
+            a.mobile-navigate__link(href="#" title="журнал") Журнал
         li.mobile-navigate__item
-            a.mobile-navigate__link(href="#" title="галерея") галерея
+            a.mobile-navigate__link(href="#" title="галерея") Галерея
         li.mobile-navigate__item
-            a.mobile-navigate__link(href="#" title="контакты") контакты
+            a.mobile-navigate__link(href="#" title="видеотека") Видеотека
         li.mobile-navigate__item
-            a.mobile-navigate__link(href="#" title="видеотека") видеотека
+            a.mobile-navigate__link(href="#" title="библиотека") Библиотека
         li.mobile-navigate__item
-            a.mobile-navigate__link(href="#" title="библиотека") библиотека
+            a.mobile-navigate__link(href="#" title="контакты") Контакты
+    ul.mobile-navigate__list
+        li.mobile-navigate__item.mobile-navigate__item--main Соцсети
+        li.mobile-navigate__item
+            a.mobile-navigate__link(href="https://vk.com/cinematographmag" target="_blank" title="Вконтакте") Вконтакте
+        li.mobile-navigate__item
+            a.mobile-navigate__link(href="https://twitter.com/cinemamagtweet" target="_blank" title="Twitter") Twitter
+        li.mobile-navigate__item
+            a.mobile-navigate__link(href="https://t.me/cinematographmag" target="_blank" title="Telegram") Telegram
+    ul.mobile-navigate__list.mobile-navigate__list--without-border
+        li.mobile-navigate__item.mobile-navigate__item--main Подписка
+        li.mobile-navigate__item
+            form.mobile-navigate__form.form
+                fieldset.form__fieldset
+                    legend.form__title Оставьте e-mail, чтобы получать наши избранные материалы
+                    div.form__data-container
+                        input.form__input.js-input-email(type="email" required placeholder="Ваш E-mail")
+                        button.form__button.js-form-button(disabled title="Отправить")
+                span.form__status.form__status--hidden.js-form-status
+            p.mobile-navigate__notice Нажимая кнопку отправки, Вы&nbsp;даёте согласие на&nbsp;обработку персональных данных в&nbsp;соответствии с&nbsp;действующим Федеральным законом &laquo;О&nbsp;персональных данных&raquo;.
