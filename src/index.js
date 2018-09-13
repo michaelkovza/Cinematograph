@@ -22,7 +22,7 @@ const counters = new TrackPagePart();
 
 window.addEventListener('load', () => {
   counters.init();
-  
+
   objectFitImages();
 
   const sliderSelector = $('.js-slider');
@@ -103,7 +103,6 @@ window.addEventListener('load', () => {
   const createTermOptions = {
     terms: document.getElementsByClassName('js-term'),
     termContainer: document.getElementsByClassName('js-clarification-container')[0]
-
   };
 
   createTerm(createTermOptions);
