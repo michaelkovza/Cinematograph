@@ -63,6 +63,15 @@ window.addEventListener('load', () => {
 
     formValidation(formValidationOptions);
 
+    const formValidationMobileOptions = {
+      formEmailSelector: document.getElementsByClassName('js-input-email-mobile')[0],
+      formStatusSelector: document.getElementsByClassName('js-form-status-mobile')[0],
+      formSendButton: document.getElementsByClassName('js-form-button-mobile')[0],
+      formStatusSelectorHiddenClass: 'form__status--hidden'
+    };
+
+    formValidation(formValidationMobileOptions);
+
     const materialsTabsOptions = {
       articlesTitle: document.getElementsByClassName('js-articles-title')[0],
       reviewsTitle: document.getElementsByClassName('js-reviews-title')[0],
@@ -140,10 +149,7 @@ window.addEventListener('load', () => {
     scrollToTop();
 
 
-    if('https://cinematograph.media' === window.location.href) {
-        notification();
-    }
-
-
+     if('https://cinematograph.media' === window.location.href) {
+       notification();
+     }
 });
-
