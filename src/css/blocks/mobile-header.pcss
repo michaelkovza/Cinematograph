@@ -13,6 +13,9 @@
 
   &__search-form {
     display: flex;
+    width: 100%;
+    margin: 0;
+    justify-content: center;
   }
 
   &__search-input {
@@ -20,14 +23,18 @@
     width: 190px;
     height: 20px;
     padding: 0 5px;
+    font-size: 14px;
+    font-family: var(--primary-font);
+    color: var(--secondary-accent-color);
     margin-right: 10px;
-    background: rgba(218, 213, 213, 0.34);
+    background: rgba(238, 238, 238, 0.34);
   }
 
   &__search-button {
     background: 0;
     padding: 0;
     color: var(--secondary-accent-color);
-    font-size: 16px;
+    font-size: 14px;
+    font-family: var(--primary-font);
   }
 }
