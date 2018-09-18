@@ -1,5 +1,5 @@
-// var firebase = require("firebase/app");
-// require("firebase/messaging");
+import firebase from 'firebase/app';
+import 'firebase/messaging';
 
 let config = {
   apiKey: "AIzaSyCaP3DNqjHDcHBOlaQkQW1klPDE9PdcZOo",
