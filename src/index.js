@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import './css/index.pcss';
 import objectFitImages from 'object-fit-images';
-import ShareToSocialNetworks from './js/ShareToSocialNetworks';
+// import ShareToSocialNetworks from './js/ShareToSocialNetworks';
 import createTerm from './js/createTerm';
 import infiniteScroll from './js/infiniteScroll';
 import scrollToTop from './js/scrollToTop';
@@ -34,12 +34,12 @@ window.addEventListener('load', () => {
     }
   });
 
-  const ShareToSocialNetworksOptions = {
-    'buttonSelector': document.getElementsByClassName('share')
-  };
+  // const ShareToSocialNetworksOptions = {
+  //   'buttonSelector': document.getElementsByClassName('share')
+  // };
 
-  ShareToSocialNetworks(ShareToSocialNetworksOptions);
-
+  // ShareToSocialNetworks(ShareToSocialNetworksOptions);
+  //
   const showAlbumModalOverlayOptions = {
     albumPhotosSelector: document.getElementsByClassName('js-album-photo'),
     albumModalOverlaySelector: document.getElementsByClassName('js-album-modal-overlay')[0],
@@ -100,12 +100,12 @@ window.addEventListener('load', () => {
 
   setImageArticleDescription(setImageArticleDescriptionOptions);
 
-  const createTermOptions = {
-    terms: document.getElementsByClassName('js-term'),
-    termContainer: document.getElementsByClassName('js-clarification-container')[0]
-  };
+   const createTermOptions = {
+     terms: document.getElementsByClassName('js-term'),
+     termContainer: document.getElementsByClassName('js-clarification-container')[0]
+   };
 
-  createTerm(createTermOptions);
+   createTerm(createTermOptions);
 
   const showFooterOptions = {
     bodySelector: document.getElementsByClassName('js-body')[0],
@@ -149,3 +149,4 @@ window.addEventListener('load', () => {
     notification();
   }
 });
+

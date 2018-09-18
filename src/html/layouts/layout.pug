@@ -16,5 +16,7 @@ html
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         meta(charset="UTF-8")
         link(rel="shortcut icon" href='favicon.ico' type="image/x-icon")
+        script(src="https://www.gstatic.com/firebasejs/5.4.0/firebase-app.js")
+        script(src="https://www.gstatic.com/firebasejs/5.4.0/firebase-messaging.js")
     body.js-body.body
         !=require('../pages/' + page)()

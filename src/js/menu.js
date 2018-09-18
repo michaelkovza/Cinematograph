@@ -1,4 +1,9 @@
 const menu = ({menuOpenButton, menuCloseButton, menuSelector, hiddenClass, bgOverlaySelector, bgOverlayHiddenClass}) => {
+
+  if(!menuOpenButton) {
+    return;
+  }
+
   menuOpenButton.addEventListener('click', function () {
     menuSelector.classList.remove(hiddenClass);
     bgOverlaySelector.classList.remove(bgOverlayHiddenClass);
@@ -8,6 +13,6 @@ const menu = ({menuOpenButton, menuCloseButton, menuSelector, hiddenClass, bgOve
     menuSelector.classList.add(hiddenClass);
     bgOverlaySelector.classList.add(bgOverlayHiddenClass);
   });
-}
+};
 
 export default menu;

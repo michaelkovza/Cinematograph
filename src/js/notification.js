@@ -1,5 +1,5 @@
-var firebase = require("firebase/app");
-require("firebase/messaging");
+// var firebase = require("firebase/app");
+// require("firebase/messaging");
 
 let config = {
   apiKey: "AIzaSyCaP3DNqjHDcHBOlaQkQW1klPDE9PdcZOo",
