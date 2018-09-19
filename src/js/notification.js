@@ -1,21 +1,23 @@
 import firebase from 'firebase/app';
 import 'firebase/messaging';
 
-let config = {
-  apiKey: "AIzaSyCaP3DNqjHDcHBOlaQkQW1klPDE9PdcZOo",
-  authDomain: "cinematograph-2c5b2.firebaseapp.com",
-  databaseURL: "https://cinematograph-2c5b2.firebaseio.com/",
-  projectId: "cinematograph-2c5b2",
-  storageBucket: "cinematograph-2c5b2.appspot.com",
-  messagingSenderId: "854998265633"
-};
-
-firebase.initializeApp(config);
-const messaging = firebase.messaging();
-
-const notifyApiUrl  = `${window.location.origin}/api/subscribeToNotify`;
 
 const notifcation = () => {
+
+  let config = {
+    apiKey: "AIzaSyCaP3DNqjHDcHBOlaQkQW1klPDE9PdcZOo",
+    authDomain: "cinematograph-2c5b2.firebaseapp.com",
+    databaseURL: "https://cinematograph-2c5b2.firebaseio.com/",
+    projectId: "cinematograph-2c5b2",
+    storageBucket: "cinematograph-2c5b2.appspot.com",
+    messagingSenderId: "854998265633"
+  };
+
+
+  firebase.initializeApp(config);
+  const messaging = firebase.messaging();
+
+  const notifyApiUrl  = `${window.location.origin}/api/subscribeToNotify`;
 
   messaging.requestPermission().then(function () {
     console.log('Notification permission granted.');

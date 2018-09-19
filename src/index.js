@@ -9,7 +9,7 @@ import showAlbumModalOverlay from './js/showAlbumModalOverlay';
 import formValidation from "./js/formValidation";
 import materialsTabs from "./js/materialsTabs";
 import setMaterials from "./js/setMaterials";
-//import notification from "./js/notification";
+import notification from "./js/notification";
 import showFooter from "./js/showFooter";
 import browserDetection from "./js/browserDetection";
 import setImageArticleDescription from './js/setImageArticleDescription';
@@ -146,8 +146,8 @@ window.addEventListener('load', () => {
   infiniteScroll();
   scrollToTop();
 
-  // if ('https://cinematograph.media' === window.location.href) {
-  //   notification();
-  // }
+  if ('https://cinematograph.media/' === window.location.href) {
+    notification();
+  }
 });
 
