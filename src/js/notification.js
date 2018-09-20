@@ -19,6 +19,7 @@ const notification = () => {
 
   const notifyApiUrl  = `${window.location.origin}/api/subscribeToNotify`;
 
+
   messaging.requestPermission().then(function () {
     console.log('Notification permission granted.');
     return messaging.getToken();
@@ -46,7 +47,7 @@ const notification = () => {
       payload.notification.title, {
         body: payload.notification.body,
         click_action: payload.notification.click_action,
-        icon: require('../images/notify-logo.png')
+        icon: '/notify-logo.png'
       }
     );
 
