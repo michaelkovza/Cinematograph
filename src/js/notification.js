@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/messaging';
 
 
-const notifcation = () => {
+const notification = () => {
 
   let config = {
     apiKey: "AIzaSyCaP3DNqjHDcHBOlaQkQW1klPDE9PdcZOo",
@@ -58,4 +58,4 @@ const notifcation = () => {
   });
 };
 
-export default notifcation;
+export default notification;
