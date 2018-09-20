@@ -16,7 +16,6 @@ import setImageArticleDescription from './js/setImageArticleDescription';
 import createTermCard from './js/createTermCard';
 import {TrackPagePart} from "./js/track-page";
 import createSlider from "./js/slider";
-
 import menu from "./js/menu";
 
 const counters = new TrackPagePart();
