@@ -1,0 +1,33 @@
+.news {
+    padding-top: 35px;
+
+    @media (--desktop-small) {
+        padding-top: 54px;
+    }
+
+
+    &__list {
+        padding-top: 35px;
+        max-width: 920px;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: row nowrap;
+        overflow-x: scroll;
+
+        @media (--tablet-large) {
+            display: block;
+            padding-top: 54px;
+            overflow-x: inherit;
+        }
+    }
+
+    &__item {
+        width: 182px !important;
+        padding: 0 10px;
+
+        @media (--tablet-large) {
+            padding: 0 5px;
+        }
+    }
+
+}

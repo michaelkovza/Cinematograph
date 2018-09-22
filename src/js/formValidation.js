@@ -11,29 +11,21 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton, f
     };
 
     const validate = () => {
-
         formStatusSelector.innerHTML = '';
-
         let email = formEmailSelector.value;
 
-
         if(validateEmail(email)) {
-
             formSendButton.removeAttribute('disabled');
-
             formSendButton.addEventListener('click', (event) => {
-
                 event.preventDefault();
 
                 formStatusSelector.classList.remove(formStatusSelectorHiddenClass);
                 formSendButton.setAttribute('disabled', true);
 
-
                 let data = new FormData();
                 data.append("email", email);
 
                 let xhr = new XMLHttpRequest();
-
                 let sendEmailUrl = `${url}/api/subscribe`;
 
                 xhr.open("POST",sendEmailUrl);
@@ -50,11 +42,6 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton, f
                 };
 
                 xhr.send(data);
-
-
-
-
-
             });
         } else {
             formStatusSelector.innerHTML = 'Поле заполнено некорректно.';
@@ -74,12 +61,10 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton, f
     };
 
     formEmailSelector.addEventListener('input', () => {
-
         validate();
     });
 
     formEmailSelector.addEventListener('blur', () => {
-
         validate()
     })
 
