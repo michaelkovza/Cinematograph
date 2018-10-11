@@ -17,6 +17,7 @@ import createTermCard from './js/createTermCard';
 import {TrackPagePart} from "./js/track-page";
 import createSlider from "./js/slider";
 import menu from "./js/menu";
+import truncateTitles from "./js/trancateTitles";
 
 const counters = new TrackPagePart();
 
@@ -142,6 +143,14 @@ window.addEventListener('load', () => {
   };
 
   menu(menuOptions);
+
+  const truncateTitlesOptions = {
+    titles: document.getElementsByClassName('js-title-truncate')
+  };
+
+  truncateTitles(truncateTitlesOptions);
+
+
   infiniteScroll();
   scrollToTop();
 
