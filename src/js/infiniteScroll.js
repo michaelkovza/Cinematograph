@@ -3,18 +3,20 @@ import isMobile from './isMobile';
 
 const reviewsButton = document.getElementsByClassName('js-reviews-button')[0];
 const articlesButton = document.getElementsByClassName('js-articles-button')[0];
+const interviewsButton = document.getElementsByClassName('js-interviews-button')[0];
 
 // везде тип default, если это не страница журнал
 
 const types = {
   default: 'default',
   articles: 'articles',
-  reviews: 'reviews'
+  reviews: 'reviews',
+  interviews: 'interviews',
 };
 
 let type = types.default;
 
-if (reviewsButton !== undefined && articlesButton !== undefined) {
+if (reviewsButton !== undefined && articlesButton !== undefined && !interviewsButton !== undefined) {
     type = types.articles;
 
     reviewsButton.addEventListener('click', () => {
@@ -23,6 +25,10 @@ if (reviewsButton !== undefined && articlesButton !== undefined) {
 
     articlesButton.addEventListener('click', () => {
         type = types.articles;
+    });
+
+    interviewsButton.addEventListener('click', () => {
+        type = types.interviews;
     });
 }
 
@@ -53,6 +59,9 @@ const infiniteScroll = () => {
     let currentUrl = window.location.href;
 
     let infinityContainer = document.getElementsByClassName('js-infinity-content')[0];
+    let infinityContainerArticles = document.getElementById('materials-articles-list');
+    let infinityContainerReviews = document.getElementById('materials-reviews-list');
+    let infinityContainerInterviews = document.getElementById('materials-interviews-list');
 
     if (!infinityContainer) {
         return
@@ -63,6 +72,7 @@ const infiniteScroll = () => {
     initDataPagination(types.default, dataPagination, 'default');
     initDataPagination(types.articles, dataPagination, 'articles');
     initDataPagination(types.reviews, dataPagination, 'reviews');
+    initDataPagination(types.interviews, dataPagination, 'interviews');
 
     const loader = document.getElementsByClassName('js-loader')[0];
     const loaderHiddenClass = 'loader--hidden';
@@ -107,6 +117,9 @@ const infiniteScroll = () => {
                 case types.reviews:
                     loadUrl = getUrl(type);
                     break;
+                case types.interviews:
+                    loadUrl = getUrl(type);
+                    break;
                 default: break;
             }
 
@@ -119,7 +132,25 @@ const infiniteScroll = () => {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 let result = xhr.responseText;
-                infinityContainer.insertAdjacentHTML('beforeend', result);
+
+                switch (type) {
+                    case types.articles: {
+                        infinityContainerArticles.insertAdjacentHTML('beforeend', result);
+                        break;
+                    }
+                    case types.reviews: {
+                        infinityContainerReviews.insertAdjacentHTML('beforeend', result);
+                        break;
+                    }
+                    case types.interviews: {
+                        infinityContainerInterviews.insertAdjacentHTML('beforeend', result);
+                        break;
+                    }
+                    default: {
+                        infinityContainer.insertAdjacentHTML('beforeend', result);
+                    }
+                }
+
                 loader.classList.add(loaderHiddenClass);
             }
         };
@@ -135,8 +166,40 @@ const infiniteScroll = () => {
 
     if(!isMobile()) {
         window.onscroll = function () {
-            if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
-                getData();
+
+            const middleOfWindow = window.innerHeight / 2;
+
+            switch (type) {
+                case types.articles: {
+
+                    if(infinityContainerArticles.getBoundingClientRect().bottom <= middleOfWindow) {
+                        getData();
+                    }
+
+                    break;
+                }
+                case types.reviews: {
+
+                    if(infinityContainerReviews.getBoundingClientRect().bottom <= middleOfWindow) {
+                        getData();
+                    }
+
+                    break;
+                }
+                case types.interviews: {
+
+                    if(infinityContainerInterviews.getBoundingClientRect().bottom <= middleOfWindow) {
+                        getData();
+                    }
+
+                    break;
+                }
+                default: {
+                    if(infinityContainer.getBoundingClientRect().bottom <= middleOfWindow) {
+                        getData();
+                    }
+                }
+
             }
         }
     }
