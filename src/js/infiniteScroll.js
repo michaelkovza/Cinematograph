@@ -1,26 +1,26 @@
 import _ from 'lodash';
 import isMobile from './isMobile';
 
-window.scrollData = {
-    articles: {
-        loadSet: {
-            endPage: 2,
-            navNum: 2
-        }
-    },
-    interviews: {
-        loadSet: {
-            endPage: 1,
-            navNum: 4
-        }
-    },
-    reviews: {
-        loadSet: {
-            endPage: 4,
-            navNum: 3
-        }
-    }
-};
+// window.scrollData = {
+//     articles: {
+//         loadSet: {
+//             endPage: 2,
+//             navNum: 2
+//         }
+//     },
+//     interviews: {
+//         loadSet: {
+//             endPage: 1,
+//             navNum: 4
+//         }
+//     },
+//     reviews: {
+//         loadSet: {
+//             endPage: 4,
+//             navNum: 3
+//         }
+//     }
+// };
 
 const reviewsButton = document.getElementsByClassName('js-reviews-button')[0];
 const articlesButton = document.getElementsByClassName('js-articles-button')[0];
