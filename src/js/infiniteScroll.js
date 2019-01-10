@@ -8,10 +8,10 @@ const interviewsButton = document.getElementsByClassName('js-interviews-button')
 // везде тип default, если это не страница журнал
 
 const types = {
-  default: 'default',
-  articles: 'articles',
-  reviews: 'reviews',
-  interviews: 'interviews',
+    default: 'default',
+    articles: 'articles',
+    reviews: 'reviews',
+    interviews: 'interviews',
 };
 
 let type = types.default;
@@ -34,8 +34,8 @@ if (reviewsButton !== undefined && articlesButton !== undefined && !interviewsBu
 
 
 const initDataPagination = (type, dataObj, scrollDataProp) => {
-    if(!window.scrollData && !window.scrollData[scrollDataProp]) {
-        return
+    if (!window.scrollData && !window.scrollData[scrollDataProp]) {
+        return;
     }
 
     dataObj[type] = {
@@ -47,7 +47,7 @@ const initDataPagination = (type, dataObj, scrollDataProp) => {
 };
 
 const showShowMoreButton = (currentCount, endPageCount, showMoreButton, showMoreButtonShownClass) => {
-    if(currentCount < endPageCount) {
+    if (currentCount < endPageCount) {
         showMoreButton.classList.add(showMoreButtonShownClass);
     } else {
         showMoreButton.classList.remove(showMoreButtonShownClass);
@@ -64,7 +64,7 @@ const infiniteScroll = () => {
     let infinityContainerInterviews = document.getElementById('materials-interviews-list');
 
     if (!infinityContainer) {
-        return
+        return;
     }
 
     let dataPagination = {};
@@ -80,52 +80,60 @@ const infiniteScroll = () => {
     const showMoreButton = document.getElementsByClassName('js-show-more')[0];
     const showMoreButtonShownClass = 'show-more--shown';
 
-    showShowMoreButton(dataPagination[type].count, dataPagination[type].endPage, showMoreButton, showMoreButtonShownClass);
+    showShowMoreButton(
+        dataPagination[type].count,
+        dataPagination[type].endPage,
+        showMoreButton,
+        showMoreButtonShownClass
+    );
 
     const getData = () => {
+        let data = new FormData();
+        data.append("AJAX", "Y");
 
-            let data = new FormData();
-            data.append("AJAX", "Y");
+        data.append("type", type);
 
-            data.append("type", type);
+        let xhr = new XMLHttpRequest();
 
-            let xhr = new XMLHttpRequest();
+        const getUrl = (type) => {
+            dataPagination[type].count = ++dataPagination[type].count;
 
-            const getUrl = (type) => {
+            showShowMoreButton(
+                dataPagination[type].count,
+                dataPagination[type].endPage,
+                showMoreButton,
+                showMoreButtonShownClass
+            );
 
-                dataPagination[type].count = ++dataPagination[type].count;
-
-                showShowMoreButton(dataPagination[type].count, dataPagination[type].endPage, showMoreButton, showMoreButtonShownClass);
-
-                if(dataPagination[type].count <= dataPagination[type].endPage) {
-                    loader.classList.remove(loaderHiddenClass);
-                    return `${currentUrl}/index.php?PAGEN_${dataPagination[type].navNum}=${dataPagination[type].count}`;
-                }
-
-                return null;
-            };
-
-            let loadUrl = null;
-
-            switch (type) {
-                case types.default:
-                    loadUrl = getUrl(type);
-                    break;
-                case types.articles:
-                    loadUrl = getUrl(type);
-                    break;
-                case types.reviews:
-                    loadUrl = getUrl(type);
-                    break;
-                case types.interviews:
-                    loadUrl = getUrl(type);
-                    break;
-                default: break;
+            if (dataPagination[type].count <= dataPagination[type].endPage) {
+                loader.classList.remove(loaderHiddenClass);
+                return `${currentUrl}/index.php?PAGEN_${dataPagination[type].navNum}=${dataPagination[type].count}`;
             }
 
-            if(loadUrl === null) {
-                return
-            }
+            return null;
+        };
+
+        let loadUrl = null;
+
+        switch (type) {
+            case types.default:
+                loadUrl = getUrl(type);
+                break;
+            case types.articles:
+                loadUrl = getUrl(type);
+                break;
+            case types.reviews:
+                loadUrl = getUrl(type);
+                break;
+            case types.interviews:
+                loadUrl = getUrl(type);
+                break;
+            default: break;
+        }
+
+        if (loadUrl === null) {
+            return;
+        }
 
         xhr.open("POST", loadUrl);
 
@@ -158,50 +166,46 @@ const infiniteScroll = () => {
         xhr.send(data);
     };
 
-    if(isMobile()) {
+    if (isMobile()) {
         showMoreButton.addEventListener('click', function () {
             getData();
-        })
+        });
     }
 
-    if(!isMobile()) {
+    if (!isMobile()) {
         window.onscroll = function () {
-
             const middleOfWindow = window.innerHeight / 2;
 
             switch (type) {
                 case types.articles: {
-
-                    if(infinityContainerArticles.getBoundingClientRect().bottom <= middleOfWindow) {
+                    if (infinityContainerArticles.getBoundingClientRect().bottom <= middleOfWindow) {
                         getData();
                     }
 
                     break;
                 }
                 case types.reviews: {
-
-                    if(infinityContainerReviews.getBoundingClientRect().bottom <= middleOfWindow) {
+                    if (infinityContainerReviews.getBoundingClientRect().bottom <= middleOfWindow) {
                         getData();
                     }
 
                     break;
                 }
                 case types.interviews: {
-
-                    if(infinityContainerInterviews.getBoundingClientRect().bottom <= middleOfWindow) {
+                    if (infinityContainerInterviews.getBoundingClientRect().bottom <= middleOfWindow) {
                         getData();
                     }
 
                     break;
                 }
                 default: {
-                    if(infinityContainer.getBoundingClientRect().bottom <= middleOfWindow) {
+                    if (infinityContainer.getBoundingClientRect().bottom <= middleOfWindow) {
                         getData();
                     }
                 }
 
             }
-        }
+        };
     }
 };
 

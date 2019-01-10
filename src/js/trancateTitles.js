@@ -18,18 +18,15 @@ const truncateTitles = ({ titles }) => {
 
 
         if (titleHeight >= maxHeight && titleWithoutNoBreakSpaces.length > maxLength) {
-
-            console.log(titleWithoutNoBreakSpaces);
-
-            if(~titleWithoutNoBreakSpaces.indexOf(quotesOpen) && ~titleWithoutNoBreakSpaces.indexOf(defaultOpenQuotes)) {
+            if (~titleWithoutNoBreakSpaces.indexOf(quotesOpen) && ~titleWithoutNoBreakSpaces.indexOf(defaultOpenQuotes)) {
                 return titleWithoutNoBreakSpaces.slice(0, maxLength - 5) + dots + defaultCloseQuotes + quotesClose;
             }
 
-            if(~titleWithoutNoBreakSpaces.indexOf(quotesOpen)) {
+            if (~titleWithoutNoBreakSpaces.indexOf(quotesOpen)) {
                 return titleWithoutNoBreakSpaces.slice(0, maxLength - 4) + dots + quotesClose;
             }
 
-            if(~titleWithoutNoBreakSpaces.indexOf(defaultOpenQuotes)) {
+            if (~titleWithoutNoBreakSpaces.indexOf(defaultOpenQuotes)) {
                 return titleWithoutNoBreakSpaces.slice(0, maxLength - 4) + dots + defaultCloseQuotes;
             }
 
@@ -40,7 +37,7 @@ const truncateTitles = ({ titles }) => {
         return titleWithoutNoBreakSpaces;
     };
 
-    for(let i = 0; i < titles.length; i++) {
+    for (let i = 0; i < titles.length; i++) {
         let title = titles[i].innerHTML;
         let titleHeight = titles[i].getBoundingClientRect().height;
         titles[i].innerHTML = truncate(title, titleHeight, maxLength, maxHeight);
