@@ -1,6 +1,6 @@
 const disableScroll = (bool) => {
     bool ? window.onwheel = function (e) {
-        e.preventDefault()
+        e.preventDefault();
     } : window.onwheel = false;
 };
 

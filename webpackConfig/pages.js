@@ -87,17 +87,17 @@ module.exports = [
   //   },
   //   chunks: ['index']
   // },
-  // {
-  //   title: '«article»',
-  //   filename: 'article.html',
-  //   template: 'src/html/layouts/layout.pug',
-  //   inject: 'body',
-  //   minify: false,
-  //   env: {
-  //     page: 'article.pug'
-  //   },
-  //   chunks: ['index']
-  // },
+  {
+    title: '«article»',
+    filename: 'article.html',
+    template: 'src/html/layouts/layout.pug',
+    inject: 'body',
+    minify: false,
+    env: {
+      page: 'article.pug'
+    },
+    chunks: ['index']
+  },
   // {
   //   title: '«article-simple»',
   //   filename: 'simple-article.html',

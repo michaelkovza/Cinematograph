@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import isMobile from './isMobile';
-
+//
 // window.scrollData = {
 //     articles: {
 //         loadSet: {
@@ -21,6 +21,8 @@ import isMobile from './isMobile';
 //         }
 //     }
 // };
+
+const middleOfWindow = window.innerHeight / 2;
 
 const reviewsButton = document.getElementsByClassName('js-reviews-button')[0];
 const articlesButton = document.getElementsByClassName('js-articles-button')[0];
@@ -53,7 +55,7 @@ const showShowMoreButton = (
 
 const initDataPagination = (type, dataObj, scrollDataProp) => {
     if (!window.scrollData && !window.scrollData[scrollDataProp]) {
-        return
+        return;
     }
 
     dataObj[type] = {
@@ -61,7 +63,6 @@ const initDataPagination = (type, dataObj, scrollDataProp) => {
         endPage: _.get(window.scrollData, `${scrollDataProp}.loadSet.endPage`, null),
         count: 1
     };
-
 };
 
 const insertResult = (
@@ -92,16 +93,15 @@ const insertResult = (
 };
 
 const infiniteScroll = () => {
+    const currentUrl = window.location.href;
 
-    let currentUrl = window.location.href;
-
-    let infinityContainer = document.getElementsByClassName('js-infinity-content')[0];
-    let infinityContainerArticles = document.getElementById('materials-articles-list');
-    let infinityContainerReviews = document.getElementById('materials-reviews-list');
-    let infinityContainerInterviews = document.getElementById('materials-interviews-list');
+    const infinityContainer = document.getElementsByClassName('js-infinity-content')[0];
+    const infinityContainerArticles = document.getElementById('materials-articles-list');
+    const infinityContainerReviews = document.getElementById('materials-reviews-list');
+    const infinityContainerInterviews = document.getElementById('materials-interviews-list');
 
     if (!infinityContainer) {
-        return
+        return;
     }
 
     let dataPagination = {};
@@ -139,55 +139,56 @@ const infiniteScroll = () => {
         reviewsButton.addEventListener('click', () => {
             type = types.reviews;
             isFetching = false;
+
             showShowMoreButton(
                 type,
                 dataPagination[type].count,
                 dataPagination[type].endPage,
                 showMoreButton,
                 showMoreButtonShownClass
-            )
+            );
         });
 
         articlesButton.addEventListener('click', () => {
             type = types.articles;
             isFetching = false;
+
             showShowMoreButton(
                 type,
                 dataPagination[type].count,
                 dataPagination[type].endPage,
                 showMoreButton,
                 showMoreButtonShownClass
-            )
+            );
         });
 
         interviewsButton.addEventListener('click', () => {
             type = types.interviews;
             isFetching = false;
+
             showShowMoreButton(
                 type,
                 dataPagination[type].count,
                 dataPagination[type].endPage,
                 showMoreButton,
                 showMoreButtonShownClass
-            )
+            );
         });
     }
 
     const getData = () => {
         isFetching = true;
         let data = new FormData();
-        data.append("AJAX", "Y");
+        data.append('AJAX', 'Y');
+        data.append('type', type);
 
-            data.append("type", type);
-
-            let xhr = new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
 
         const getUrl = (type) => {
 
             dataPagination[type].count = ++dataPagination[type].count;
 
             if (isMobile()) {
-
                 showShowMoreButton(
                     type,
                     dataPagination[type].count,
@@ -197,15 +198,15 @@ const infiniteScroll = () => {
                 );
             }
 
-                if(dataPagination[type].count <= dataPagination[type].endPage) {
-                    loader.classList.remove(loaderHiddenClass);
-                    return `${currentUrl}/index.php?PAGEN_${dataPagination[type].navNum}=${dataPagination[type].count}`;
-                }
+            if (dataPagination[type].count <= dataPagination[type].endPage) {
+                loader.classList.remove(loaderHiddenClass);
+                return `${currentUrl}/index.php?PAGEN_${dataPagination[type].navNum}=${dataPagination[type].count}`;
+                // return 'https://cinematograph.media/journal//index.php?PAGEN_' + dataPagination[type].navNum + '=' + dataPagination[type].count;
+            }
+            return null;
+        };
 
-                return null;
-            };
-
-            let loadUrl = null;
+        let loadUrl = null;
 
         switch (type) {
             case types.default:
@@ -225,10 +226,10 @@ const infiniteScroll = () => {
         }
 
         if (!loadUrl) {
-            return
+            return;
         }
 
-        xhr.open("POST", loadUrl);
+        xhr.open('POST', loadUrl);
 
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -251,58 +252,46 @@ const infiniteScroll = () => {
         xhr.send(data);
     };
 
-    if(isMobile()) {
+    if (isMobile()) {
         showMoreButton.addEventListener('click', function () {
             getData();
         });
 
-        return
+        return;
+    }
+
+    function requestOnScroll(infinityContainer, middleOfWindow) {
+        if (infinityContainer.getBoundingClientRect().bottom <= middleOfWindow) {
+
+            if (isFetching) {
+                return null;
+            }
+
+            getData();
+        }
+
+        return null;
     }
 
     window.onscroll = function () {
-
-        const middleOfWindow = window.innerHeight / 2;
-
         switch (type) {
             case types.articles: {
-
-                if (infinityContainerArticles.getBoundingClientRect().bottom <= middleOfWindow) {
-                    if(!isFetching) {
-                        getData();
-                    }
-                }
-
+                requestOnScroll(infinityContainerArticles, middleOfWindow);
                 break;
             }
             case types.reviews: {
-
-                if (infinityContainerReviews.getBoundingClientRect().bottom <= middleOfWindow) {
-                    if(!isFetching) {
-                        getData();
-                    }
-                }
-
+                requestOnScroll(infinityContainerReviews, middleOfWindow);
                 break;
             }
             case types.interviews: {
-
-                if (infinityContainerInterviews.getBoundingClientRect().bottom <= middleOfWindow) {
-                    if(!isFetching) {
-                        getData();
-                    }
-                }
-
+                requestOnScroll(infinityContainerInterviews, middleOfWindow);
                 break;
             }
             default: {
-                if (infinityContainer.getBoundingClientRect().bottom <= middleOfWindow) {
-                    if(!isFetching) {
-                        getData();
-                    }
-                }
+                requestOnScroll(infinityContainer, middleOfWindow);
             }
         }
-    }
+    };
 };
 
 export default infiniteScroll;

@@ -1,8 +1,5 @@
-const createTerm = ({terms, termContainer}) => {
-
-
+const createTerm = ({ terms, termContainer }) => {
     for (let i = 0; i < terms.length; i++) {
-
         let YOffset = window.pageYOffset;
         let termTopCoords = terms[i].getBoundingClientRect().top + YOffset + 'px';
         let termTitle = terms[i].getAttribute('data-term-title');
@@ -24,21 +21,16 @@ const createTerm = ({terms, termContainer}) => {
         fragmentClarification.appendChild(fragmentClarificationDescription);
 
         terms[i].addEventListener('mouseover', () => {
-            fragmentClarification.style = `opacity: 1; position:absolute;  top: ${termTopCoords}`
+            fragmentClarification.style = `opacity: 1; position:absolute;  top: ${termTopCoords}`;
         });
 
         terms[i].addEventListener('mouseout', () => {
             fragmentClarification.style = `opacity: 0; position:absolute;  top: ${termTopCoords}`;
         });
 
-
         fragment.appendChild(fragmentClarification);
-
         termContainer.appendChild(fragment);
-
-
     }
-
 };
 
 export default createTerm;
