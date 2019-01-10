@@ -121,6 +121,10 @@ const webpackConfig = {
             ]
         }
     },
+    historyApiFallback: true,
+    proxy: {
+        '/api': 'http://localhost:8080/materials.html'
+    },
     postcss: function (webpack) {
         return [
             require('postcss-import'),

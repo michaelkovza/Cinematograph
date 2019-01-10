@@ -1,6 +1,27 @@
 import _ from 'lodash';
 import isMobile from './isMobile';
 
+// window.scrollData = {
+//     articles: {
+//         loadSet: {
+//             endPage: 2,
+//             navNum: 2
+//         }
+//     },
+//     interviews: {
+//         loadSet: {
+//             endPage: 1,
+//             navNum: 4
+//         }
+//     },
+//     reviews: {
+//         loadSet: {
+//             endPage: 4,
+//             navNum: 3
+//         }
+//     }
+// };
+
 const reviewsButton = document.getElementsByClassName('js-reviews-button')[0];
 const articlesButton = document.getElementsByClassName('js-articles-button')[0];
 const interviewsButton = document.getElementsByClassName('js-interviews-button')[0];
@@ -15,42 +36,58 @@ const types = {
 };
 
 let type = types.default;
+let isFetching = false;
 
-if (reviewsButton !== undefined && articlesButton !== undefined && !interviewsButton !== undefined) {
-    type = types.articles;
-
-    reviewsButton.addEventListener('click', () => {
-        type = types.reviews;
-    });
-
-    articlesButton.addEventListener('click', () => {
-        type = types.articles;
-    });
-
-    interviewsButton.addEventListener('click', () => {
-        type = types.interviews;
-    });
-}
-
+const showShowMoreButton = (
+    type,
+    currentCount,
+    endPageCount,
+    showMoreButton,
+    showMoreButtonShownClass) => {
+    if (currentCount < endPageCount) {
+        showMoreButton.classList.add(showMoreButtonShownClass);
+    } else {
+        showMoreButton.classList.remove(showMoreButtonShownClass);
+    }
+};
 
 const initDataPagination = (type, dataObj, scrollDataProp) => {
     if (!window.scrollData && !window.scrollData[scrollDataProp]) {
-        return;
+        return
     }
 
     dataObj[type] = {
-        navNum: _.get(window.scrollData ,`${scrollDataProp}.loadSet.navNum`, null),
-        endPage: _.get(window.scrollData ,`${scrollDataProp}.loadSet.endPage`, null),
+        navNum: _.get(window.scrollData, `${scrollDataProp}.loadSet.navNum`, null),
+        endPage: _.get(window.scrollData, `${scrollDataProp}.loadSet.endPage`, null),
         count: 1
     };
 
 };
 
-const showShowMoreButton = (currentCount, endPageCount, showMoreButton, showMoreButtonShownClass) => {
-    if (currentCount < endPageCount) {
-        showMoreButton.classList.add(showMoreButtonShownClass);
-    } else {
-        showMoreButton.classList.remove(showMoreButtonShownClass);
+const insertResult = (
+    type,
+    result,
+    infinityContainerArticles,
+    infinityContainerReviews,
+    infinityContainerInterviews,
+    infinityContainer
+) => {
+    switch (type) {
+        case types.articles: {
+            infinityContainerArticles.insertAdjacentHTML('beforeend', result);
+            break;
+        }
+        case types.reviews: {
+            infinityContainerReviews.insertAdjacentHTML('beforeend', result);
+            break;
+        }
+        case types.interviews: {
+            infinityContainerInterviews.insertAdjacentHTML('beforeend', result);
+            break;
+        }
+        default: {
+            infinityContainer.insertAdjacentHTML('beforeend', result);
+        }
     }
 };
 
@@ -64,7 +101,7 @@ const infiniteScroll = () => {
     let infinityContainerInterviews = document.getElementById('materials-interviews-list');
 
     if (!infinityContainer) {
-        return;
+        return
     }
 
     let dataPagination = {};
@@ -81,39 +118,94 @@ const infiniteScroll = () => {
     const showMoreButtonShownClass = 'show-more--shown';
 
     showShowMoreButton(
+        type,
         dataPagination[type].count,
         dataPagination[type].endPage,
         showMoreButton,
         showMoreButtonShownClass
     );
 
-    const getData = () => {
-        let data = new FormData();
-        data.append("AJAX", "Y");
+    if (reviewsButton && articlesButton && interviewsButton) {
+        type = types.articles;
 
-        data.append("type", type);
+        showShowMoreButton(
+            type,
+            dataPagination[type].count,
+            dataPagination[type].endPage,
+            showMoreButton,
+            showMoreButtonShownClass
+        );
 
-        let xhr = new XMLHttpRequest();
-
-        const getUrl = (type) => {
-            dataPagination[type].count = ++dataPagination[type].count;
-
+        reviewsButton.addEventListener('click', () => {
+            type = types.reviews;
+            isFetching = false;
             showShowMoreButton(
+                type,
                 dataPagination[type].count,
                 dataPagination[type].endPage,
                 showMoreButton,
                 showMoreButtonShownClass
-            );
+            )
+        });
 
-            if (dataPagination[type].count <= dataPagination[type].endPage) {
-                loader.classList.remove(loaderHiddenClass);
-                return `${currentUrl}/index.php?PAGEN_${dataPagination[type].navNum}=${dataPagination[type].count}`;
+        articlesButton.addEventListener('click', () => {
+            type = types.articles;
+            isFetching = false;
+            showShowMoreButton(
+                type,
+                dataPagination[type].count,
+                dataPagination[type].endPage,
+                showMoreButton,
+                showMoreButtonShownClass
+            )
+        });
+
+        interviewsButton.addEventListener('click', () => {
+            type = types.interviews;
+            isFetching = false;
+            showShowMoreButton(
+                type,
+                dataPagination[type].count,
+                dataPagination[type].endPage,
+                showMoreButton,
+                showMoreButtonShownClass
+            )
+        });
+    }
+
+    const getData = () => {
+        isFetching = true;
+        let data = new FormData();
+        data.append("AJAX", "Y");
+
+            data.append("type", type);
+
+            let xhr = new XMLHttpRequest();
+
+        const getUrl = (type) => {
+
+            dataPagination[type].count = ++dataPagination[type].count;
+
+            if (isMobile()) {
+
+                showShowMoreButton(
+                    type,
+                    dataPagination[type].count,
+                    dataPagination[type].endPage,
+                    showMoreButton,
+                    showMoreButtonShownClass
+                );
             }
 
-            return null;
-        };
+                if(dataPagination[type].count <= dataPagination[type].endPage) {
+                    loader.classList.remove(loaderHiddenClass);
+                    return `${currentUrl}/index.php?PAGEN_${dataPagination[type].navNum}=${dataPagination[type].count}`;
+                }
 
-        let loadUrl = null;
+                return null;
+            };
+
+            let loadUrl = null;
 
         switch (type) {
             case types.default:
@@ -128,11 +220,12 @@ const infiniteScroll = () => {
             case types.interviews:
                 loadUrl = getUrl(type);
                 break;
-            default: break;
+            default:
+                break;
         }
 
-        if (loadUrl === null) {
-            return;
+        if (!loadUrl) {
+            return
         }
 
         xhr.open("POST", loadUrl);
@@ -141,24 +234,16 @@ const infiniteScroll = () => {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 let result = xhr.responseText;
 
-                switch (type) {
-                    case types.articles: {
-                        infinityContainerArticles.insertAdjacentHTML('beforeend', result);
-                        break;
-                    }
-                    case types.reviews: {
-                        infinityContainerReviews.insertAdjacentHTML('beforeend', result);
-                        break;
-                    }
-                    case types.interviews: {
-                        infinityContainerInterviews.insertAdjacentHTML('beforeend', result);
-                        break;
-                    }
-                    default: {
-                        infinityContainer.insertAdjacentHTML('beforeend', result);
-                    }
-                }
+                insertResult(
+                    type,
+                    result,
+                    infinityContainerArticles,
+                    infinityContainerReviews,
+                    infinityContainerInterviews,
+                    infinityContainer
+                );
 
+                isFetching = false;
                 loader.classList.add(loaderHiddenClass);
             }
         };
@@ -166,46 +251,57 @@ const infiniteScroll = () => {
         xhr.send(data);
     };
 
-    if (isMobile()) {
+    if(isMobile()) {
         showMoreButton.addEventListener('click', function () {
             getData();
         });
+
+        return
     }
 
-    if (!isMobile()) {
-        window.onscroll = function () {
-            const middleOfWindow = window.innerHeight / 2;
+    window.onscroll = function () {
 
-            switch (type) {
-                case types.articles: {
-                    if (infinityContainerArticles.getBoundingClientRect().bottom <= middleOfWindow) {
-                        getData();
-                    }
+        const middleOfWindow = window.innerHeight / 2;
 
-                    break;
-                }
-                case types.reviews: {
-                    if (infinityContainerReviews.getBoundingClientRect().bottom <= middleOfWindow) {
-                        getData();
-                    }
+        switch (type) {
+            case types.articles: {
 
-                    break;
-                }
-                case types.interviews: {
-                    if (infinityContainerInterviews.getBoundingClientRect().bottom <= middleOfWindow) {
-                        getData();
-                    }
-
-                    break;
-                }
-                default: {
-                    if (infinityContainer.getBoundingClientRect().bottom <= middleOfWindow) {
+                if (infinityContainerArticles.getBoundingClientRect().bottom <= middleOfWindow) {
+                    if(!isFetching) {
                         getData();
                     }
                 }
 
+                break;
             }
-        };
+            case types.reviews: {
+
+                if (infinityContainerReviews.getBoundingClientRect().bottom <= middleOfWindow) {
+                    if(!isFetching) {
+                        getData();
+                    }
+                }
+
+                break;
+            }
+            case types.interviews: {
+
+                if (infinityContainerInterviews.getBoundingClientRect().bottom <= middleOfWindow) {
+                    if(!isFetching) {
+                        getData();
+                    }
+                }
+
+                break;
+            }
+            default: {
+                if (infinityContainer.getBoundingClientRect().bottom <= middleOfWindow) {
+                    if(!isFetching) {
+                        getData();
+                    }
+                }
+            }
+        }
     }
 };
 
