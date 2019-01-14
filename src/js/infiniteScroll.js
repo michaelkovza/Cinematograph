@@ -185,7 +185,6 @@ const infiniteScroll = () => {
         let xhr = new XMLHttpRequest();
 
         const getUrl = (type) => {
-
             dataPagination[type].count = ++dataPagination[type].count;
 
             if (isMobile()) {

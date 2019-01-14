@@ -1,22 +1,27 @@
-const setMaterials = ( {materialsVideoArr, materialsContentList, materialsVideoList, materials, materialsHiddenClass}) => {
-
-    if(!materials) {
-        return
+const setMaterials = ({
+    materialsVideoArr,
+    materialsContentList,
+    materialsVideoList,
+    materials,
+    materialsHiddenClass
+}) => {
+    if (!materials) {
+        return;
     }
 
-
-    if(materialsVideoArr.length === 0) {
-        materials.classList.add(materialsHiddenClass)
+    if (materialsVideoArr.length === 0) {
+        materials.classList.add(materialsHiddenClass);
     }
 
-    for(let i = 0; i < materialsVideoArr.length; i++) {
+    for (let i = 0; i < materialsVideoArr.length; i++) {
         let materialsVideoTitle = materialsVideoArr[i].getAttribute('data-title');
         let materialsVideoDescription = materialsVideoArr[i].getAttribute('data-description');
         let materialsVideoHref = materialsVideoArr[i].getAttribute('data-href');
         let materialsVideoArea = materialsVideoArr[i].getAttribute('data-area');
         let materailsVideoSrc = materialsVideoArr[i].getAttribute('src');
 
-        materialsVideoArr[i].insertAdjacentHTML('afterEnd',
+        materialsVideoArr[i].insertAdjacentHTML(
+            'afterEnd',
             `<h3 class="article-detailed__video-title"> 
                 ${materialsVideoTitle}
              </h3>
@@ -25,7 +30,8 @@ const setMaterials = ( {materialsVideoArr, materialsContentList, materialsVideoL
              </a>`
         );
 
-        materialsContentList.insertAdjacentHTML('beforeend',
+        materialsContentList.insertAdjacentHTML(
+            'beforeend',
             `<li class="article-materials__content-item">
                 <h5 class="article-materials__content-title">
                     ${materialsVideoTitle}
@@ -36,7 +42,8 @@ const setMaterials = ( {materialsVideoArr, materialsContentList, materialsVideoL
             </li>`
         );
 
-        materialsVideoList.insertAdjacentHTML('beforeend',
+        materialsVideoList.insertAdjacentHTML(
+            'beforeend',
             `<li class="article-materials__video-item">
                 <iframe src=${materailsVideoSrc}></iframe>
             </li>`

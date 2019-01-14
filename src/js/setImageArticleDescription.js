@@ -1,6 +1,6 @@
 const setImageArticleDescription = ({imageArticleArr}) => {
 
-    for(let i = 0; i < imageArticleArr.length; i++) {
+    for (let i = 0; i < imageArticleArr.length; i++) {
         let imageDescription = imageArticleArr[i].getAttribute('alt');
         let imageArea = imageArticleArr[i].getAttribute('data-area');
         let imageHref = imageArticleArr[i].getAttribute('data-href');

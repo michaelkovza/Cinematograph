@@ -1,8 +1,8 @@
-const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton, formStatusSelectorHiddenClass}) => {
+const formValidaton = ({ formEmailSelector, formStatusSelector, formSendButton, formStatusSelectorHiddenClass }) => {
     let url = window.location.origin;
 
-    if(!formEmailSelector) {
-        return
+    if (!formEmailSelector) {
+        return;
     }
 
     const validateEmail =  (email) => {
@@ -14,7 +14,7 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton, f
         formStatusSelector.innerHTML = '';
         let email = formEmailSelector.value;
 
-        if(validateEmail(email)) {
+        if (validateEmail(email)) {
             formSendButton.removeAttribute('disabled');
             formSendButton.addEventListener('click', (event) => {
                 event.preventDefault();
@@ -48,16 +48,15 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton, f
             formStatusSelector.classList.remove(formStatusSelectorHiddenClass);
         }
 
-        if(email === '') {
+        if (email === '') {
             formStatusSelector.innerHTML = 'Поле не может быть пустым.';
             formStatusSelector.classList.remove(formStatusSelectorHiddenClass);
 
             setTimeout(() => {
                 formStatusSelector.innerHTML = '';
                 formStatusSelector.classList.add(formStatusSelectorHiddenClass);
-            }, 5000)
+            }, 5000);
         }
-
     };
 
     formEmailSelector.addEventListener('input', () => {
@@ -65,9 +64,8 @@ const formValidaton = ({formEmailSelector, formStatusSelector, formSendButton, f
     });
 
     formEmailSelector.addEventListener('blur', () => {
-        validate()
-    })
-
+        validate();
+    });
 };
 
 export default formValidaton;

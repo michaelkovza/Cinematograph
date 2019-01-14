@@ -155,7 +155,7 @@ window.addEventListener('load', () => {
     infiniteScroll();
     scrollToTop();
 
-    if ('https://cinematograph.media/' === window.location.href) {
+    if (window.location.href === 'https://cinematograph.media/') {
         notification();
     }
 });

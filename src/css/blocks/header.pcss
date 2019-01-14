@@ -1,26 +1,31 @@
 .header {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding-top: 20px;
 
-  &__navigate {
-    background-color: var(--accent-color);
-    text-align: center;
-    color: var(--secondary-accent-color);
-  }
+    &__navigate {
+        background-color: var(--accent-color);
+        text-align: center;
+        color: var(--secondary-accent-color);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
 
-  &__navigate-link {
-    font-family: var(--secondary-font);
-    font-size: 18px;
-  }
+    &__navigate-link {
+        font-family: var(--secondary-font);
+        font-size: 18px;
+    }
 
-  &__logo {
-    width: 180px;
-  }
+    &__logo {
+        width: 180px;
+    }
 
-  &__link {
-    display: block;
-    margin: 14px auto 35px;
-  }
+    &__link {
+        display: block;
+        margin: 14px auto 35px;
+    }
 }
 

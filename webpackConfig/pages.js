@@ -142,28 +142,28 @@ module.exports = [
   //   },
   //   chunks: ['index']
   // },
-  // {
-  //   title: '«contacts»',
-  //   filename: 'contacts.html',
-  //   template: 'src/html/layouts/layout.pug',
-  //   inject: 'body',
-  //   minify: false,
-  //   env: {
-  //     page: 'contacts.pug'
-  //   },
-  //   chunks: ['index']
-  // },
-  // {
-  //   title: '«search-page»',
-  //   filename: 'search-page.html',
-  //   template: 'src/html/layouts/layout.pug',
-  //   inject: 'body',
-  //   minify: false,
-  //   env: {
-  //     page: 'search-page.pug'
-  //   },
-  //   chunks: ['index']
-  // },
+  {
+    title: '«contacts»',
+    filename: 'contacts.html',
+    template: 'src/html/layouts/layout.pug',
+    inject: 'body',
+    minify: false,
+    env: {
+      page: 'contacts.pug'
+    },
+    chunks: ['index']
+  },
+  {
+    title: '«search-page»',
+    filename: 'search-page.html',
+    template: 'src/html/layouts/layout.pug',
+    inject: 'body',
+    minify: false,
+    env: {
+      page: 'search-page.pug'
+    },
+    chunks: ['index']
+  },
   // {
   //   title: '«404»',
   //   filename: '404.html',
