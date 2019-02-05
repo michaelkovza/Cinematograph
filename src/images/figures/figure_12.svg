@@ -1,7 +1,7 @@
-<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.53 141.53">
+<svg class='figure' data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.53 141.53">
     <title>13Монтажная область 1</title>
     <polyline points="61.9 100.53 61.9 29.58 71.11 20.36 79.98 29.23 79.98 100.18 70.76 109.4 61.9 100.53"
-              style="fill:blue;fill-rule:evenodd"/>
+              style="fill-rule:evenodd"/>
     <line x1="61.89" y1="100.53" x2="70.76" y2="109.4"
           style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0px"/>
     <line x1="70.76" y1="109.4" x2="79.98" y2="100.18"

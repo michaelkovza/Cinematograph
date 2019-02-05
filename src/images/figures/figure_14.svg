@@ -1,4 +1,4 @@
-<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+<svg class='figure figure--video' data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
      viewBox="0 0 141.53 141.53">
     <defs>
         <clipPath id="clip-path">
@@ -9,7 +9,7 @@
     <title>15Монтажная область 1</title>
     <polyline
             points="50.41 78.14 50.41 57.34 51.27 52.57 53.02 48.04 55.59 43.93 58.88 40.37 62.78 37.49 67.16 35.4 71.85 34.17 76.69 33.85 81.5 34.44 86.12 35.93 90.37 38.27 94.11 41.35 94.11 52.33 94.11 73.27 83.07 84.31 80.99 82.72 78.57 81.72 75.97 81.37 73.38 81.72 70.95 82.72 68.88 84.31 68.88 98.5 57.84 109.54 54.95 106.1 52.71 102.21 51.18 97.99 50.41 93.56 50.41 78.14"
-            style="fill:blue;fill-rule:evenodd"/>
+            style="fill-rule:evenodd"/>
     <line x1="50.41" y1="62.8" x2="50.41" y2="93.56"
           style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.7086614370346069px"/>
     <g style="clip-path:url(#clip-path)">

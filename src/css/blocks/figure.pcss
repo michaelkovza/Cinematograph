@@ -1,0 +1,39 @@
+.figure {
+  width: 100%;
+  height: auto;
+  display: block;
+  fill: var(--secondary-text-color);
+  transition: fill 0.3s linear;
+
+  &--circle {
+    position: relative;
+    z-index: 10;
+  }
+
+  &--video {
+    position: relative;
+    z-index: 1;
+  }
+
+  &--form {
+    display: block;
+    width: 50px;
+    height: 110px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  &--gallery {
+    display: block;
+    width: 47px;
+    height: 57px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+  }
+}
